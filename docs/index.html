@@ -555,18 +555,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .graph svg{width:100%;height:auto;display:block;max-width:700px;margin:0 auto}
 .node{fill:#fff;stroke:#4f4e49;stroke-width:1.4;transition:fill .35s,stroke .35s}
 .node.stim{stroke:var(--accent);stroke-width:2;stroke-dasharray:5 3}
+.graph svg{max-width:640px}
 .node.out{stroke-width:2}
 .gnode.pulse circle{stroke-width:3.5}
 .nl{font-family:inherit;font-size:12.5px;fill:var(--ink)}
-.nv{font-family:inherit;font-size:13px;fill:var(--ink);font-weight:800}
-.el{font-family:inherit;font-size:13px;fill:var(--mut);font-weight:700}
+.nv{font-family:inherit;font-size:12px;fill:var(--ink2);font-weight:800}
+.el{font-family:inherit;font-size:11.5px;fill:var(--mut);font-weight:700}
 .dol{font-family:inherit;font-size:11px;fill:var(--accent-ink);font-weight:700;letter-spacing:.05em}
 .edge{stroke:#4f4e49;stroke-width:1.5;fill:none;marker-end:url(#ar)}
-.edge.neg{stroke:#8a8a86;stroke-dasharray:4 3}
+.nin{font-family:inherit;font-size:12.5px;fill:var(--ink);font-weight:700}
+.edge.pos{stroke:#1d4fb0;marker-end:url(#arp)}.edge.neg{stroke:#b3261e;marker-end:url(#arn)}
+.msvg .edge.pos{marker-end:url(#arp2)}.msvg .edge.neg{marker-end:url(#arn2)}
+.edge.w1{stroke-width:1.1;stroke-dasharray:0}.edge.w2{stroke-width:2}.edge.w3{stroke-width:3.2}
+.el.pos{fill:#1d4fb0}.el.neg{fill:#b3261e}
+
 .glegend{font-size:12.5px;color:var(--mut);text-align:center;margin-top:4px}
 .formula{margin-top:12px;font-size:13px;color:var(--ink2);line-height:1.6}
 .mcard{border:1px solid var(--line);background:#fff;padding:10px 12px 0;margin-bottom:12px}
-.edge.m{marker-end:url(#ar2)}
 .evl{stroke:var(--accent);stroke-width:1.2;stroke-dasharray:3 3}
 .msvg{width:100%;max-width:560px;height:auto;display:block;margin:0 auto}
 .qa.ev{border:none;border-top:1.5px dotted var(--accent);background:var(--tint);margin:0 -12px;padding:10px 14px}
@@ -578,7 +583,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .rbar i{position:absolute;left:0;top:0;bottom:0;width:31%;background:#b3261e;transition:width .35s,background .35s}
 .rnum{font-size:12px;color:var(--mut)}
 .rnum b{color:var(--ink)}
-.ain{font-size:12px;color:var(--mut);margin-bottom:8px;line-height:1.5}
+.ain{font-size:12px;color:var(--mut);margin-bottom:8px;line-height:1.9}
+.chip{display:inline-block;border:1px solid var(--line);background:#fff;padding:0 7px;line-height:1.6;color:var(--ink2);font-size:11.5px}
+.ch{font-style:normal;color:var(--mut);margin:0 5px;font-size:14px}
 .agent.surface .sw{background:#cfe0ea}.agent.deep .sw{background:#2b3f52}
 .agent.surface{border-left:3px solid #cfe0ea}.agent.deep{border-left:3px solid #2b3f52}
 @media(max-width:760px){.stage.two{grid-template-columns:1fr}}
@@ -648,7 +655,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <line x1="157" y1="45" x2="175" y2="30" class="pe"/><line x1="157" y1="53" x2="175" y2="68" class="pe"/><line x1="185" y1="30" x2="203" y2="45" class="pe"/><line x1="185" y1="68" x2="203" y2="53" class="pe"/><line x1="228" y1="49" x2="268" y2="49" class="pa"/><rect x="270" y="26" width="84" height="46" rx="4" class="pb"/><text x="312" y="54" text-anchor="middle" class="pt">response</text></svg><b>Cognitivism</b><span class="era"><em>People</em> 1956 &rarr;<br><em>LLM agents</em> starting now</span>Structure in between: beliefs with causes, a trace you can read, a response that follows.</div>
     <div class="pcol dim"><i>and beyond</i><svg viewBox="0 0 360 122" class="pd" aria-label="constructivism: experience keeps rewiring the structure"><rect x="6" y="26" width="84" height="46" rx="4" class="pb"/><text x="48" y="54" text-anchor="middle" class="pt">stimulus</text><line x1="92" y1="49" x2="132" y2="49" class="pa"/><rect x="134" y="12" width="92" height="74" rx="4" class="pb tint"/>
 <circle cx="152" cy="49" r="6" class="pn"/><circle cx="180" cy="26" r="6" class="pn"/><circle cx="180" cy="72" r="6" class="pn"/><circle cx="208" cy="49" r="6" class="pn"/>
-<line x1="157" y1="45" x2="175" y2="30" class="pe"/><line x1="157" y1="53" x2="175" y2="68" class="pe"/><line x1="185" y1="30" x2="203" y2="45" class="pe"/><line x1="185" y1="68" x2="203" y2="53" class="pe"/><circle cx="208" cy="22" r="6" class="pn new"/><line x1="186" y1="25" x2="202" y2="22" class="pe new"/><path d="M180 88 C180 118, 70 118, 48 74" class="pa loop"/><text x="114" y="104" text-anchor="middle" class="pt tiny">experience</text><line x1="228" y1="49" x2="268" y2="49" class="pa"/><rect x="270" y="26" width="84" height="46" rx="4" class="pb"/><text x="312" y="54" text-anchor="middle" class="pt">response</text></svg><b>Constructivism</b><span class="era"><em>People</em> 1980s &rarr;<br><em>LLM agents</em> not yet</span>Experience keeps rewiring the structure. The horizon, once a structure exists.</div>
+<line x1="157" y1="45" x2="175" y2="30" class="pe"/><line x1="157" y1="53" x2="175" y2="68" class="pe"/><line x1="185" y1="30" x2="203" y2="45" class="pe"/><line x1="185" y1="68" x2="203" y2="53" class="pe"/><circle cx="208" cy="22" r="6" class="pn new"/><line x1="186" y1="25" x2="202" y2="22" class="pe new"/><path d="M180 88 C180 124, 70 124, 48 74" class="pa loop"/><text x="114" y="105" text-anchor="middle" class="pt tiny">experience</text><line x1="228" y1="49" x2="268" y2="49" class="pa"/><rect x="270" y="26" width="84" height="46" rx="4" class="pb"/><text x="312" y="54" text-anchor="middle" class="pt">response</text></svg><b>Constructivism</b><span class="era"><em>People</em> 1980s &rarr;<br><em>LLM agents</em> not yet</span>Experience keeps rewiring the structure. The horizon, once a structure exists.</div>
   </div>
   <div class="tl">
     <div class="tlrow"><span class="tll">How we studied people<small>psychology, 20th century</small></span><div class="tlbar"><i class="s1" style="left:0;width:34%">behaviorism &middot; 1913&ndash;1950s</i><i class="s2" style="left:34%;width:36%">cognitivism &middot; 1956&ndash;</i><i class="s3" style="left:70%;width:30%">constructivism &middot; 1980s&ndash;</i></div></div>
@@ -674,8 +681,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <p class="note" style="margin-top:6px">Everyday language, elicited by a semi-structured interview. No survey scale yet, no persona label. Just how one person explains their own view.</p>
       </div>
       <div class="pane">
-<div class="mcard"><svg viewBox="0 0 560 128" class="msvg" aria-label="motif"><defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f4e49"/></marker></defs><line x1="120" y1="38" x2="250" y2="38" class="edge m"/><text x="185" y="30" text-anchor="middle" class="el">&minus;</text><line x1="310" y1="38" x2="440" y2="38" class="edge m"/><text x="375" y="30" text-anchor="middle" class="el">&minus;</text><circle cx="90" cy="38" r="24" class="node"/><text x="90" y="84" text-anchor="middle" class="nl">Transparency</text><circle cx="280" cy="38" r="24" class="node"/><text x="280" y="84" text-anchor="middle" class="nl">Crime rate</text><circle cx="470" cy="38" r="24" class="node"/><text x="470" y="84" text-anchor="middle" class="nl">Public safety</text><line x1="280" y1="96" x2="280" y2="126" class="evl"/><text x="292" y="118" class="dol">evidence</text></svg><div class="qa ev"><b>Motif 1, from answer 1</b>&ldquo;It can reduce <strong>crime</strong> by aiding investigations with more <strong>transparency</strong>, which increases <strong>public safety</strong>.&rdquo;</div></div>
-<div class="mcard"><svg viewBox="0 0 560 128" class="msvg" aria-label="motif"><defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f4e49"/></marker></defs><line x1="120" y1="38" x2="250" y2="38" class="edge m"/><text x="185" y="30" text-anchor="middle" class="el">&minus;</text><line x1="310" y1="38" x2="440" y2="38" class="edge m"/><text x="375" y="30" text-anchor="middle" class="el">&minus;</text><circle cx="90" cy="38" r="24" class="node"/><text x="90" y="84" text-anchor="middle" class="nl">Transparency</text><circle cx="280" cy="38" r="24" class="node"/><text x="280" y="84" text-anchor="middle" class="nl">Privacy concern</text><circle cx="470" cy="38" r="24" class="node"/><text x="470" y="84" text-anchor="middle" class="nl">Support</text><line x1="280" y1="96" x2="280" y2="126" class="evl"/><text x="292" y="118" class="dol">evidence</text></svg><div class="qa ev"><b>Motif 2, from answer 2</b>&ldquo;People will have less <strong>privacy concern</strong> if they know how data is used&hellip;&rdquo;</div></div>
+<div class="mcard"><svg viewBox="0 0 580 110" class="msvg" aria-label="motif"><defs><marker id="arp2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d4fb0"/></marker><marker id="arn2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b3261e"/></marker></defs><path class="edge neg w1" d="M128 52 L252 52"/><text class="el neg" x="190" y="42" text-anchor="middle">- weak</text><path class="edge neg w3" d="M328 52 L452 52"/><text class="el neg" x="390" y="42" text-anchor="middle">- strong</text><g class="gnode"><circle class="node" cx="90" cy="52" r="36"/><text class="nin" x="90" y="49" text-anchor="middle">Transpa-</text><text class="nin" x="90" y="64" text-anchor="middle">rency</text></g><g class="gnode"><circle class="node" cx="290" cy="52" r="36"/><text class="nin" x="290" y="49" text-anchor="middle">Crime</text><text class="nin" x="290" y="64" text-anchor="middle">rate</text></g><g class="gnode"><circle class="node" cx="490" cy="52" r="36"/><text class="nin" x="490" y="49" text-anchor="middle">Public</text><text class="nin" x="490" y="64" text-anchor="middle">safety</text></g><line x1="290" y1="90" x2="290" y2="110" class="evl"/></svg><div class="qa ev"><b>Motif 1, from answer 1</b>&ldquo;It can reduce <strong>crime</strong> by aiding investigations with more <strong>transparency</strong>, which increases <strong>public safety</strong>.&rdquo;</div></div>
+<div class="mcard"><svg viewBox="0 0 580 110" class="msvg" aria-label="motif"><defs><marker id="arp2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d4fb0"/></marker><marker id="arn2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b3261e"/></marker></defs><path class="edge neg w2" d="M128 52 L252 52"/><text class="el neg" x="190" y="42" text-anchor="middle">- moderate</text><path class="edge neg w3" d="M328 52 L452 52"/><text class="el neg" x="390" y="42" text-anchor="middle">- strong</text><g class="gnode"><circle class="node" cx="90" cy="52" r="36"/><text class="nin" x="90" y="49" text-anchor="middle">Transpa-</text><text class="nin" x="90" y="64" text-anchor="middle">rency</text></g><g class="gnode"><circle class="node" cx="290" cy="52" r="36"/><text class="nin" x="290" y="49" text-anchor="middle">Privacy</text><text class="nin" x="290" y="64" text-anchor="middle">concern</text></g><g class="gnode"><circle class="node" cx="490" cy="52" r="36"/><text class="nin" x="490" y="57" text-anchor="middle">Support</text></g><line x1="290" y1="90" x2="290" y2="110" class="evl"/></svg><div class="qa ev"><b>Motif 2, from answer 2</b>&ldquo;People will have less <strong>privacy concern</strong> if they know how data is used&hellip;&rdquo;</div></div>
         <p class="note" style="margin-top:10px">A motif is the smallest causal unit in someone&rsquo;s reasoning: concept, signed arrow, concept. Each one carries the sentence it came from, so every edge in the graph can be traced back to the person&rsquo;s own words. Motifs recur across people, which is what makes them comparable.</p>
       </div>
       <div class="pane on">
@@ -691,39 +698,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="stimscale"><span>less transparent</span><span>more transparent</span></div>
           </div>
         </div>
-        <div class="llm"><span class="llmtag">LLM as semantic parser</span> reads both texts and writes graph operations: <b>query</b> the node <i>Support for the law</i> &nbsp;&middot;&nbsp; <b>intervene</b> <span class="dotag" id="dotag">do(Transparency = <span id="tv">0.50</span>)</span></div>
+        <div class="llm"><span class="llmtag">LLM as semantic parser</span> reads both texts and writes two graph operations: <b>query</b> the node <i>Support</i>, and <b>intervene</b> with <span class="dotag" id="dotag">do(Transparency = <span id="tv">0.50</span>)</span></div>
         <div class="stage">
           <div class="fcol wide">
             <div class="fh"><span class="fn">2</span> Structure <small>the agent&rsquo;s belief graph, built from its own words; the do() sets one node, propagation does the rest</small></div>
             <div class="graph">
-              <svg viewBox="0 0 560 270" aria-label="Belief graph">
-                <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f4e49"/></marker></defs>
-                <path class="edge" d="M104 135 C160 70, 200 70, 236 70"/>
-                <path class="edge" d="M104 135 C160 200, 200 200, 236 200"/>
-                <path class="edge" d="M304 70 C350 70, 400 70, 436 70"/>
-                <path class="edge" d="M304 200 C350 200, 400 200, 436 200"/>
-                <path class="edge neg" d="M292 96 C320 150, 420 130, 452 172"/>
-                <text class="el" x="170" y="88">+</text><text class="el" x="170" y="222">&minus;</text>
-                <text class="el" x="370" y="62">+</text><text class="el" x="370" y="192">&minus;</text>
-                <text class="el" x="392" y="128">&minus;</text>
-                <g id="nT" class="gnode"><circle class="node stim" cx="70" cy="135" r="30"/><text class="nv" x="70" y="140" text-anchor="middle" id="vT">.50</text></g>
-                <text class="nl" x="70" y="184" text-anchor="middle">Transparency</text>
-                <text class="dol" x="70" y="96" text-anchor="middle">do()</text>
-                <g class="gnode"><circle class="node" cx="270" cy="70" r="26"/><text class="nv" x="270" y="75" text-anchor="middle" id="vC">.20</text></g>
-                <text class="nl" x="270" y="30" text-anchor="middle">Crime reduction</text>
-                <g class="gnode"><circle class="node" cx="270" cy="200" r="26"/><text class="nv" x="270" y="205" text-anchor="middle" id="vP">.70</text></g>
-                <text class="nl" x="270" y="246" text-anchor="middle">Privacy concern</text>
-                <g class="gnode"><circle class="node" cx="470" cy="70" r="26"/><text class="nv" x="470" y="75" text-anchor="middle" id="vS">.20</text></g>
-                <text class="nl" x="470" y="30" text-anchor="middle">Public safety</text>
-                <g id="nO" class="gnode"><circle class="node out" id="cO" cx="470" cy="200" r="30"/><text class="nv" x="470" y="205" text-anchor="middle" id="vO">.31</text></g>
-                <text class="nl" x="470" y="250" text-anchor="middle">Support for the law</text>
-                <text class="dol" x="512" y="205" text-anchor="start">query</text>
-              </svg>
+              <svg viewBox="0 0 520 320" aria-label="Belief graph">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f4e49"/></marker><marker id="arp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d4fb0"/></marker><marker id="arn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b3261e"/></marker></defs>
+<path class="edge neg w1" d="M112 150 C160 80, 190 78, 216 76"/><text class="el neg" x="150" y="72" text-anchor="middle">- weak</text><path class="edge neg w2" d="M112 150 C160 220, 190 222, 216 224"/><text class="el neg" x="150" y="246" text-anchor="middle">- moderate</text><path class="edge neg w3" d="M292 76 C330 76, 350 76, 386 76"/><text class="el neg" x="338" y="66" text-anchor="middle">- strong</text><path class="edge neg w3" d="M292 224 C330 224, 350 224, 386 224"/><text class="el neg" x="338" y="246" text-anchor="middle">- strong</text><path class="edge pos w3" d="M446 106 C446 150, 446 160, 446 192"/><text class="el pos" x="484" y="152" text-anchor="middle">+ strong</text>
+<g id="nT" class="gnode"><circle class="node stim" cx="76" cy="150" r="36"/><text class="nin" x="76" y="147" text-anchor="middle">Transpa-</text><text class="nin" x="76" y="162" text-anchor="middle">rency</text></g><text class="nv" x="76" y="204" text-anchor="middle" id="vT">.00</text><text class="dol" x="76" y="98" text-anchor="middle">do()</text><g class="gnode"><circle class="node" cx="254" cy="76" r="36"/><text class="nin" x="254" y="73" text-anchor="middle">Crime</text><text class="nin" x="254" y="88" text-anchor="middle">rate</text></g><text class="nv" x="254" y="130" text-anchor="middle" id="vC">.00</text><g class="gnode"><circle class="node" cx="254" cy="224" r="36"/><text class="nin" x="254" y="221" text-anchor="middle">Privacy</text><text class="nin" x="254" y="236" text-anchor="middle">concern</text></g><text class="nv" x="254" y="278" text-anchor="middle" id="vP">.00</text><g class="gnode"><circle class="node" cx="424" cy="76" r="36"/><text class="nin" x="424" y="73" text-anchor="middle">Public</text><text class="nin" x="424" y="88" text-anchor="middle">safety</text></g><text class="nv" x="424" y="130" text-anchor="middle" id="vS">.00</text><g id="nO" class="gnode"><circle class="node out" cx="424" cy="224" r="36" id="cO"/><text class="nin" x="424" y="229" text-anchor="middle">Support</text></g><text class="nv" x="424" y="278" text-anchor="middle" id="vO">.00</text><text class="dol" x="466" y="228" text-anchor="start">query</text></svg>
             </div>
-            <div class="glegend">+ increases &nbsp; &minus; decreases &nbsp; dashed = preventive path &nbsp; numbers = P(node)</div>
+            <div class="glegend"><span style="color:#1d4fb0">+ increases</span> &nbsp; <span style="color:#b3261e">&minus; decreases</span> &nbsp; thicker = stronger &nbsp; numbers under nodes = P(node)</div>
           </div>
         </div>
-        <div class="llm"><span class="llmtag">LLM as verbalizer</span> turns the queried posterior back into language: P(support) = <b id="rSv">0.31</b> &rarr; <b id="rav">&ldquo;I lean against it.&rdquo;</b></div>
+        <div class="llm"><span class="llmtag">LLM as verbalizer</span> turns the queried posterior back into language: P(support) = <b id="rSv">0.31</b> becomes <b id="rav">&ldquo;I lean against it.&rdquo;</b></div>
         <div class="stage two">
           <div class="fcol agent deep">
             <div class="fh"><span class="fn">3</span> Response <small><i class="sw"></i>grounded agent &middot; beliefs in</small></div>
@@ -733,13 +721,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           </div>
           <div class="fcol agent surface">
             <div class="fh"><span class="fn">&ne;</span> For comparison <small><i class="sw"></i>surface agent &middot; demographics in</small></div>
-            <div class="ain">&ldquo;34 &middot; urban &middot; renter&rdquo; &rarr; persona prompt &rarr; answer. No structure in between, so the announcement never reaches it.</div>
+            <div class="ain"><span class="chip">34, urban, renter</span><i class="ch">&rsaquo;</i><span class="chip">persona prompt</span><i class="ch">&rsaquo;</i><span class="chip">answer</span><br>No structure in between, so the announcement never reaches it.</div>
             <div class="ra small">I oppose it.</div>
             <div class="rbar"><i style="width:35%;background:#8a8a86"></i></div>
             <div class="rnum">support <b>0.35</b>, whatever the announcement</div>
           </div>
         </div>
-        <p class="formula">Same person, same question, five announcements. Slide right and the paper&rsquo;s worked numbers appear (privacy concern 0.7 &rarr; 0.3, support 0.3 &rarr; 0.8); slide left and the graph runs the other way. Weights are illustrative; the structure and the sign of every edge come from the two answers in step 1. do() sets the node instead of observing it, so nothing flows back upstream.</p>
+        <p class="formula">Same person, same question, five announcements. Slide right and the paper&rsquo;s worked numbers appear (privacy concern 0.7 &rarr; 0.3, support 0.3 &rarr; 0.8); slide left and the graph runs the other way. Weights are illustrative; the structure, the sign, and the strength of every edge come from the two answers in step 1 (hedged claims are weak edges, flat assertions are strong). do() sets the node instead of observing it, so nothing flows back upstream.</p>
       </div>
       </div>
     </div>
