@@ -78,6 +78,11 @@ p.body strong{color:var(--ink)}
 .card .csub{font-size:12.5px;color:var(--accent-ink);font-weight:600;letter-spacing:.06em;margin-bottom:10px}
 .card p{font-size:14.5px;color:var(--ink2)}
 .note{font-size:13.5px;color:var(--mut);margin-top:20px;max-width:760px}
+.two{margin-top:22px;border:1px solid var(--line);padding:14px 18px 6px}
+.th2{font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--accent-ink);margin-bottom:8px}
+.tw{display:grid;grid-template-columns:120px 1fr;gap:12px;font-size:13.5px;color:var(--ink2);padding:6px 0 8px;border-top:1px dashed var(--line)}
+.tw b{color:var(--ink)}
+@media(max-width:760px){.tw{grid-template-columns:1fr}}
 /* stats strip */
 .stats{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);margin-top:8px}
 .stat{padding:16px 14px;border-left:1px solid var(--line);font-size:13.5px;color:var(--ink2)}
@@ -593,6 +598,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <b>SimThought</b>
   <nav>
     <a href="https://arxiv.org/abs/2506.06958" target="_blank" rel="noopener">Paper</a>
+    <a href="https://openreview.net/forum?id=EvXWexakZX" target="_blank" rel="noopener">OpenReview</a>
     <a href="#bibtex">BibTeX</a>
   </nav>
   <img class="mitmark" src="assets/mit-black.svg" alt="MIT">
@@ -613,6 +619,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
   <div class="btns">
     <a class="btn primary" href="https://arxiv.org/abs/2506.06958" target="_blank" rel="noopener">Paper</a>
+    <a class="btn" href="https://openreview.net/forum?id=EvXWexakZX" target="_blank" rel="noopener">OpenReview: discuss</a>
     <a class="btn" href="#bibtex">BibTeX</a>
   </div>
 </header>
@@ -641,6 +648,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="card"><h3>1 &middot; Auditable causality</h3><div class="csub">why did the agent say that?</div><p>A stance should come with the chain of beliefs that produced it. Without a trace, a right answer and a wrong one look the same, and nobody can say which reason moved the outcome.</p></div>
     <div class="card"><h3>2 &middot; Grounded in a real individual</h3><div class="csub">whose reasoning is this?</div><p>Beliefs come from experience. Two people with the same label routinely hold opposite views for good reasons. Simulate the label and you get a stereotype, then a stereotyped society.</p></div>
     <div class="card"><h3>3 &middot; Consistent under counterfactuals</h3><div class="csub">what would change their mind?</div><p>Policy questions are what-if questions. An agent that cannot revise its beliefs predictably under an intervention cannot say what a policy would do, which is the only reason to run the simulation.</p></div>
+  </div>
+  <div class="two"><div class="th2">Two alignments the paper asks for</div>
+    <div class="tw"><b>Faithfulness</b><span>the answer follows from the agent&rsquo;s own trace: if the trace says privacy concern fell, the stance moves, and nothing else moves it.</span></div>
+    <div class="tw"><b>Fidelity</b><span>the agent&rsquo;s trace matches the person&rsquo;s: the beliefs, causes, and updates they actually reported.</span></div>
   </div>
   <p class="body" style="margin-top:22px">Together these define what the paper calls <strong>reasoning fidelity</strong>: a trace of belief formation that is traceable, revisable, and built from reusable causal parts. DIBO has none of it. It is <strong>behaviorism rebuilt in software</strong>: whatever happens between input and output is not represented, so it <strong>cannot be inspected, tested, or falsified</strong>. We argue for the move psychology already made, <strong>from behaviorism to cognitivism</strong>, because only an agent with an inspectable internal structure is a <strong>scientific object</strong>, and only that makes a simulation <strong>scientifically credible</strong>. Plausible is a different thing.</p>
   <div class="para">
