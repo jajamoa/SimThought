@@ -536,7 +536,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .motif{border:1px solid var(--accent);color:var(--accent-ink);background:var(--tint);padding:6px 12px;font-size:13.5px;font-weight:700}
 .motif small{display:block;font-weight:400;color:var(--ink2);font-size:12px;margin-top:2px}
 .stage{display:grid;grid-template-columns:1fr;gap:14px;margin-top:0}
-.pipe{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:2px;margin:2px 0 12px;font-size:11.5px}
+.pipe{display:flex;align-items:center;justify-content:center;flex-wrap:nowrap;gap:2px;margin:2px 0 12px;font-size:11.5px;overflow:hidden}
+.pipe .say{min-width:40px;overflow:hidden;text-overflow:ellipsis;flex:0 1 auto}
+.pipe .say:first-child{flex-shrink:3}
+.pipe .pchip:not(.say){flex:0 0 auto}
 .pchip{border:1px solid var(--line);background:#fff;padding:2px 7px;color:var(--ink2);white-space:nowrap}
 .pchip.say{color:var(--ink);font-weight:700;background:var(--tint);border-color:var(--accent)}
 .flowarrow{height:22px;display:flex;justify-content:center;margin:4px 0}
