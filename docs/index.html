@@ -636,7 +636,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </p>
   <p class="heronote">* equal contribution &nbsp;&middot;&nbsp; &dagger; now at Google &nbsp;&middot;&nbsp; <a href="mailto:jiajie@mit.edu">jiajie@mit.edu</a></p>
   <div class="tldrbox">
-    <p><b class="lb">Position</b> Today&rsquo;s social simulations are oversimplified black boxes: demographics in, behavior out (DIBO). The paradigm must shift from behaviorism to cognitivism: (1) auditable causality behind behavior, (2) grounding in real individual experience, (3) counterfactual reasoning with consistency. <a href="#why">Why these three&nbsp;&darr;</a></p>
+    <p><b class="lb">Position</b> Today&rsquo;s social simulations are oversimplified black boxes: demographics in, behavior out (DIBO). The paradigm must shift from behaviorism to cognitivism: (1) auditable causality behind behavior, (2) grounding in real individual experience, (3) counterfactual reasoning with consistency. <a href="#why">What we ask for&nbsp;&darr;</a></p>
   </div>
   <div class="btns">
     <a class="btn primary" href="https://arxiv.org/abs/2506.06958" target="_blank" rel="noopener">Paper</a>
@@ -659,22 +659,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="ice bot"><svg viewBox="0 0 34 100" preserveAspectRatio="none"><polygon points="11,0 23,0 32,55 23,100 11,100 2,55" fill="#33506e" stroke="#33506e" stroke-width="1" vector-effect="non-scaling-stroke"/></svg></div>
       <div class="row below"><strong class="be">Below, extrapolate the personal beliefs and experiences.</strong> A crowd that is heterogeneous and complete: fair if transparent, who decides the rate, what is in it for me, better transit first, the rich will not care. Every opinion still carries the beliefs that produced it. Click the figure to enlarge.</div>
     </div>
+    <p class="note" style="margin-top:14px">Why the model above the waterline behaves this way is an old story in psychology.</p>
   </div>
 </div>
 
-<section class="wrap" id="why" style="margin-top:55px">
-  <div class="kicker">What matters, and why</div>
-  <h2>Three things a simulation must get right</h2>
-  <div class="cards cards3">
-    <div class="card"><h3>1 &middot; Auditable causality</h3><div class="csub">why did the agent say that?</div><p>&ldquo;The ability to inspect how a belief or stance was formed through intermediate reasoning steps.&rdquo; Without it, an agent&rsquo;s reasoning trace is assembled after the fact from language patterns, with no belief model underneath.</p></div>
-    <div class="card"><h3>2 &middot; Grounded in a real individual</h3><div class="csub">whose reasoning is this?</div><p>&ldquo;Simulations should preserve individual-level heterogeneity, the positional and contextual diversity of human reasoning.&rdquo; Agents trained under shared priors collapse toward the mean of the pretraining distribution and erase it.</p></div>
-    <div class="card"><h3>3 &middot; Consistent under counterfactuals</h3><div class="csub">what would change their mind?</div><p>&ldquo;The capacity to revise beliefs predictably in response to interventions or changes in context.&rdquo; Most benchmarks test static inputs and never measure belief revision under a counterfactual: intervention blindness.</p></div>
-  </div>
-  <div class="two"><div class="th2">Two alignments the paper asks for</div>
-    <div class="tw"><b>Agent behavior &harr; agent reasoning<small>decoding faithfulness</small></b><span>The reasoning trace an agent shows must be the path it actually computed, not a rationalization assembled after the answer.</span></div>
-    <div class="tw"><b>Agent reasoning &harr; human reasoning<small>cognitive alignment</small></b><span>The agent&rsquo;s inference path must follow the way the person forms beliefs, and today that correspondence is asserted, never measured.</span></div>
-  </div>
-  <p class="body" style="margin-top:22px">Together these define what the paper calls <strong>reasoning fidelity</strong>: a trace of belief formation that is traceable, revisable, and built from reusable causal parts. DIBO has none of it. It is <strong>behaviorism rebuilt in software</strong>: whatever happens between input and output is not represented, so it <strong>cannot be inspected, tested, or falsified</strong>. We argue for the move psychology already made, <strong>from behaviorism to cognitivism</strong>, because only an agent with an inspectable internal structure is a <strong>scientific object</strong>, and only that makes a simulation <strong>scientifically credible</strong>. Plausible is a different thing.</p>
+<section class="wrap" id="problem" style="margin-top:55px">
+  <div class="kicker">The problem</div>
+  <h2>Demographics in, behavior out.</h2>
+  <p class="body">Today&rsquo;s social simulation runs on demographic input to behavioral output (DIBO). It is <strong>behaviorism rebuilt in software</strong>: whatever happens between input and output is not represented, so it <strong>cannot be inspected, tested, or falsified</strong>. Psychology made this move once already, <strong>from behaviorism to cognitivism</strong>, because only an agent with an inspectable internal structure is a <strong>scientific object</strong>, and only that makes a simulation <strong>scientifically credible</strong>. Plausible is a different thing.</p>
   <div class="para">
     <div class="pcol dim"><b>Behaviorism</b><svg viewBox="0 0 360 128" class="pd" aria-label="behaviorism: stimulus to black box to response"><defs><marker id="pa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f4e49"/></marker></defs><rect x="4" y="24" width="100" height="50" rx="4" class="pb"/><text x="54" y="55" text-anchor="middle" class="pt">stimulus</text><line x1="106" y1="49" x2="128" y2="49" class="pa"/><rect x="130" y="18" width="100" height="62" rx="4" class="pb dark"/><text x="180" y="45" text-anchor="middle" class="pt light">black</text><text x="180" y="66" text-anchor="middle" class="pt light">box</text><line x1="232" y1="49" x2="254" y2="49" class="pa"/><rect x="256" y="24" width="100" height="50" rx="4" class="pb"/><text x="306" y="55" text-anchor="middle" class="pt">response</text></svg><span class="era"><em>People</em> 1913 &rarr; 1950s<br><em>LLM agents</em> 2023 &rarr; now</span>A stimulus goes in and a response comes out, with nothing in between that you could inspect.</div>
     <div class="pcol on"><b>Cognitivism</b><svg viewBox="0 0 360 128" class="pd" aria-label="cognitivism: stimulus through structure to response"><rect x="4" y="24" width="100" height="50" rx="4" class="pb"/><text x="54" y="55" text-anchor="middle" class="pt">stimulus</text><line x1="106" y1="49" x2="128" y2="49" class="pa"/><rect x="130" y="10" width="100" height="78" rx="4" class="pb tint"/>
@@ -689,6 +681,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="tlrow"><span class="tll">How we study simulated people<small>LLM social simulation, 2023 to now</small></span><div class="tlbar"><i class="s1" style="left:0;width:34%">behaviorism &middot; 2023&ndash;</i><i class="s2 now" style="left:34%;width:17%">&#8592; we are here</i><i class="s0" style="left:51%;width:49%"></i></div></div>
     <div class="tlnote"><strong>The same process is happening on a different subject.</strong> Psychology needed about forty years to get from stimulus and response to internal structure, and agent simulation is two years in. Dates are approximate.</div>
   </div>
+  <p class="note" style="margin-top:18px">So what should a simulation have in between?</p>
+</section>
+
+<section class="wrap" id="why">
+  <div class="kicker">What we ask for instead</div>
+  <h2>Reasoning fidelity, in three properties</h2>
+  <div class="cards cards3">
+    <div class="card"><h3>1 &middot; Auditable causality</h3><div class="csub">why did the agent say that?</div><p>&ldquo;The ability to inspect how a belief or stance was formed through intermediate reasoning steps.&rdquo; Without it, an agent&rsquo;s reasoning trace is assembled after the fact from language patterns, with no belief model underneath.</p></div>
+    <div class="card"><h3>2 &middot; Grounded in a real individual</h3><div class="csub">whose reasoning is this?</div><p>&ldquo;Simulations should preserve individual-level heterogeneity, the positional and contextual diversity of human reasoning.&rdquo; Agents trained under shared priors collapse toward the mean of the pretraining distribution and erase it.</p></div>
+    <div class="card"><h3>3 &middot; Consistent under counterfactuals</h3><div class="csub">what would change their mind?</div><p>&ldquo;The capacity to revise beliefs predictably in response to interventions or changes in context.&rdquo; Most benchmarks test static inputs and never measure belief revision under a counterfactual: intervention blindness.</p></div>
+  </div>
+  <p class="body" style="margin-top:22px">Together these define what the paper calls <strong>reasoning fidelity</strong>: a trace of belief formation that is traceable, revisable, and built from reusable causal parts. Two alignments make it precise.</p>
+  <div class="two"><div class="th2">Two alignments the paper asks for</div>
+    <div class="tw"><b>Agent behavior &harr; agent reasoning<small>decoding faithfulness</small></b><span>The reasoning trace an agent shows must be the path it actually computed, not a rationalization assembled after the answer.</span></div>
+    <div class="tw"><b>Agent reasoning &harr; human reasoning<small>cognitive alignment</small></b><span>The agent&rsquo;s inference path must follow the way the person forms beliefs, and today that correspondence is asserted, never measured.</span></div>
+  </div>
+  <p class="note" style="margin-top:18px">The next section makes this concrete.</p>
 </section>
 
 <div class="quiz" id="try">
