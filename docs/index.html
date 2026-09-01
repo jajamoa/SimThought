@@ -874,7 +874,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     var ra=document.getElementById('ra'); ra.textContent=st[1]; ra.style.color=st[2];
     document.getElementById('rSv').textContent=f(sup); document.getElementById('rav').textContent='\u201c'+st[1]+'\u201d';
     var cO=document.getElementById('cO'); cO.style.stroke=st[2]; cO.style.fill=st[2]+'22';
-    var w={e1:[1.0,0.3,T],e2:[1.4,0.6,T],e3:[1.8,1,C],e4:[1.8,1,P],e5:[1.8,1,S]}; Object.keys(w).forEach(function(id){var e=document.getElementById(id); if(e)e.style.strokeWidth=(w[id][0]+1.1*w[id][1]*w[id][2]).toFixed(2);});
+    var w={e1:[1.0,0.3,T],e2:[1.4,0.6,T],e3:[1.8,1,C],e4:[1.8,1,P],e5:[1.8,1,S]}; Object.keys(w).forEach(function(id){var e=document.getElementById(id); if(e)e.style.strokeWidth=(0.7*w[id][0]+2.6*w[id][1]*w[id][2]).toFixed(2);});
     var po=document.getElementById('pipeOut'); if(po)po.textContent='\u201c'+st[1]+'\u201d';
     var dev=(sup-0.5)*2; document.getElementById('gl').style.width=(dev<0?Math.round(-dev*50):0)+'%'; document.getElementById('gr').style.width=(dev>0?Math.round(dev*50):0)+'%';
     var sl=document.getElementById('sl'), sr=document.getElementById('sr'); if(sl){sl.style.width='15%'; sr.style.width='0%';}
