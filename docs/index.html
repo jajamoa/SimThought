@@ -554,6 +554,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .opn{display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;border:1px solid var(--accent);border-radius:50%;font-size:11px;color:var(--accent-ink)}
 .opsrc{color:var(--mut);min-width:170px}
 .opex{color:var(--mut)}
+.dotag.say{font-family:inherit;color:var(--ink);background:#fff}
 .llm b{color:var(--ink)}
 .llmtag{display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;margin-right:8px}
 .dotag{display:inline-block;border:1px solid var(--accent);color:var(--accent-ink);background:#fff;padding:1px 8px;font-size:12.5px;font-weight:700}
@@ -726,7 +727,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="glegend"><span style="color:#15803d">+ increases</span> &nbsp; <span style="color:#b3261e">&minus; decreases</span> &nbsp; thicker = stronger &nbsp; numbers in nodes = P(node), <span style="color:#15803d">green</span> if up and <span style="color:#b3261e">red</span> if down versus the status quo</div>
           </div>
         </div>
-        <div class="llm"><span class="llmtag">LLM as verbalizer</span> turns the queried posterior back into language: P(support) = <b id="rSv">0.31</b> becomes <b id="rav">&ldquo;I lean against it.&rdquo;</b></div>
+        <div class="llm"><span class="llmtag">LLM as verbalizer</span> turns the queried posterior back into language:
+          <div class="ops"><div class="op"><span class="opsrc">from the graph</span><span class="dotag">P(Support) = <span id="rSv">0.31</span></span><span class="opex">becomes</span><span class="dotag say" id="rav">&ldquo;I lean against it.&rdquo;</span></div></div></div>
         <div class="stage two">
           <div class="fcol agent deep">
             <div class="fh"><span class="fn">3</span> Response <small><i class="sw"></i>grounded agent &middot; beliefs in</small></div>
