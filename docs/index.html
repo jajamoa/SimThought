@@ -342,10 +342,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .wl{position:absolute;right:6px;bottom:1px;font-size:12px;letter-spacing:.02em;color:#6f8db0}
 .tag{font-weight:800;letter-spacing:.04em;font-size:12px;margin-right:2px}
 .tag.ab{color:#7fa3bd}.tag.be{color:#2b3f52}
-.ice{align-self:stretch}
-.ice svg{width:46px;height:100%;display:block;margin:0 auto}
-.ice.top{padding-top:26px}
-.ice.bot{padding-bottom:22px}
+.ice{align-self:stretch;position:relative;min-height:0}
+.ice svg{position:absolute;left:50%;top:0;bottom:0;width:46px;height:100%;margin-left:-23px;display:block}
+.ice.top svg{top:14px;height:calc(100% - 14px)}
+.ice.bot svg{bottom:22px;height:calc(100% - 22px)}
 @media(max-width:760px){.ig{grid-template-columns:1fr}.ice,.ig .th:nth-child(2),.wave .trunk{display:none}.wl{display:none}}
 /* sections */
 section.wrap{margin-top:46px}
