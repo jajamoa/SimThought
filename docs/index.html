@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SimThought · MIT</title>
+<meta name="description" content="Simulating Society Requires Simulating Thought. A NeurIPS 2025 position paper: social simulation must move from demographics-in, behavior-out mimicry to cognitively grounded, traceable, revisable reasoning.">
+<meta property="og:title" content="Simulating Society Requires Simulating Thought">
+<meta property="og:image" content="https://jajamoa.github.io/SimThought/assets/teaser.jpg">
+<meta property="og:description" content="A position paper (NeurIPS 2025): align the reasoning trace, not just the output.">
+<link rel="icon" type="image/svg+xml" href="assets/iceberg.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0}
+:root{--ink:#111110;--ink2:#4f4e49;--mut:#96948d;--line:#e0e0e0;--accent:#1d4fb0;--accent-ink:#173f8e;--tint:#eef3fb;--tint2:#e4ecf8}
+html{scroll-behavior:smooth}
+body{font-family:"Inconsolata",ui-monospace,monospace;color:var(--ink);background:#fff;line-height:1.6;font-size:16.5px;overflow-x:hidden}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+a{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid #b9c8e6}
+a:hover{border-bottom-color:var(--accent-ink)}
+/* top strip */
+.topbar{border-bottom:1px solid var(--line);font-size:13.5px;color:var(--ink2)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:13px;padding-bottom:13px;gap:12px;flex-wrap:wrap;line-height:1}
+.topbar b{color:var(--ink);letter-spacing:.04em}
+.topbar nav{display:flex;gap:16px;flex-wrap:wrap;margin-left:auto;align-items:center}
+.mitmark{height:13.5px;display:block;margin-left:26px;position:relative;top:-.5px}
+.topbar a{border-bottom:none;color:var(--ink2)}
+.topbar a:hover{color:var(--accent-ink)}
+/* hero */
+.hero{padding:64px 0 8px;text-align:center}
+.kickerline{font-size:13px;color:var(--mut);letter-spacing:.03em}
+h1{font-size:31px;font-weight:800;letter-spacing:.01em;line-height:1.35;margin:16px 0 14px}
+.h1a{font-weight:500}.h1b{font-weight:800}
+.tagline{font-size:21px;color:var(--ink);font-weight:500}
+.tagline em{font-style:normal;color:var(--accent-ink);border-bottom:2px solid var(--accent)}
+.heroauthors{max-width:720px;margin:30px auto 0;font-size:13.5px;line-height:1.9;color:var(--ink)}
+.heroauthors sup{color:var(--accent-ink);font-size:10.5px;margin-left:1px}
+.heroaffils sup{color:var(--accent-ink);font-size:10.5px;margin-right:3px}
+.heroaffils{max-width:680px;margin:14px auto 0;font-size:12.5px;color:var(--mut);line-height:1.9}
+.heronote{font-size:12px;color:var(--mut);margin-top:12px}
+.tldrbox{max-width:720px;margin:30px auto 0;border:1px solid var(--accent);background:var(--tint);padding:14px 18px;text-align:left;font-size:14.5px;color:var(--ink2);line-height:1.7}
+.tldrbox p{margin:0}
+.tldrbox p+p{margin-top:11px;border-top:1px dashed #b9c8e6;padding-top:11px}
+.tldrbox strong{color:var(--ink)}
+.lb{color:var(--accent-ink);font-weight:800;margin-right:7px;text-transform:uppercase;font-size:11.5px;letter-spacing:.09em}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:26px 0 8px}
+.btn{border:1px solid var(--ink);padding:7px 16px;font-size:14px;font-weight:600;color:var(--ink);border-bottom-width:1px}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent-ink);border-color:var(--accent-ink)}
+.teaser{margin:48px auto 0;max-width:1040px;padding:0 24px}
+.teaser img{width:100%;display:block;border:1px solid var(--line)}
+.figcap{font-size:13px;color:var(--mut);max-width:760px;margin:10px auto 0;text-align:center}
+.lg{white-space:normal;color:var(--ink2)}
+.lg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin:0 5px 0 2px;vertical-align:baseline}
+.panelcaps{display:grid;grid-template-columns:353fr 353fr 354fr 633fr;column-gap:12px;padding:0 .4% 0 1.6%;margin-top:8px;font-size:12px;color:var(--ink2);line-height:1.5}
+.panelcaps b{color:var(--accent-ink);margin-right:6px}
+.pc{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px;border:1px solid rgba(0,0,0,.18)}
+.pc-gray{background:#a9a9a6}
+.pc-green{background:#7cb46b}
+.pc-half{background:linear-gradient(90deg,#a9a9a6 50%,#7cb46b 50%)}
+.pc-green2{background:#7cb46b;box-shadow:2px 0 0 0 #a9a9a6 inset}
+.pcl{color:var(--mut);font-size:11px;letter-spacing:.05em;text-transform:uppercase;margin-right:6px}
+.term{border-bottom:1px dotted var(--mut);color:inherit}
+a.term:hover{border-bottom-color:var(--accent-ink);color:var(--accent-ink)}
+@media(max-width:760px){.panelcaps{grid-template-columns:1fr 1fr;font-size:12px}}
+/* sections */
+section.wrap{margin-top:46px}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--accent-ink);text-transform:uppercase;margin-bottom:10px}
+h2{font-size:27px;font-weight:700;line-height:1.3;margin-bottom:14px;letter-spacing:-.01em}
+p.body{color:var(--ink2);max-width:700px;margin-bottom:14px}
+p.body strong{color:var(--ink)}
+/* cards */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.cards3{grid-template-columns:1fr 1fr 1fr}
+.card{border:1px solid var(--line);padding:20px 22px}
+.card h3{font-size:17.5px;font-weight:700;margin-bottom:2px}
+.card .csub{font-size:12.5px;color:var(--accent-ink);font-weight:600;letter-spacing:.06em;margin-bottom:10px}
+.card p{font-size:14.5px;color:var(--ink2)}
+.note{font-size:13.5px;color:var(--mut);margin-top:20px;max-width:760px}
+/* stats strip */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);margin-top:8px}
+.stat{padding:16px 14px;border-left:1px solid var(--line);font-size:13.5px;color:var(--ink2)}
+.stat:first-child{border-left:none}
+.stat b{display:block;font-size:21px;color:var(--ink);font-weight:800}
+/* table */
+.tablewrap{overflow-x:auto;margin-top:16px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{padding:9px 14px;text-align:right;border-top:1px solid var(--line);white-space:nowrap}
+th{font-size:12.5px;color:var(--mut);font-weight:600;border-top:none;letter-spacing:.03em}
+td:first-child,th:first-child{text-align:left}
+tr.human{background:var(--tint)}
+tr.human td{font-weight:700}
+td.best{color:var(--accent-ink);font-weight:800}
+tr.dim td{color:var(--mut)}
+.tnote{font-size:13px;color:var(--mut);margin-top:10px;max-width:700px}
+/* quiz */
+.quiz{background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0 42px;margin-top:46px}
+.qcard{background:#fff;border:1px solid var(--line);padding:22px 24px;margin-top:18px}
+.qhead{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mut);letter-spacing:.05em;margin-bottom:10px}
+.qsetup{font-size:14.5px;color:var(--ink2);margin-bottom:12px}
+.chips{display:grid;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);background:#fafaf8;padding:9px 12px;font-size:13px;color:var(--ink2)}
+.chip b{display:block;color:var(--mut);font-weight:600;font-size:12px;margin-bottom:2px}
+.qq{font-size:16px;font-weight:700;margin:14px 0 12px}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opt{border:1px solid var(--ink);background:#fff;padding:7px 14px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
+.opt:hover{background:var(--ink);color:#fff}
+.opt.scale{padding:7px 0;width:34px;text-align:center}
+.opt.picked-right{background:var(--accent);border-color:var(--accent);color:#fff}
+.opt.picked-wrong{background:#b3261e;border-color:#b3261e;color:#fff}
+.opt.gold{outline:2px solid var(--accent);outline-offset:1px}
+.opt:disabled{cursor:default;opacity:.85}
+.qreveal{display:none;margin-top:14px;border-left:3px solid var(--accent);padding:10px 14px;background:var(--tint2);font-size:14px;color:var(--ink2)}
+.qreveal b{color:var(--ink)}
+.verdict{font-weight:800;font-size:13px;letter-spacing:.05em;margin-bottom:4px}
+.verdict.ok{color:var(--accent-ink)} .verdict.no{color:#b3261e}
+.scoreline{margin-top:22px;font-size:15px;font-weight:700;display:none}
+.scoreline span{color:var(--accent-ink)}
+.outro{font-size:14.5px;color:var(--ink2);margin-top:12px;max-width:700px;display:none}
+/* pipeline + tyt */
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.step{border:1px solid var(--line);padding:14px 16px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sh{font-weight:700;color:var(--ink);font-size:13px;margin-bottom:5px;letter-spacing:.03em}
+.sh .pc{margin-right:6px}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.pipefig{margin-top:16px;border:1px solid var(--line)}
+.pipefig img{width:100%;display:block}
+.split{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center;margin-top:22px}
+.split img{width:100%;border:1px solid var(--line)}
+pre{background:#fafaf8;border:1px solid var(--line);padding:16px 18px;font-size:13.5px;overflow-x:auto;margin-top:16px;line-height:1.7}
+/* team */
+.authors{font-size:14.5px;line-height:1.75;max-width:760px}
+.authors sup{color:var(--accent-ink);font-size:11px}
+.affils{font-size:13.5px;color:var(--ink2);margin-top:18px;max-width:760px;display:flex;flex-wrap:wrap;gap:6px 26px}
+.affils span{white-space:nowrap}
+.affils sup{color:var(--accent-ink);font-size:11px;margin-right:3px}
+/* footer */
+/* easter egg: average mode */
+body.avg{--accent:#8a8a86;--accent-ink:#6f6f6b;--tint:#f2f2f0;--tint2:#ececea}
+body.avg img{filter:grayscale(1)}
+body.avg .pc,body.avg .lb,body.avg .kicker,body.avg .csub{filter:grayscale(1)}
+body.avg .tagline em{color:var(--ink2);border-bottom-color:#8a8a86}
+.avgnote{display:none;position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:#111110;color:#fff;font-size:13px;padding:8px 16px;z-index:9;white-space:nowrap}
+body.avg .avgnote{display:block}
+.backnote{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:13px;padding:8px 16px;z-index:9;white-space:nowrap}
+footer{border-top:1px solid var(--line);margin-top:46px;padding:36px 0 48px;font-size:13.5px;color:var(--mut)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){
+  h1{font-size:21px;padding:0 6px}.tagline{font-size:16.5px}
+  .deskbr{display:none}
+  .hero.wrap{padding:44px 18px 8px}
+  .kickerline{padding:0 12px}
+  .heroauthors{font-size:12.5px;line-height:1.7}
+  .heroaffils{font-size:11.5px}
+  .heronote{font-size:11px}
+  section.wrap{margin-top:39px}
+  .quiz{margin-top:84px;padding:56px 0 48px}
+  .qcard{padding:16px 14px}
+  .opt.scale{width:28px;font-size:13px}
+  .chips{gap:6px}
+  .chip{font-size:12.5px}
+  .panelcaps{gap:10px 14px}
+  .teaser{padding:0 16px}
+  .wrap{padding:0 18px}
+  .topbar nav{gap:12px;font-size:12.5px}
+  .mitmark{height:12px;margin-left:12px}
+  table{min-width:520px;font-size:12.5px}
+  th,td{padding:7px 8px}
+  .cards,.cards3{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr;border-right:none}
+  .stat{border-right:1px solid var(--line);border-top:1px solid var(--line)}
+  .stat:nth-child(-n+2){border-top:none}
+  .stat:last-child{grid-column:1/-1}
+  .split{grid-template-columns:1fr}
+  body{font-size:15.5px}
+}
+</style>
+<style>
+/* page-specific */
+.strip{display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--line);margin-top:16px}
+.strip div{padding:16px 18px;border-left:1px solid var(--line);font-size:14px;color:var(--ink2)}
+.strip div:first-child{border-left:none}
+.strip b{display:block;font-size:15px;color:var(--ink);margin-bottom:4px}
+.strip i{display:block;font-style:normal;color:var(--mut);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.strip .dim{color:var(--mut)}
+.strip .on b{color:var(--accent-ink)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+.twocol .figcap{text-align:left;margin:0}
+/* interactive */
+.lab{background:#fff;border:1px solid var(--line);margin-top:18px}
+.tabs{display:flex;border-bottom:1px solid var(--line)}
+.tab{flex:1;padding:11px 14px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);cursor:pointer;border-right:1px solid var(--line);background:#fafaf8;font-family:inherit;border-top:none;border-bottom:none;border-left:none;text-align:left}
+.tab:last-child{border-right:none}
+.tab.on{background:#fff;color:var(--accent-ink)}
+.tab span{color:var(--mut);font-weight:600;margin-right:8px}
+.pane{display:none;padding:20px 22px}
+.pane.on{display:block}
+.qa{border:1px solid var(--line);background:#fafaf8;padding:12px 14px;font-size:13.5px;color:var(--ink2);margin-bottom:10px}
+.qa b{display:block;color:var(--mut);font-weight:600;font-size:12px;margin-bottom:3px}
+.qa .m{margin-top:8px;font-size:13px;color:var(--accent-ink);font-weight:700}
+.qa .m i{font-style:normal;color:var(--mut);font-weight:600;margin-right:6px;letter-spacing:.05em;font-size:11.5px}
+.motifs{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.motif{border:1px solid var(--accent);color:var(--accent-ink);background:var(--tint);padding:6px 12px;font-size:13.5px;font-weight:700}
+.motif small{display:block;font-weight:400;color:var(--ink2);font-size:12px;margin-top:2px}
+.runwrap{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;align-items:start}
+.graph svg{width:100%;height:auto;display:block}
+.node{fill:#fff;stroke:var(--ink);stroke-width:1.4}
+.node.t{fill:var(--accent);stroke:var(--accent-ink)}
+.nl{font-family:inherit;font-size:12.5px;fill:var(--ink)}
+.nv{font-family:inherit;font-size:12px;fill:var(--ink2);font-weight:700}
+.edge{stroke:var(--ink);stroke-width:1.5;fill:none;marker-end:url(#ar)}
+.edge.neg{stroke:#b3261e;stroke-dasharray:4 3}
+.ctl{font-size:13.5px;color:var(--ink2)}
+.ctl label{display:block;font-weight:700;color:var(--ink);margin-bottom:6px}
+.ctl input[type=range]{width:100%;accent-color:var(--accent)}
+.readout{margin-top:14px;border:1px solid var(--line);padding:12px 14px;font-size:13.5px}
+.readout div{display:flex;justify-content:space-between;padding:4px 0;border-top:1px dashed var(--line)}
+.readout div:first-child{border-top:none}
+.readout .v{font-weight:800;color:var(--ink)}
+.readout .v.dn{color:var(--accent-ink)}
+.readout .v.up{color:#b3261e}
+.formula{margin-top:12px;font-size:12.5px;color:var(--mut);line-height:1.6}
+.dobadge{display:inline-block;border:1px solid var(--accent);color:var(--accent-ink);background:var(--tint);padding:2px 8px;font-size:12px;font-weight:700;margin-left:6px}
+.cta{border:1px solid var(--accent);background:var(--tint);padding:18px 22px;margin-top:22px;font-size:16px;color:var(--ink);font-weight:600;text-align:center}
+@media(max-width:760px){.strip{grid-template-columns:1fr}.strip div{border-left:none;border-top:1px solid var(--line)}.strip div:first-child{border-top:none}.twocol{grid-template-columns:1fr}.runwrap{grid-template-columns:1fr}.tab{font-size:11.5px;padding:10px 8px}.tab span{display:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <b>SimThought</b>
+  <nav>
+    <a href="https://arxiv.org/abs/2506.06958" target="_blank" rel="noopener">Paper</a>
+    <a href="#bibtex">BibTeX</a>
+  </nav>
+  <img class="mitmark" src="assets/mit-black.svg" alt="MIT">
+</div></div>
+
+<header class="hero wrap">
+  <div class="kickerline">NeurIPS 2025 &middot; Position Paper Track</div>
+  <h1><span class="h1a">Simulating Society Requires</span> <span class="h1b">Simulating Thought</span></h1>
+  <p class="heroauthors">
+    Chance Jiajie Li<sup>1*</sup>, Jiayi Wu<sup>9*</sup>, Zhenze Mo<sup>8</sup>, Ao Qu<sup>4</sup>, Yuhan Tang<sup>5</sup>, Kaiya Ivy Zhao<sup>2,3</sup>, Yulu Gan<sup>2</sup>, Jie Fan<sup>2,7,&dagger;</sup>, Jiangbo Yu<sup>10</sup>, Jinhua Zhao<sup>4,5,6</sup>, Paul Pu Liang<sup>1,2</sup>, Luis Alonso<sup>1</sup>, Kent Larson<sup>1</sup>
+  </p>
+  <p class="heroaffils">
+    <sup>1</sup>MIT Media Lab &nbsp; <sup>2</sup>MIT EECS &nbsp; <sup>3</sup>MIT BCS &nbsp; <sup>4</sup>MIT IDSS &nbsp; <sup>5</sup>MIT CEE &nbsp; <sup>6</sup>MIT DUSP &nbsp; <sup>7</sup>MIT Architecture &nbsp; <sup>8</sup>Northeastern University &nbsp; <sup>9</sup>Brown University &nbsp; <sup>10</sup>McGill University
+  </p>
+  <p class="heronote">* equal contribution &nbsp;&middot;&nbsp; &dagger; now at Google &nbsp;&middot;&nbsp; <a href="mailto:jiajie@mit.edu">jiajie@mit.edu</a></p>
+  <div class="tldrbox">
+    <p><b class="lb">tl;dr</b> Today&rsquo;s social simulations are oversimplified black boxes: demographics in, behavior out (DIBO). The paradigm must shift from behaviorism to cognitivism: (1) auditable causality behind behavior, (2) grounding in real individual experience, (3) counterfactual reasoning with consistency.</p>
+    <p><b class="lb">Position</b> Align the reasoning trace, not just the output. We call this <strong>reasoning fidelity</strong>: beliefs that are traceable, revisable under intervention, and built from reusable causal motifs. <a href="#fidelity">What that means&nbsp;&darr;</a></p>
+  </div>
+  <div class="btns">
+    <a class="btn primary" href="https://arxiv.org/abs/2506.06958" target="_blank" rel="noopener">Paper</a>
+    <a class="btn" href="#bibtex">BibTeX</a>
+  </div>
+</header>
+
+<div class="teaser">
+  <a class="pipefig" style="display:block;margin:0;border:1px solid var(--line)" href="assets/teaser.jpg" target="_blank" rel="noopener"><img src="assets/teaser.jpg" alt="Iceberg: surface opinion from demographics above the waterline, reasoning from beliefs and experience below. Extrapolated to a population, the surface view yields flattened stereotypes; the grounded view yields heterogeneous, interpretable opinions."></a>
+  <div class="twocol">
+    <p class="figcap"><b style="color:var(--accent-ink)">Left, one person.</b> Above the waterline, an opinion predicted from age, gender, and income. Below it, the beliefs and experiences that actually produce the opinion, and that decide how it would change.</p>
+    <p class="figcap"><b style="color:var(--accent-ink)">Right, a population.</b> Extrapolate the surface and you get three stereotyped camps. Extrapolate the reasoning and you get a crowd that is heterogeneous, interpretable, and causally faithful. Click to enlarge.</p>
+  </div>
+</div>
+
+<section class="wrap" id="problem" style="margin-top:55px">
+  <div class="kicker">The problem</div>
+  <h2>Demographics in, behavior out.</h2>
+  <p class="body">Most LLM-based social simulations map a persona to a plausible answer. This is behaviorism rebuilt in software: behavior as a function of external cues, with no internal state. The outputs sound coherent, but there is nothing underneath to be consistent with, nothing to trace, and nothing to update when the world changes. That is exactly where these simulations are now being used: contested policy questions such as upzoning, surveillance, and healthcare, where the reasoning is the point.</p>
+  <div class="strip">
+    <div class="dim"><i>where we are</i><b>Behaviorism</b>Stimulus in, response out. Persona prompts and supervised fine-tuning. Plausible, flat, untraceable.</div>
+    <div class="on"><i>where we argue to go</i><b>Cognitivism</b>Structured internal representations. Beliefs with causes, a trace you can inspect, and a stance that follows from it.</div>
+    <div class="dim"><i>and beyond</i><b>Constructivism</b>Beliefs continually reshaped by individual and social experience. The horizon, once the internal state exists at all.</div>
+  </div>
+</section>
+
+<section class="wrap" id="fidelity">
+  <div class="kicker">What we ask of an agent</div>
+  <h2>Reasoning fidelity, in three testable properties</h2>
+  <p class="body">Reasoning fidelity is an agent&rsquo;s ability to construct, simulate, and revise a structured trace of belief formation that mirrors how people actually reason. It is not a vibe; each property has a measurement.</p>
+  <div class="cards cards3">
+    <div class="card"><h3>Traceability</h3><div class="csub">how was this belief formed?</div><p>Every stance comes with the intermediate beliefs that produced it. Measured by motif-to-stance inference: given the reasons, can you recover the position?</p></div>
+    <div class="card"><h3>Counterfactual adaptability</h3><div class="csub">what would change it?</div><p>Beliefs revise predictably under an intervention or a changed context. Measured by belief revision under hypothetical scenarios.</p></div>
+    <div class="card"><h3>Motif compositionality</h3><div class="csub">does the reasoning transfer?</div><p>The same causal building blocks recur across topics. Measured by motif reuse across unrelated domains.</p></div>
+  </div>
+</section>
+
+<div class="quiz" id="try">
+  <div class="wrap">
+    <div class="kicker">Try it</div>
+    <h2>From two answers to a belief graph you can run</h2>
+    <p class="body">The paper&rsquo;s worked example, made live. Two interview answers become causal motifs, the motifs compose into one person&rsquo;s belief graph, and then you intervene on it and watch the downstream beliefs move. This is the whole position in one object.</p>
+    <div class="lab">
+      <div class="tabs">
+        <button class="tab on" data-p="0"><span>1</span>Ask</button>
+        <button class="tab" data-p="1"><span>2</span>Extract motifs</button>
+        <button class="tab" data-p="2"><span>3</span>Compose &amp; run</button>
+      </div>
+      <div class="pane on">
+        <div class="qa"><b>Q: How do you think surveillance might affect public safety?</b>&ldquo;It can reduce crime by aiding investigations with more transparency, which increases public safety.&rdquo;</div>
+        <div class="qa"><b>Q: Does transparency have an effect on support for surveillance?</b>&ldquo;People will have less privacy concern if they know how data is used&hellip;&rdquo;</div>
+        <p class="note" style="margin-top:6px">Everyday language, elicited by a semi-structured interview. No survey scale yet, no persona label. Just how one person explains their own view.</p>
+      </div>
+      <div class="pane">
+        <div class="qa"><b>From answer 1</b>&ldquo;&hellip;reduce crime by aiding investigations with more transparency, which increases public safety.&rdquo;<div class="m"><i>motif</i>Transparency &rarr; Crime rate &rarr; Public safety</div></div>
+        <div class="qa"><b>From answer 2</b>&ldquo;&hellip;less privacy concern if they know how data is used.&rdquo;<div class="m"><i>motif</i>Transparency &rarr; Privacy concern &rarr; Opposition to surveillance</div></div>
+        <p class="note" style="margin-top:6px">A motif is the smallest causal unit in someone&rsquo;s reasoning: concept, arrow, concept. Motifs recur across people, which is what makes them shareable and comparable.</p>
+      </div>
+      <div class="pane">
+        <div class="runwrap">
+          <div class="graph">
+            <svg viewBox="0 0 520 250" aria-label="Belief graph">
+              <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111110"/></marker></defs>
+              <path class="edge" d="M92 125 C150 60, 190 60, 232 62"/>
+              <path class="edge" d="M92 125 C150 190, 190 190, 232 188"/>
+              <path class="edge" d="M292 62 C340 62, 380 62, 412 62"/>
+              <path class="edge" d="M292 188 C340 188, 380 188, 412 188"/>
+              <path class="edge neg" d="M262 82 C262 130, 430 120, 442 170"/>
+              <circle class="node t" cx="66" cy="125" r="24"/>
+              <circle class="node" cx="262" cy="62" r="22"/>
+              <circle class="node" cx="262" cy="188" r="22"/>
+              <circle class="node" cx="440" cy="62" r="22"/>
+              <circle class="node" cx="440" cy="188" r="22"/>
+              <text class="nl" x="66" y="163" text-anchor="middle">Transparency</text>
+              <text class="nv" x="66" y="130" text-anchor="middle" fill="#fff" id="vT">low</text>
+              <text class="nl" x="262" y="30" text-anchor="middle">Crime rate &darr;</text>
+              <text class="nv" x="262" y="67" text-anchor="middle" id="vC">.20</text>
+              <text class="nl" x="262" y="222" text-anchor="middle">Privacy concern</text>
+              <text class="nv" x="262" y="193" text-anchor="middle" id="vP">.70</text>
+              <text class="nl" x="440" y="30" text-anchor="middle">Public safety</text>
+              <text class="nv" x="440" y="67" text-anchor="middle" id="vS">.20</text>
+              <text class="nl" x="440" y="222" text-anchor="middle">Opposition</text>
+              <text class="nv" x="440" y="193" text-anchor="middle" id="vO">.69</text>
+            </svg>
+          </div>
+          <div class="ctl">
+            <label>Intervene: do(Transparency = <span id="tv">low</span>) <span class="dobadge">do()</span></label>
+            <input type="range" id="tr" min="0" max="100" value="0">
+            <div class="readout">
+              <div><span>P(privacy concern)</span><span class="v" id="rP">0.70</span></div>
+              <div><span>P(public safety)</span><span class="v" id="rS">0.20</span></div>
+              <div><span>P(opposition to surveillance)</span><span class="v" id="rO">0.69</span></div>
+            </div>
+            <p class="formula">Slide to high and the paper&rsquo;s numbers appear: privacy concern 0.7 &rarr; 0.3, opposition 0.7 &rarr; 0.2. The safety path is preventive (dashed): more safety, less opposition. Illustrative weights, real structure. do() sets a value instead of observing it, so the change flows only downstream.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="body" style="margin-top:18px">Ask what an average persona would do here: a &ldquo;privacy advocate, 34, urban&rdquo; answers the survey and the number lands wherever the prior lands. Nothing in that number tells you the stance turns on transparency, so nothing in it can predict the update. The graph can, and it shows its work.</p>
+  </div>
+</div>
+
+<section class="wrap" id="scaffolds">
+  <div class="kicker">Two scaffolds</div>
+  <h2>One for modeling, one for evaluating</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>GenMinds</h3><div class="csub">a modeling paradigm</div>
+      <p>Elicit reasoning through semi-structured interviews; parse it into causal motifs; compose motifs into a causal belief network per person; run interventions on it with probabilistic updates. Symbolic structure for interpretability, a language model for elicitation and assembly. And it should know what it does not know: isolated or weakly supported nodes stay visible instead of being smoothed away.</p>
+    </div>
+    <div class="card">
+      <h3>RECAP</h3><div class="csub">reconstructing causal paths</div>
+      <p>A benchmark schema that scores the reasoning, not the answer. Principles: traceability, demographic sensitivity, intervention coherence. Metrics: motif alignment between human and model graphs, belief coherence within a trace, counterfactual robustness under intervention. Every item comes from a real interview.</p>
+    </div>
+  </div>
+  <p class="note">Neither is a fixed system. They are the minimum structure a simulation needs before &ldquo;this agent reasons like that person&rdquo; can be checked rather than asserted.</p>
+</section>
+
+<section class="wrap" id="next">
+  <div class="kicker">Where this leads</div>
+  <p class="body">The evaluation half is now real. <a href="https://jajamoa.github.io/HugAgent/" target="_blank" rel="noopener">HugAgent</a> (EMNLP 2026) tests whether models recover what a specific person believes and predict how they change their mind, on 54 real participants across healthcare, surveillance, and zoning. Its headline result is this paper&rsquo;s prediction: models can recover beliefs, and struggle to predict updates.</p>
+  <p class="body">Two open problems shape what comes next. Building causal belief networks from transcripts is hard: concept boundaries, causal direction, polarity, and granularity are all ambiguous. And causality is not all of human reasoning; people also think by association, analogy, and feeling. Causal structure is the tractable starting point, not the finish line.</p>
+  <div class="cta">To simulate society faithfully, we must simulate thought.</div>
+</section>
+
+<section class="wrap" id="bibtex">
+  <div class="kicker">Citation</div>
+  <p class="body">Accepted to the NeurIPS 2025 Position Paper Track.</p>
+<pre>@inproceedings{li2025simulating,
+  title     = {Simulating Society Requires Simulating Thought},
+  author    = {Li, Chance Jiajie and Wu, Jiayi and Mo, Zhenze and Qu, Ao
+               and Tang, Yuhan and Zhao, Kaiya Ivy and Gan, Yulu and Fan, Jie
+               and Yu, Jiangbo and Zhao, Jinhua and Liang, Paul Pu
+               and Alonso, Luis and Larson, Kent},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS),
+               Position Paper Track},
+  year      = {2025},
+  eprint    = {2506.06958},
+  archivePrefix = {arXiv}
+}</pre>
+</section>
+
+<footer><div class="wrap">
+  <span>SimThought &middot; 2025</span>
+  <span><a href="https://arxiv.org/abs/2506.06958" target="_blank" rel="noopener">arxiv.org/abs/2506.06958</a></span>
+</div></footer>
+
+<script>
+(function(){
+  // tabs
+  var tabs=document.querySelectorAll('.tab'), panes=document.querySelectorAll('.pane');
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(x){x.classList.remove('on')}); panes.forEach(function(x){x.classList.remove('on')});
+    t.classList.add('on'); panes[+t.dataset.p].classList.add('on');
+  });});
+  // belief graph: illustrative weights reproducing the paper's worked example
+  var tr=document.getElementById('tr');
+  function f(n){return n.toFixed(2)}
+  function run(){
+    var T=tr.value/100;
+    var P=0.7*(1-0.571*T);           // privacy concern: 0.70 -> 0.30
+    var S=0.2+0.6*T;                 // public safety via crime: 0.20 -> 0.80
+    var O=Math.min(1,1.1*P*(1-0.5*S)); // opposition: ~0.69 -> ~0.20
+    document.getElementById('vT').textContent=T<0.34?'low':(T<0.67?'mid':'high');
+    document.getElementById('tv').textContent=document.getElementById('vT').textContent;
+    document.getElementById('vC').textContent=f(S).slice(1);
+    document.getElementById('vS').textContent=f(S).slice(1);
+    document.getElementById('vP').textContent=f(P).slice(1);
+    document.getElementById('vO').textContent=f(O).slice(1);
+    var rP=document.getElementById('rP'),rS=document.getElementById('rS'),rO=document.getElementById('rO');
+    rP.textContent=f(P); rS.textContent=f(S); rO.textContent=f(O);
+    rP.className='v'+(T>0?' dn':''); rO.className='v'+(T>0?' dn':''); rS.className='v'+(T>0?' up':'');
+  }
+  tr.addEventListener('input',run); run();
+  console.log('%cSimThought: to simulate society faithfully, we must simulate thought. arxiv.org/abs/2506.06958','color:#1d4fb0;font-family:monospace');
+})();
+</script>
+</body>
+</html>
