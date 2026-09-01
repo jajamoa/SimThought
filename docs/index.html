@@ -488,6 +488,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .pane.on{display:block}
 .qa{border:1px solid var(--line);background:#fafaf8;padding:12px 14px;font-size:13.5px;color:var(--ink2);margin-bottom:10px}
 .qa b{display:block;color:var(--mut);font-weight:600;font-size:12px;margin-bottom:3px}
+.qa b.al{display:inline;margin-right:4px}
 .qa .m{margin-top:8px;font-size:13px;color:var(--accent-ink);font-weight:700}
 .qa .m i{font-style:normal;color:var(--mut);font-weight:600;margin-right:6px;letter-spacing:.05em;font-size:11.5px}
 .motifs{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
@@ -660,7 +661,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <div class="quiz" id="try">
   <div class="wrap">
     <div class="kicker">Try it</div>
-    <h2>From three answers to a runnable agent</h2>
+    <h2>From three answers to an agent that simulates one person</h2>
     <p class="body">Three interview answers become causal motifs, the motifs compose into one person&rsquo;s belief graph, and the graph is already an agent: ask it a survey question, change the world around it, and it answers as this person would. Start at step 3; steps 1 and 2 show where the agent came from.</p>
     <div class="lab">
       <div class="tabs">
@@ -669,9 +670,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <button class="tab on" data-p="2"><span>3</span>Compose &amp; run</button>
       </div>
       <div class="pane">
-        <div class="qa"><b>Q: How do you think surveillance might affect public safety?</b>&ldquo;It can reduce crime by aiding investigations with more transparency, which increases public safety.&rdquo;</div>
-        <div class="qa"><b>Q: Does transparency have an effect on support for surveillance?</b>&ldquo;People will have less privacy concern if they know how data is used&hellip;&rdquo;</div>
-        <div class="qa"><b>Q: What would make you support the cameras?</b>&ldquo;If the cameras actually make the streets safer, then I&rsquo;d back them.&rdquo;</div>
+        <div class="qa"><b>Q: How do you think surveillance might affect public safety?</b><b class="al">A:</b> &ldquo;It can reduce crime by aiding investigations with more transparency, which increases public safety.&rdquo;</div>
+        <div class="qa"><b>Q: Does transparency have an effect on support for surveillance?</b><b class="al">A:</b> &ldquo;People will have less privacy concern if they know how data is used&hellip;&rdquo;</div>
+        <div class="qa"><b>Q: What would make you support the cameras?</b><b class="al">A:</b> &ldquo;If the cameras actually make the streets safer, then I&rsquo;d back them.&rdquo;</div>
         <p class="note" style="margin-top:6px">Everyday language, elicited by a semi-structured interview. There is no survey scale yet and no persona label, just one person explaining their own view.</p>
       </div>
       <div class="pane">
