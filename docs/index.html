@@ -194,6 +194,15 @@ body.bb .glegend,body.bb .formula,body.bb .two,body.bb #why .cards{opacity:.15}
 .bbnote{display:none;position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:#111110;color:#fff;font-size:13px;padding:8px 16px;z-index:9;white-space:nowrap}
 body.bb .bbnote{display:block}
 .bbback{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:13px;padding:8px 16px;z-index:9;white-space:nowrap}
+.obj{border:1px solid var(--line);margin-top:6px}
+.orow{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.orow:first-child{border-top:none}
+.oq,.oa{padding:14px 18px;font-size:14px;line-height:1.6}
+.oq{color:var(--ink2);background:#fafaf8;border-right:1px solid var(--line)}
+.oq::before{content:"Objection";display:block;font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--mut);margin-bottom:4px}
+.oa{color:var(--ink)}
+.oa::before{content:"Response";display:block;font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--accent-ink);margin-bottom:4px}
+@media(max-width:760px){.orow{grid-template-columns:1fr}.oq{border-right:none;border-bottom:1px solid var(--line)}}
 </style>
 <style>
 /* page-specific */
@@ -775,6 +784,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </div>
   </div>
 </div>
+
+<section class="wrap" id="objections">
+  <div class="kicker">Counter-arguments</div>
+  <div class="obj">
+    <div class="orow"><div class="oq">Post-hoc rationalization is how people work too, so it is authentic enough.</div><div class="oa">Form is not function. A person&rsquo;s rationalization sits on a belief model you can trace; an LLM&rsquo;s sits on nothing.</div></div>
+    <div class="orow"><div class="oq">Human cognition is non-monotonic, so demanding coherence is unrealistic.</div><div class="oa">We ask for grounded incoherence, contradictions you can locate in the trace, not logical perfection.</div></div>
+    <div class="orow"><div class="oq">Abstracting over identity categories is unavoidable at scale.</div><div class="oa">Abstraction is fine. Abstracting without modeling how beliefs, values, and position vary together is what flattens people.</div></div>
+  </div>
+  <p class="note">Read further in the <a href="https://arxiv.org/pdf/2506.06958" target="_blank" rel="noopener">paper (PDF)</a>, sections 3.1 and 3.2.</p>
+</section>
 
 <section class="wrap" id="call">
   <div class="kicker">The call</div>
