@@ -573,6 +573,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .rbl{display:flex;justify-content:space-between;font-size:10.5px;color:var(--mut);letter-spacing:.02em;margin-bottom:4px}
 .rnum b{color:var(--ink)}
 .ain{font-size:12px;color:var(--mut);margin-bottom:8px;line-height:1.9}
+.ain .chip+.ch,.ain .chip{margin-bottom:6px}
+.ain br{display:block;content:"";margin-top:6px}
 .chip{display:inline-block;border:1px solid var(--line);background:#fff;padding:0 7px;line-height:1.6;color:var(--ink2);font-size:11.5px}
 .ch{font-style:normal;color:var(--mut);margin:0 5px;font-size:14px}
 .ain mark{background:transparent;color:var(--accent-ink);font-weight:700}
@@ -723,7 +725,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           </div>
           <div class="fcol agent surface">
             <div class="fh"><span class="fn">&ne;</span> For comparison <small><i class="sw"></i>surface agent &middot; a persona label in</small></div>
-            <div class="ain"><span class="chip">privacy advocate, 34, urban</span><i class="ch">&rsaquo;</i><span class="chip">persona prompt</span><i class="ch">&rsaquo;</i><span class="chip">answer</span><br>The label says privacy advocate, so it opposes whatever is announced. No node carries this person&rsquo;s actual reasons.</div>
+            <div class="ain"><span class="chip">34, urban, renter, graduate degree</span><i class="ch">&rsaquo;</i><span class="chip">persona prompt</span><i class="ch">&rsaquo;</i><span class="chip">answer</span><br>For that demographic cell the population prior is opposition, so it opposes whatever is announced. No node carries this person&rsquo;s actual reasons.</div>
             <div class="ra small" id="raS">I oppose it.</div>
             <div class="rbar2"><div class="rb2 l" id="sl"></div><div class="rb2 r" id="sr"></div><i class="mid"></i></div><div class="rbl"><span>oppose</span><span>support</span></div>
             <div class="rnum">support <b id="rSs">0.23</b>, whatever the announcement</div>
@@ -828,7 +830,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     var w={e1:[1.0,0.3,T],e2:[1.4,0.6,T],e3:[1.8,1,C],e4:[1.8,1,P],e5:[1.8,1,S]}; Object.keys(w).forEach(function(id){var e=document.getElementById(id); if(!e)return; var sw=0.7*w[id][0]+2.6*w[id][1]*w[id][2]; e.style.strokeWidth=sw.toFixed(2); e.style.markerEnd='url(#m_'+id+')'; var mk=document.getElementById('m_'+id); if(mk){var sz=(6+1.2*sw).toFixed(2); mk.setAttribute('markerWidth',sz); mk.setAttribute('markerHeight',sz);}});
     var po=document.getElementById('pipeOut'); if(po)po.textContent='\u201c'+st[1]+'\u201d';
     var dev=(sup-0.5)*2; document.getElementById('gl').style.width=(dev<0?Math.round(-dev*50):0)+'%'; document.getElementById('gr').style.width=(dev>0?Math.round(dev*50):0)+'%';
-    var sv=0.23+0.03*t;                     // the label answers: a privacy advocate opposes, whatever is announced (0.20 .. 0.26)
+    var sv=0.23+0.03*t;                     // the label answers: the prior for this demographic cell is opposition, whatever is announced (0.20 .. 0.26)
     var sdev=(sv-0.5)*2, sl=document.getElementById('sl'), sr=document.getElementById('sr');
     if(sl){sl.style.width=(sdev<0?Math.round(-sdev*50):0)+'%'; sr.style.width=(sdev>0?Math.round(sdev*50):0)+'%';}
     var ss=stances[0]; for(var j=0;j<stances.length;j++){if(sv<stances[j][0]){ss=stances[j];break;}}
