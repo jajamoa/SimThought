@@ -178,23 +178,44 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </style>
 <style>
 /* page-specific */
-.strip{display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--line);margin-top:16px}
-.strip div{padding:16px 18px;border-left:1px solid var(--line);font-size:14px;color:var(--ink2)}
-.strip div:first-child{border-left:none}
-.strip b{display:block;font-size:15px;color:var(--ink);margin-bottom:4px}
-.strip i{display:block;font-style:normal;color:var(--mut);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
-.strip .dim{color:var(--mut)}
-.strip .on b{color:var(--accent-ink)}
+.para{display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--line);margin-top:16px}
+.pcol{padding:16px 18px;border-left:1px solid var(--line);font-size:13.5px;color:var(--ink2);line-height:1.55}
+.pcol:first-child{border-left:none}
+.pcol i{display:block;font-style:normal;color:var(--mut);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.pcol b{display:block;font-size:15px;color:var(--ink);margin:8px 0 2px}
+.pcol.on b{color:var(--accent-ink)}
+.pcol .era{display:block;font-size:11.5px;color:var(--mut);margin-bottom:6px;line-height:1.45}
+.pd{width:100%;height:auto;display:block;max-width:260px}
+.pb{fill:#fff;stroke:#4f4e49;stroke-width:1.1}.pb.dark{fill:#4f4e49}.pb.tint{fill:var(--tint);stroke:var(--accent)}
+.pt{font-family:inherit;font-size:9.5px;fill:var(--ink)}.pt.light{fill:#fff}.pt.tiny{font-size:8px;fill:var(--mut)}
+.pa{stroke:#4f4e49;stroke-width:1.1;marker-end:url(#pa);fill:none}.pa.loop{stroke:var(--accent);stroke-dasharray:3 2}
+.pn{fill:var(--accent)}.pn.new{fill:#fff;stroke:var(--accent);stroke-width:1.2;stroke-dasharray:2 1}
+.pe{stroke:var(--accent-ink);stroke-width:1.1}.pe.new{stroke-dasharray:2 1}
+.tl{margin-top:14px;border:1px solid var(--line);padding:12px 16px}
+.tlrow{display:grid;grid-template-columns:190px 1fr;gap:12px;align-items:center;margin-bottom:8px}
+.tll{font-size:11.5px;color:var(--mut);letter-spacing:.04em;text-transform:uppercase}
+.tlbar{position:relative;height:22px;background:#f4f4f2;border:1px solid var(--line)}
+.tlbar i{position:absolute;top:0;bottom:0;font-style:normal;font-size:11px;line-height:20px;padding-left:8px;white-space:nowrap;overflow:hidden;color:#fff}
+.tlbar .s1{background:#8a8a86}.tlbar .s2{background:var(--accent)}.tlbar .s3{background:#6f8fc4}.tlbar .s0{background:repeating-linear-gradient(45deg,#f4f4f2,#f4f4f2 4px,#e6e6e3 4px,#e6e6e3 8px)}
+.tlbar .now{background:var(--accent-ink);font-weight:700}
+.tlnote{font-size:12px;color:var(--mut);margin-top:6px;line-height:1.5}
+@media(max-width:760px){.para{grid-template-columns:1fr}.pcol{border-left:none;border-top:1px solid var(--line)}.pcol:first-child{border-top:none}.tlrow{grid-template-columns:1fr}.tll{margin-bottom:2px}}
 .tcap{margin-top:12px}
 .scen{font-size:13.5px;color:var(--ink2);line-height:1.65;max-width:900px;margin:0 auto 14px;text-align:center}
 .scen b{color:var(--ink)}
 .tgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .th{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
-.trow{position:relative;padding:8px 0 8px 16px;border-left:3px solid;font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:8px}
+.tcol{display:grid;grid-template-columns:34px 1fr;grid-template-rows:auto auto auto;column-gap:12px}
+.tcol .th{grid-column:1/-1}
+.ice{align-self:stretch}
+.ice svg{width:100%;height:100%;display:block}
+.ice.top{padding-top:6px}
+.ice.bot{padding-bottom:6px}
+.trow{padding:8px 0 10px;font-size:13px;color:var(--ink2);line-height:1.6}
+.trow.deep,.ice.bot{border-top:1.5px solid #6f8fc4;background:#f3f6fa}
+.trow.deep{padding-left:8px;padding-right:8px}
+.ice.bot{padding-left:0}
 .trow b{color:var(--ink)}
-.trow .sw{position:absolute;left:-8px;top:10px;width:13px;height:13px;border-radius:2px;border:1px solid rgba(0,0,0,.2)}
-.trow.light{border-color:#cfe0ea}.trow.light .sw{background:#cfe0ea}
-.trow.deep{border-color:#2b3f52}.trow.deep .sw{background:#2b3f52}
 @media(max-width:760px){.tgrid{grid-template-columns:1fr}.scen{text-align:left}}
 /* interactive */
 .lab{background:#fff;border:1px solid var(--line);margin-top:18px}
@@ -212,25 +233,44 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .motifs{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .motif{border:1px solid var(--accent);color:var(--accent-ink);background:var(--tint);padding:6px 12px;font-size:13.5px;font-weight:700}
 .motif small{display:block;font-weight:400;color:var(--ink2);font-size:12px;margin-top:2px}
-.runwrap{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;align-items:start}
-.graph svg{width:100%;height:auto;display:block}
-.node{fill:#fff;stroke:var(--ink);stroke-width:1.4}
-.node.t{fill:var(--accent);stroke:var(--accent-ink)}
+.stage{display:grid;grid-template-columns:1fr;gap:14px;margin-top:10px}
+.stage.two{grid-template-columns:1fr 1fr}
+.fcol{border:1px solid var(--line);padding:12px 14px;background:#fff;display:flex;flex-direction:column}
+.fcol.wide{padding:12px 10px}
+.fh{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:10px}
+.fh small{display:block;text-transform:none;letter-spacing:0;font-weight:400;color:var(--mut);font-size:12px;margin-top:2px}
+.fh small .sw{display:inline-block;width:11px;height:11px;border-radius:2px;border:1px solid rgba(0,0,0,.2);vertical-align:-1px;margin-right:5px}
+.fn{display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;border:1px solid var(--accent);border-radius:50%;font-size:11px;margin-right:4px}
+.qbig{font-size:17px;font-weight:700;color:var(--ink);line-height:1.4;flex:1;display:flex;align-items:center}
+.stimlab{font-size:13.5px;color:var(--ink);font-weight:700;min-height:40px;line-height:1.45;margin-bottom:8px}
+.fcol input[type=range]{width:100%;accent-color:var(--accent)}
+.stimscale{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);margin-top:2px}
+.llm{margin:10px 0 0;border:1px dashed var(--accent);background:var(--tint);padding:9px 14px;font-size:13px;color:var(--ink2);line-height:1.6}
+.llm b{color:var(--ink)}
+.llmtag{display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;margin-right:8px}
+.dotag{display:inline-block;border:1px solid var(--accent);color:var(--accent-ink);background:#fff;padding:1px 8px;font-size:12.5px;font-weight:700}
+.graph svg{width:100%;height:auto;display:block;max-width:700px;margin:0 auto}
+.node{fill:#fff;stroke:#4f4e49;stroke-width:1.4;transition:fill .35s,stroke .35s}
+.node.stim{stroke:var(--accent);stroke-width:2;stroke-dasharray:5 3}
+.node.out{stroke-width:2}
+.gnode.pulse circle{stroke-width:3.5}
 .nl{font-family:inherit;font-size:12.5px;fill:var(--ink)}
-.nv{font-family:inherit;font-size:12px;fill:var(--ink2);font-weight:700}
-.edge{stroke:var(--ink);stroke-width:1.5;fill:none;marker-end:url(#ar)}
-.edge.neg{stroke:#b3261e;stroke-dasharray:4 3}
-.ctl{font-size:13.5px;color:var(--ink2)}
-.ctl label{display:block;font-weight:700;color:var(--ink);margin-bottom:6px}
-.ctl input[type=range]{width:100%;accent-color:var(--accent)}
-.readout{margin-top:14px;border:1px solid var(--line);padding:12px 14px;font-size:13.5px}
-.readout div{display:flex;justify-content:space-between;padding:4px 0;border-top:1px dashed var(--line)}
-.readout div:first-child{border-top:none}
-.readout .v{font-weight:800;color:var(--ink)}
-.readout .v.dn{color:var(--accent-ink)}
-.readout .v.up{color:#b3261e}
-.formula{margin-top:12px;font-size:12.5px;color:var(--mut);line-height:1.6}
-.dobadge{display:inline-block;border:1px solid var(--accent);color:var(--accent-ink);background:var(--tint);padding:2px 8px;font-size:12px;font-weight:700;margin-left:6px}
+.nv{font-family:inherit;font-size:13px;fill:var(--ink);font-weight:800}
+.el{font-family:inherit;font-size:13px;fill:var(--mut);font-weight:700}
+.dol{font-family:inherit;font-size:11px;fill:var(--accent-ink);font-weight:700;letter-spacing:.05em}
+.edge{stroke:#4f4e49;stroke-width:1.5;fill:none;marker-end:url(#ar)}
+.edge.neg{stroke:#8a8a86;stroke-dasharray:4 3}
+.glegend{font-size:11.5px;color:var(--mut);text-align:center;margin-top:4px}
+.ra{font-size:19px;font-weight:800;line-height:1.25;transition:color .35s}
+.ra.small{font-size:16px;color:#6f6f6b}
+.rbar{height:7px;background:#eee;border:1px solid var(--line);margin:8px 0 6px;position:relative}
+.rbar i{position:absolute;left:0;top:0;bottom:0;width:31%;background:#b3261e;transition:width .35s,background .35s}
+.rnum{font-size:12px;color:var(--mut)}
+.rnum b{color:var(--ink)}
+.ain{font-size:12px;color:var(--mut);margin-bottom:8px;line-height:1.5}
+.agent.surface .sw{background:#cfe0ea}.agent.deep .sw{background:#2b3f52}
+.agent.surface{border-left:3px solid #cfe0ea}.agent.deep{border-left:3px solid #2b3f52}
+@media(max-width:760px){.stage.two{grid-template-columns:1fr}}
 .cta{border:1px solid var(--accent);background:var(--tint);padding:18px 22px;margin-top:22px;font-size:16px;color:var(--ink);font-weight:600;text-align:center}
 @media(max-width:760px){.strip{grid-template-columns:1fr}.strip div{border-left:none;border-top:1px solid var(--line)}.strip div:first-child{border-top:none}.runwrap{grid-template-columns:1fr}.tab{font-size:11.5px;padding:10px 8px}.tab span{display:none}}
 </style>
@@ -257,8 +297,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </p>
   <p class="heronote">* equal contribution &nbsp;&middot;&nbsp; &dagger; now at Google &nbsp;&middot;&nbsp; <a href="mailto:jiajie@mit.edu">jiajie@mit.edu</a></p>
   <div class="tldrbox">
-    <p><b class="lb">tl;dr</b> Today&rsquo;s social simulations are oversimplified black boxes: demographics in, behavior out (DIBO). The paradigm must shift from behaviorism to cognitivism: (1) auditable causality behind behavior, (2) grounding in real individual experience, (3) counterfactual reasoning with consistency.</p>
-    <p><b class="lb">Position</b> Align the reasoning trace, not just the output. We call this <strong>reasoning fidelity</strong>: beliefs that are traceable, revisable under intervention, and built from reusable causal motifs. <a href="#fidelity">What that means&nbsp;&darr;</a></p>
+    <p><b class="lb">Position</b> Today&rsquo;s social simulations are oversimplified black boxes: demographics in, behavior out (DIBO). The paradigm must shift from behaviorism to cognitivism: (1) auditable causality behind behavior, (2) grounding in real individual experience, (3) counterfactual reasoning with consistency. <a href="#why">Why these three&nbsp;&darr;</a></p>
   </div>
   <div class="btns">
     <a class="btn primary" href="https://arxiv.org/abs/2506.06958" target="_blank" rel="noopener">Paper</a>
@@ -273,37 +312,47 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="tgrid">
       <div class="tcol">
         <div class="th">Left &middot; one person</div>
-        <div class="trow light"><i class="sw"></i><b>Above the waterline: demographics.</b> 35, male, middle income. A model carrying population weights returns the modal answer for that label: support, &ldquo;we need to act on climate now.&rdquo; The label answered, not the person. This is a flattened identity.</div>
-        <div class="trow deep"><i class="sw"></i><b>Below: beliefs and experience.</b> Behind the same label sit specific experiences that pull in opposite directions. He volunteered for reforestation in college, so he cares about the climate and wants the policy. He now runs a logistics startup and is already struggling with delivery costs, so a fuel tax lands on his margins: &ldquo;this could hurt my small business.&rdquo; A real individual holds both. His stance is the resolution of that conflict, and it is exactly what an intervention (say, a small-business exemption) would move.</div>
+        <div class="ice top"><svg viewBox="0 0 34 100" preserveAspectRatio="none"><polygon points="9,100 17,4 25,100" fill="#dbe8f0" stroke="#2b3f52" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg></div><div class="trow light"><b>Above the waterline: demographics.</b> 35, male, middle income. A model carrying population weights returns the modal answer for that label: support, &ldquo;we need to act on climate now.&rdquo; The label answered, not the person. This is a flattened identity.</div>
+        <div class="ice bot"><svg viewBox="0 0 34 100" preserveAspectRatio="none"><polygon points="9,0 25,0 32,55 23,100 11,100 2,55" fill="#2b3f52" stroke="#2b3f52" stroke-width="1" vector-effect="non-scaling-stroke"/></svg></div><div class="trow deep"><b>Below: beliefs and experience.</b> Behind the same label sit specific experiences that pull in opposite directions. He volunteered for reforestation in college, so he cares about the climate and wants the policy. He now runs a logistics startup and is already struggling with delivery costs, so a fuel tax lands on his margins: &ldquo;this could hurt my small business.&rdquo; A real individual holds both. His stance is the resolution of that conflict, and it is exactly what an intervention (say, a small-business exemption) would move.</div>
       </div>
       <div class="tcol">
         <div class="th">Right &middot; a population</div>
-        <div class="trow light"><i class="sw"></i><b>Extrapolate the surface</b> and you get three camps: yes, no, whatever. Stereotypes at scale: a society flattened into the categories the model started with.</div>
-        <div class="trow deep"><i class="sw"></i><b>Extrapolate the reasoning</b> and you get a crowd that is heterogeneous and complete: fair if transparent, who decides the rate, what is in it for me, better transit first, the rich will not care. Diverse, interpretable, and causally faithful, because every opinion still carries the beliefs that produced it. Click the figure to enlarge.</div>
+        <div class="ice top"><svg viewBox="0 0 34 100" preserveAspectRatio="none"><polygon points="9,100 17,4 25,100" fill="#dbe8f0" stroke="#2b3f52" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg></div><div class="trow light"><b>Extrapolate the surface</b> and you get three camps: yes, no, whatever. Stereotypes at scale: a society flattened into the categories the model started with.</div>
+        <div class="ice bot"><svg viewBox="0 0 34 100" preserveAspectRatio="none"><polygon points="9,0 25,0 32,55 23,100 11,100 2,55" fill="#2b3f52" stroke="#2b3f52" stroke-width="1" vector-effect="non-scaling-stroke"/></svg></div><div class="trow deep"><b>Extrapolate the reasoning</b> and you get a crowd that is heterogeneous and complete: fair if transparent, who decides the rate, what is in it for me, better transit first, the rich will not care. Diverse, interpretable, and causally faithful, because every opinion still carries the beliefs that produced it. Click the figure to enlarge.</div>
       </div>
     </div>
   </div>
 </div>
 
-<section class="wrap" id="problem" style="margin-top:55px">
-  <div class="kicker">The problem</div>
-  <h2>Demographics in, behavior out.</h2>
-  <p class="body">Most LLM-based social simulations map a persona to a plausible answer. This is behaviorism rebuilt in software: behavior as a function of external cues, with no internal state. The outputs sound coherent, but there is nothing underneath to be consistent with, nothing to trace, and nothing to update when the world changes. That is exactly where these simulations are now being used: contested policy questions such as upzoning, surveillance, and healthcare, where the reasoning is the point.</p>
-  <div class="strip">
-    <div class="dim"><i>where we are</i><b>Behaviorism</b>Stimulus in, response out. Persona prompts and supervised fine-tuning. Plausible, flat, untraceable.</div>
-    <div class="on"><i>where we argue to go</i><b>Cognitivism</b>Structured internal representations. Beliefs with causes, a trace you can inspect, and a stance that follows from it.</div>
-    <div class="dim"><i>and beyond</i><b>Constructivism</b>Beliefs continually reshaped by individual and social experience. The horizon, once the internal state exists at all.</div>
-  </div>
-</section>
-
-<section class="wrap" id="fidelity">
-  <div class="kicker">What we ask of an agent</div>
-  <h2>Reasoning fidelity, in three testable properties</h2>
-  <p class="body">Reasoning fidelity is an agent&rsquo;s ability to construct, simulate, and revise a structured trace of belief formation that mirrors how people actually reason. It is not a vibe; each property has a measurement.</p>
+<section class="wrap" id="why" style="margin-top:55px">
+  <div class="kicker">What matters, and why</div>
+  <h2>Three things a simulation must get right</h2>
   <div class="cards cards3">
-    <div class="card"><h3>Traceability</h3><div class="csub">how was this belief formed?</div><p>Every stance comes with the intermediate beliefs that produced it. Measured by motif-to-stance inference: given the reasons, can you recover the position?</p></div>
-    <div class="card"><h3>Counterfactual adaptability</h3><div class="csub">what would change it?</div><p>Beliefs revise predictably under an intervention or a changed context. Measured by belief revision under hypothetical scenarios.</p></div>
-    <div class="card"><h3>Motif compositionality</h3><div class="csub">does the reasoning transfer?</div><p>The same causal building blocks recur across topics. Measured by motif reuse across unrelated domains.</p></div>
+    <div class="card"><h3>1 &middot; Auditable causality</h3><div class="csub">why did the agent say that?</div><p>A stance should come with the chain of beliefs that produced it. Without a trace there is nothing to check, so a wrong answer and a right one look the same, and no one can tell you which reason moved the outcome.</p></div>
+    <div class="card"><h3>2 &middot; Grounded in a real individual</h3><div class="csub">whose reasoning is this?</div><p>Beliefs come from experience, not from a demographic cell. Two people with the same label routinely hold opposite views for good reasons. Simulate the label and you get a stereotype; scale it and you get a stereotyped society.</p></div>
+    <div class="card"><h3>3 &middot; Consistent under counterfactuals</h3><div class="csub">what would change their mind?</div><p>Policy questions are &ldquo;what if&rdquo; questions. An agent that cannot revise its beliefs predictably under an intervention cannot tell you what a policy would do, which is the only reason to run the simulation.</p></div>
+  </div>
+  <p class="note" style="margin-top:18px">Together these define what the paper calls <strong style="color:var(--ink)">reasoning fidelity</strong>: a trace of belief formation that is traceable, revisable, and built from reusable causal parts. The shift it asks for:</p>
+  <div class="para">
+    <div class="pcol dim"><i>where we are</i><svg viewBox="0 0 260 66" class="pd" aria-label="behaviorism: stimulus to black box to response">
+<defs><marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f4e49"/></marker></defs>
+<rect x="6" y="18" width="46" height="30" rx="3" class="pb"/><text x="29" y="37" text-anchor="middle" class="pt">label</text><line x1="54" y1="33" x2="98" y2="33" class="pa"/><rect x="100" y="12" width="60" height="42" rx="3" class="pb dark"/><text x="130" y="30" text-anchor="middle" class="pt light">black</text><text x="130" y="43" text-anchor="middle" class="pt light">box</text><line x1="162" y1="33" x2="206" y2="33" class="pa"/><rect x="208" y="18" width="46" height="30" rx="3" class="pb"/><text x="231" y="37" text-anchor="middle" class="pt">answer</text></svg><b>Behaviorism</b><span class="era">psychology, roughly 1913 to the 1950s &middot; LLM agents, 2023 to now</span>Stimulus in, response out. Persona prompts and supervised fine-tuning. Plausible, flat, untraceable.</div>
+    <div class="pcol on"><i>where we argue to go</i><svg viewBox="0 0 260 66" class="pd" aria-label="cognitivism: stimulus through a belief graph to response">
+<rect x="6" y="18" width="46" height="30" rx="3" class="pb"/><text x="29" y="37" text-anchor="middle" class="pt">stimulus</text><line x1="54" y1="33" x2="98" y2="33" class="pa"/><rect x="100" y="6" width="60" height="54" rx="3" class="pb tint"/>
+<circle cx="112" cy="33" r="4" class="pn"/><circle cx="130" cy="18" r="4" class="pn"/><circle cx="130" cy="48" r="4" class="pn"/><circle cx="148" cy="33" r="4" class="pn"/>
+<line x1="116" y1="31" x2="126" y2="21" class="pe"/><line x1="116" y1="35" x2="126" y2="46" class="pe"/><line x1="134" y1="20" x2="144" y2="30" class="pe"/><line x1="134" y1="46" x2="144" y2="36" class="pe"/>
+<line x1="162" y1="33" x2="206" y2="33" class="pa"/><rect x="208" y="18" width="46" height="30" rx="3" class="pb"/><text x="231" y="37" text-anchor="middle" class="pt">stance</text></svg><b>Cognitivism</b><span class="era">psychology, the 1956 cognitive revolution onward &middot; LLM agents, starting now</span>Structured internal representations. Beliefs with causes, a trace you can inspect, and a stance that follows from it.</div>
+    <div class="pcol dim"><i>and beyond</i><svg viewBox="0 0 260 66" class="pd" aria-label="constructivism: experience keeps rewiring the belief graph">
+<rect x="6" y="18" width="46" height="30" rx="3" class="pb"/><text x="29" y="37" text-anchor="middle" class="pt">stimulus</text><line x1="54" y1="33" x2="98" y2="33" class="pa"/><rect x="100" y="6" width="60" height="54" rx="3" class="pb tint"/>
+<circle cx="112" cy="33" r="4" class="pn"/><circle cx="130" cy="18" r="4" class="pn"/><circle cx="130" cy="48" r="4" class="pn"/><circle cx="148" cy="33" r="4" class="pn"/><circle cx="148" cy="14" r="4" class="pn new"/>
+<line x1="116" y1="31" x2="126" y2="21" class="pe"/><line x1="116" y1="35" x2="126" y2="46" class="pe"/><line x1="134" y1="46" x2="144" y2="36" class="pe"/><line x1="134" y1="17" x2="144" y2="15" class="pe new"/>
+<path d="M130 60 C130 70, 60 70, 40 52" class="pa loop"/><text x="70" y="64" text-anchor="middle" class="pt tiny">experience</text>
+<line x1="162" y1="33" x2="206" y2="33" class="pa"/><rect x="208" y="18" width="46" height="30" rx="3" class="pb"/><text x="231" y="37" text-anchor="middle" class="pt">stance</text></svg><b>Constructivism</b><span class="era">psychology, the 1980s onward (Piaget, Vygotsky) &middot; LLM agents, not yet</span>Beliefs continually reshaped by individual and social experience. The horizon, once the internal state exists at all.</div>
+  </div>
+  <div class="tl">
+    <div class="tlrow"><span class="tll">how we studied people</span><div class="tlbar"><i class="s1" style="left:0;width:34%">behaviorism</i><i class="s2" style="left:34%;width:36%">cognitivism</i><i class="s3" style="left:70%;width:30%">constructivism</i></div></div>
+    <div class="tlrow"><span class="tll">how LLMs simulate people</span><div class="tlbar"><i class="s1" style="left:0;width:34%">behaviorism (2023&ndash;)</i><i class="s2 now" style="left:34%;width:17%">&#8592; we are here</i><i class="s0" style="left:51%;width:49%"></i></div></div>
+    <div class="tlnote">Psychology took about forty years to move from stimulus&ndash;response to internal structure. Agent simulation is two years in, and still at the first stop. Dates are the conventional ones and approximate.</div>
   </div>
 </section>
 
@@ -311,7 +360,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="wrap">
     <div class="kicker">Try it</div>
     <h2>From two answers to a belief graph you can run</h2>
-    <p class="body">The paper&rsquo;s worked example, made live. Two interview answers become causal motifs, the motifs compose into one person&rsquo;s belief graph, and then you intervene on it and watch the downstream beliefs move. This is the whole position in one object.</p>
+    <p class="body">The paper&rsquo;s worked example, made live. Two interview answers become causal motifs, the motifs compose into one person&rsquo;s belief graph, and then you intervene on it and watch a policy announcement travel through it to a new answer. This is the whole position in one object.</p>
     <div class="lab">
       <div class="tabs">
         <button class="tab on" data-p="0"><span>1</span>Ask</button>
@@ -329,46 +378,70 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <p class="note" style="margin-top:6px">A motif is the smallest causal unit in someone&rsquo;s reasoning: concept, arrow, concept. Motifs recur across people, which is what makes them shareable and comparable.</p>
       </div>
       <div class="pane">
-        <div class="runwrap">
-          <div class="graph">
-            <svg viewBox="0 0 520 250" aria-label="Belief graph">
-              <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111110"/></marker></defs>
-              <path class="edge" d="M92 125 C150 60, 190 60, 232 62"/>
-              <path class="edge" d="M92 125 C150 190, 190 190, 232 188"/>
-              <path class="edge" d="M292 62 C340 62, 380 62, 412 62"/>
-              <path class="edge" d="M292 188 C340 188, 380 188, 412 188"/>
-              <path class="edge neg" d="M262 82 C262 130, 430 120, 442 170"/>
-              <circle class="node t" cx="66" cy="125" r="24"/>
-              <circle class="node" cx="262" cy="62" r="22"/>
-              <circle class="node" cx="262" cy="188" r="22"/>
-              <circle class="node" cx="440" cy="62" r="22"/>
-              <circle class="node" cx="440" cy="188" r="22"/>
-              <text class="nl" x="66" y="163" text-anchor="middle">Transparency</text>
-              <text class="nv" x="66" y="130" text-anchor="middle" fill="#fff" id="vT">low</text>
-              <text class="nl" x="262" y="30" text-anchor="middle">Crime rate &darr;</text>
-              <text class="nv" x="262" y="67" text-anchor="middle" id="vC">.20</text>
-              <text class="nl" x="262" y="222" text-anchor="middle">Privacy concern</text>
-              <text class="nv" x="262" y="193" text-anchor="middle" id="vP">.70</text>
-              <text class="nl" x="440" y="30" text-anchor="middle">Public safety</text>
-              <text class="nv" x="440" y="67" text-anchor="middle" id="vS">.20</text>
-              <text class="nl" x="440" y="222" text-anchor="middle">Opposition</text>
-              <text class="nv" x="440" y="193" text-anchor="middle" id="vO">.69</text>
-            </svg>
+        <div class="stage two">
+          <div class="fcol">
+            <div class="fh"><span class="fn">1</span> Stimulus <small>the survey question, the agent&rsquo;s input</small></div>
+            <div class="qbig">&ldquo;Do you support the surveillance law?&rdquo;</div>
           </div>
-          <div class="ctl">
-            <label>Intervene: do(Transparency = <span id="tv">low</span>) <span class="dobadge">do()</span></label>
-            <input type="range" id="tr" min="0" max="100" value="0">
-            <div class="readout">
-              <div><span>P(privacy concern)</span><span class="v" id="rP">0.70</span></div>
-              <div><span>P(public safety)</span><span class="v" id="rS">0.20</span></div>
-              <div><span>P(opposition to surveillance)</span><span class="v" id="rO">0.69</span></div>
-            </div>
-            <p class="formula">Slide to high and the paper&rsquo;s numbers appear: privacy concern 0.7 &rarr; 0.3, opposition 0.7 &rarr; 0.2. The safety path is preventive (dashed): more safety, less opposition. Illustrative weights, real structure. do() sets a value instead of observing it, so the change flows only downstream.</p>
+          <div class="fcol">
+            <div class="fh"><span class="fn">&#8635;</span> External change <small>a policy announcement in the world</small></div>
+            <div class="stimlab" id="stimlab">No announcement. Status quo.</div>
+            <input type="range" id="tr" min="-100" max="100" value="0" step="5">
+            <div class="stimscale"><span>less transparent</span><span>more transparent</span></div>
           </div>
         </div>
+        <div class="llm"><span class="llmtag">LLM as semantic parser</span> reads both texts and writes graph operations: <b>query</b> the node <i>Support for the law</i> &nbsp;&middot;&nbsp; <b>intervene</b> <span class="dotag" id="dotag">do(Transparency = <span id="tv">0.50</span>)</span></div>
+        <div class="stage">
+          <div class="fcol wide">
+            <div class="fh"><span class="fn">2</span> Structure <small>the agent&rsquo;s belief graph, built from its own words; the do() sets one node, propagation does the rest</small></div>
+            <div class="graph">
+              <svg viewBox="0 0 560 270" aria-label="Belief graph">
+                <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f4e49"/></marker></defs>
+                <path class="edge" d="M104 135 C160 70, 200 70, 236 70"/>
+                <path class="edge" d="M104 135 C160 200, 200 200, 236 200"/>
+                <path class="edge" d="M304 70 C350 70, 400 70, 436 70"/>
+                <path class="edge" d="M304 200 C350 200, 400 200, 436 200"/>
+                <path class="edge neg" d="M292 96 C320 150, 420 130, 452 172"/>
+                <text class="el" x="170" y="88">+</text><text class="el" x="170" y="222">&minus;</text>
+                <text class="el" x="370" y="62">+</text><text class="el" x="370" y="192">&minus;</text>
+                <text class="el" x="392" y="128">&minus;</text>
+                <g id="nT" class="gnode"><circle class="node stim" cx="70" cy="135" r="30"/><text class="nv" x="70" y="140" text-anchor="middle" id="vT">.50</text></g>
+                <text class="nl" x="70" y="184" text-anchor="middle">Transparency</text>
+                <text class="dol" x="70" y="96" text-anchor="middle">do()</text>
+                <g class="gnode"><circle class="node" cx="270" cy="70" r="26"/><text class="nv" x="270" y="75" text-anchor="middle" id="vC">.20</text></g>
+                <text class="nl" x="270" y="30" text-anchor="middle">Crime reduction</text>
+                <g class="gnode"><circle class="node" cx="270" cy="200" r="26"/><text class="nv" x="270" y="205" text-anchor="middle" id="vP">.70</text></g>
+                <text class="nl" x="270" y="246" text-anchor="middle">Privacy concern</text>
+                <g class="gnode"><circle class="node" cx="470" cy="70" r="26"/><text class="nv" x="470" y="75" text-anchor="middle" id="vS">.20</text></g>
+                <text class="nl" x="470" y="30" text-anchor="middle">Public safety</text>
+                <g id="nO" class="gnode"><circle class="node out" id="cO" cx="470" cy="200" r="30"/><text class="nv" x="470" y="205" text-anchor="middle" id="vO">.31</text></g>
+                <text class="nl" x="470" y="250" text-anchor="middle">Support for the law</text>
+                <text class="dol" x="512" y="205" text-anchor="start">query</text>
+              </svg>
+            </div>
+            <div class="glegend">+ increases &nbsp; &minus; decreases &nbsp; dashed = preventive path &nbsp; numbers = P(node)</div>
+          </div>
+        </div>
+        <div class="llm"><span class="llmtag">LLM as verbalizer</span> turns the queried posterior back into language: P(support) = <b id="rSv">0.31</b> &rarr; <b id="rav">&ldquo;I lean against it.&rdquo;</b></div>
+        <div class="stage two">
+          <div class="fcol agent deep">
+            <div class="fh"><span class="fn">3</span> Response <small><i class="sw"></i>grounded agent &middot; beliefs in</small></div>
+            <div class="ra" id="ra">I lean against it.</div>
+            <div class="rbar"><i id="rfill"></i></div>
+            <div class="rnum">support <b id="rS">0.31</b> &nbsp;&middot;&nbsp; privacy concern <b id="rP">0.70</b> &nbsp;&middot;&nbsp; safety <b id="rSf">0.20</b></div>
+          </div>
+          <div class="fcol agent surface">
+            <div class="fh"><span class="fn">&ne;</span> For comparison <small><i class="sw"></i>surface agent &middot; demographics in</small></div>
+            <div class="ain">&ldquo;34 &middot; urban &middot; renter&rdquo; &rarr; persona prompt &rarr; answer. No structure in between, so the announcement never reaches it.</div>
+            <div class="ra small">I oppose it.</div>
+            <div class="rbar"><i style="width:35%;background:#8a8a86"></i></div>
+            <div class="rnum">support <b>0.35</b>, whatever the announcement</div>
+          </div>
+        </div>
+        <p class="formula">Same person, same question, five announcements. Slide right and the paper&rsquo;s worked numbers appear (privacy concern 0.7 &rarr; 0.3, support 0.3 &rarr; 0.8); slide left and the graph runs the other way. Weights are illustrative; the structure and the sign of every edge come from the two answers in step 1. do() sets the node instead of observing it, so nothing flows back upstream.</p>
+      </div>
       </div>
     </div>
-    <p class="body" style="margin-top:18px">Ask what an average persona would do here: a &ldquo;privacy advocate, 34, urban&rdquo; answers the survey and the number lands wherever the prior lands. Nothing in that number tells you the stance turns on transparency, so nothing in it can predict the update. The graph can, and it shows its work.</p>
   </div>
 </div>
 
@@ -388,10 +461,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <p class="note">Neither is a fixed system. They are the minimum structure a simulation needs before &ldquo;this agent reasons like that person&rdquo; can be checked rather than asserted.</p>
 </section>
 
-<section class="wrap" id="next">
-  <div class="kicker">Where this leads</div>
-  <p class="body">The evaluation half is now real. <a href="https://jajamoa.github.io/HugAgent/" target="_blank" rel="noopener">HugAgent</a> (EMNLP 2026) tests whether models recover what a specific person believes and predict how they change their mind, on 54 real participants across healthcare, surveillance, and zoning. Its headline result is this paper&rsquo;s prediction: models can recover beliefs, and struggle to predict updates.</p>
-  <p class="body">Two open problems shape what comes next. Building causal belief networks from transcripts is hard: concept boundaries, causal direction, polarity, and granularity are all ambiguous. And causality is not all of human reasoning; people also think by association, analogy, and feeling. Causal structure is the tractable starting point, not the finish line.</p>
+<section class="wrap" id="call">
+  <div class="kicker">The call</div>
+  <p class="body">Whether to build agents that merely sound human, or agents that reason in structured, human-like ways, is a choice the field is making right now. We argue for the latter: agents that represent beliefs, simulate causal relationships, revise assumptions, and reveal their internal logic. Causal structure is the tractable starting point, not the finish line; people also think by association, analogy, and feeling.</p>
   <div class="cta">To simulate society faithfully, we must simulate thought.</div>
 </section>
 
@@ -425,23 +497,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     tabs.forEach(function(x){x.classList.remove('on')}); panes.forEach(function(x){x.classList.remove('on')});
     t.classList.add('on'); panes[+t.dataset.p].classList.add('on');
   });});
-  // belief graph: illustrative weights reproducing the paper's worked example
+  // stimulus -> structure -> response. Weights illustrative; baseline and "high" reproduce the paper's worked example.
   var tr=document.getElementById('tr');
-  function f(n){return n.toFixed(2)}
+  var labels=[[-100,'Announcement: footage will be shared with third parties. No disclosure.'],[-50,'Announcement: retention extended indefinitely. No public access.'],[0,'No announcement. Status quo.'],[50,'Announcement: data use disclosed, retention limits set.'],[100,'Announcement: public audit log and independent oversight.']];
+  var stances=[[0.15,'I strongly oppose it.','#8f1d16'],[0.27,'I oppose it.','#b3261e'],[0.45,'I lean against it.','#c4553f'],[0.6,'I am torn.','#6f6f6b'],[0.72,'I lean toward it.','#4a7fd6'],[0.85,'I support it.','#2f6bd8'],[1.01,'I strongly support it.','#173f8e']];
+  function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
+  function f(n){return n.toFixed(2)} function d(n){return f(n).slice(1)}
+  function nearest(v){var best=labels[0];labels.forEach(function(l){if(Math.abs(l[0]-v)<Math.abs(best[0]-v))best=l});return best[1]}
   function run(){
-    var T=tr.value/100;
-    var P=0.7*(1-0.571*T);           // privacy concern: 0.70 -> 0.30
-    var S=0.2+0.6*T;                 // public safety via crime: 0.20 -> 0.80
-    var O=Math.min(1,1.1*P*(1-0.5*S)); // opposition: ~0.69 -> ~0.20
-    document.getElementById('vT').textContent=T<0.34?'low':(T<0.67?'mid':'high');
-    document.getElementById('tv').textContent=document.getElementById('vT').textContent;
-    document.getElementById('vC').textContent=f(S).slice(1);
-    document.getElementById('vS').textContent=f(S).slice(1);
-    document.getElementById('vP').textContent=f(P).slice(1);
-    document.getElementById('vO').textContent=f(O).slice(1);
-    var rP=document.getElementById('rP'),rS=document.getElementById('rS'),rO=document.getElementById('rO');
-    rP.textContent=f(P); rS.textContent=f(S); rO.textContent=f(O);
-    rP.className='v'+(T>0?' dn':''); rO.className='v'+(T>0?' dn':''); rS.className='v'+(T>0?' up':'');
+    var t=tr.value/100;                       // -1 .. 1, 0 = status quo
+    var T=clamp(0.5+0.5*t,0,1);               // transparency level
+    var P=clamp(t>=0?0.7-0.4*t:0.7-0.2*t,0.05,0.95);   // privacy concern: 0.70 -> 0.30 at t=1, up to 0.90 at t=-1
+    var C=clamp(t>=0?0.2+0.6*t:0.2+0.1*t,0.05,0.95);   // crime reduction: 0.20 -> 0.80
+    var S=C;                                  // public safety follows crime reduction
+    var O=clamp(1.1*P*(1-0.5*S),0.05,0.95);   // opposition: ~0.69 -> ~0.20
+    var sup=1-O;
+    document.getElementById('vT').textContent=d(T); document.getElementById('tv').textContent=f(T);
+    document.getElementById('vC').textContent=d(C); document.getElementById('vS').textContent=d(S);
+    document.getElementById('vP').textContent=d(P); document.getElementById('vO').textContent=d(sup);
+    document.getElementById('stimlab').textContent=nearest(tr.value);
+    var st=stances[0]; for(var i=0;i<stances.length;i++){if(sup<stances[i][0]){st=stances[i];break;}}
+    var ra=document.getElementById('ra'); ra.textContent=st[1]; ra.style.color=st[2];
+    document.getElementById('rSv').textContent=f(sup); document.getElementById('rav').textContent='\u201c'+st[1]+'\u201d';
+    var cO=document.getElementById('cO'); cO.style.stroke=st[2]; cO.style.fill=st[2]+'22';
+    var fill=document.getElementById('rfill'); fill.style.width=Math.round(sup*100)+'%'; fill.style.background=st[2];
+    document.getElementById('rS').textContent=f(sup); document.getElementById('rP').textContent=f(P); document.getElementById('rSf').textContent=f(S);
+    ['nT','nO'].forEach(function(id){var g=document.getElementById(id);g.classList.add('pulse');setTimeout(function(){g.classList.remove('pulse')},350)});
   }
   tr.addEventListener('input',run); run();
   console.log('%cSimThought: to simulate society faithfully, we must simulate thought. arxiv.org/abs/2506.06958','color:#1d4fb0;font-family:monospace');
