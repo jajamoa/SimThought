@@ -726,7 +726,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="ain"><span class="chip">privacy advocate, 34, urban</span><i class="ch">&rsaquo;</i><span class="chip">persona prompt</span><i class="ch">&rsaquo;</i><span class="chip">answer</span><br>The label says privacy advocate, so it opposes whatever is announced. No node carries this person&rsquo;s actual reasons.</div>
             <div class="ra small" id="raS">I oppose it.</div>
             <div class="rbar2"><div class="rb2 l" id="sl"></div><div class="rb2 r" id="sr"></div><i class="mid"></i></div><div class="rbl"><span>oppose</span><span>support</span></div>
-            <div class="rnum">support <b id="rSs">0.25</b>, whatever the announcement</div>
+            <div class="rnum">support <b id="rSs">0.23</b>, whatever the announcement</div>
           </div>
         </div>
         <p class="formula">The same person answers the same question under five different announcements. The label never moves; this person crosses over once the announcement meets their objection. Weights are illustrative; the structure, sign, and strength of every edge come from the three answers in step 1. do() sets a node instead of observing it, so nothing flows back upstream.</p>
@@ -737,7 +737,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="cr"><span>do()</span><code>Transparency T = 0.5 + 0.5&thinsp;t</code></div>
             <div class="cr"><span>propagate</span><code>Privacy concern P = 0.7 &minus; 0.4&thinsp;t &nbsp;(t &ge; 0), &nbsp;0.7 &minus; 0.2&thinsp;t &nbsp;(t &lt; 0)</code></div>
             <div class="cr"><span></span><code>Crime deterrence C = 0.2 + 0.6&thinsp;t &nbsp;(t &ge; 0), &nbsp;0.2 + 0.1&thinsp;t &nbsp;(t &lt; 0); &nbsp;Public safety S = C</code></div>
-            <div class="cr"><span>combine</span><code>Opposition O = 1.1 &middot; P &middot; (1 &minus; 0.5&thinsp;S), clipped to [0.05, 0.95]; &nbsp;Support = 1 &minus; O; &nbsp;persona label = 0.25 + 0.03&thinsp;t</code></div>
+            <div class="cr"><span>combine</span><code>Opposition O = 1.1 &middot; P &middot; (1 &minus; 0.5&thinsp;S), clipped to [0.05, 0.95]; &nbsp;Support = 1 &minus; O; &nbsp;persona label = 0.23 + 0.03&thinsp;t</code></div>
             <div class="cr"><span>verbalize</span><code>&lt; 0.15 strongly oppose &middot; &lt; 0.27 oppose &middot; &lt; 0.45 lean against &middot; &lt; 0.60 torn &middot; &lt; 0.72 lean toward &middot; &lt; 0.85 support &middot; else strongly support</code></div>
             <p class="calcref">Semantics: causal Bayesian network with the do-operator (<a href="https://bayes.cs.ucla.edu/BOOK-2K/" target="_blank" rel="noopener">Pearl, <i>Causality</i>, 2009</a>); positive parents combine by noisy-OR, negative parents by noisy-AND-NOT (<a href="https://doi.org/10.1037/0033-295X.104.2.367" target="_blank" rel="noopener">Cheng 1997</a>; <a href="https://doi.org/10.1016/j.cogpsych.2005.05.004" target="_blank" rel="noopener">Griffiths &amp; Tenenbaum 2005</a>). The page uses a linear simplification of those rules.</p>
           </div>
@@ -828,7 +828,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     var w={e1:[1.0,0.3,T],e2:[1.4,0.6,T],e3:[1.8,1,C],e4:[1.8,1,P],e5:[1.8,1,S]}; Object.keys(w).forEach(function(id){var e=document.getElementById(id); if(!e)return; var sw=0.7*w[id][0]+2.6*w[id][1]*w[id][2]; e.style.strokeWidth=sw.toFixed(2); e.style.markerEnd='url(#m_'+id+')'; var mk=document.getElementById('m_'+id); if(mk){var sz=(6+1.2*sw).toFixed(2); mk.setAttribute('markerWidth',sz); mk.setAttribute('markerHeight',sz);}});
     var po=document.getElementById('pipeOut'); if(po)po.textContent='\u201c'+st[1]+'\u201d';
     var dev=(sup-0.5)*2; document.getElementById('gl').style.width=(dev<0?Math.round(-dev*50):0)+'%'; document.getElementById('gr').style.width=(dev>0?Math.round(dev*50):0)+'%';
-    var sv=0.25+0.03*t;                     // the label answers: a privacy advocate opposes, whatever is announced (0.22 .. 0.28)
+    var sv=0.23+0.03*t;                     // the label answers: a privacy advocate opposes, whatever is announced (0.20 .. 0.26)
     var sdev=(sv-0.5)*2, sl=document.getElementById('sl'), sr=document.getElementById('sr');
     if(sl){sl.style.width=(sdev<0?Math.round(-sdev*50):0)+'%'; sr.style.width=(sdev>0?Math.round(sdev*50):0)+'%';}
     var ss=stances[0]; for(var j=0;j<stances.length;j++){if(sv<stances[j][0]){ss=stances[j];break;}}
