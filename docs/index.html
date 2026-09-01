@@ -185,8 +185,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .strip i{display:block;font-style:normal;color:var(--mut);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
 .strip .dim{color:var(--mut)}
 .strip .on b{color:var(--accent-ink)}
-.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
-.twocol .figcap{text-align:left;margin:0}
+.tcap{margin-top:12px}
+.scen{font-size:13.5px;color:var(--ink2);line-height:1.65;max-width:900px;margin:0 auto 14px;text-align:center}
+.scen b{color:var(--ink)}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.th{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
+.trow{position:relative;padding:8px 0 8px 16px;border-left:3px solid;font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:8px}
+.trow b{color:var(--ink)}
+.trow .sw{position:absolute;left:-8px;top:10px;width:13px;height:13px;border-radius:2px;border:1px solid rgba(0,0,0,.2)}
+.trow.light{border-color:#cfe0ea}.trow.light .sw{background:#cfe0ea}
+.trow.deep{border-color:#2b3f52}.trow.deep .sw{background:#2b3f52}
+@media(max-width:760px){.tgrid{grid-template-columns:1fr}.scen{text-align:left}}
 /* interactive */
 .lab{background:#fff;border:1px solid var(--line);margin-top:18px}
 .tabs{display:flex;border-bottom:1px solid var(--line)}
@@ -223,13 +232,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .formula{margin-top:12px;font-size:12.5px;color:var(--mut);line-height:1.6}
 .dobadge{display:inline-block;border:1px solid var(--accent);color:var(--accent-ink);background:var(--tint);padding:2px 8px;font-size:12px;font-weight:700;margin-left:6px}
 .cta{border:1px solid var(--accent);background:var(--tint);padding:18px 22px;margin-top:22px;font-size:16px;color:var(--ink);font-weight:600;text-align:center}
-@media(max-width:760px){.strip{grid-template-columns:1fr}.strip div{border-left:none;border-top:1px solid var(--line)}.strip div:first-child{border-top:none}.twocol{grid-template-columns:1fr}.runwrap{grid-template-columns:1fr}.tab{font-size:11.5px;padding:10px 8px}.tab span{display:none}}
+@media(max-width:760px){.strip{grid-template-columns:1fr}.strip div{border-left:none;border-top:1px solid var(--line)}.strip div:first-child{border-top:none}.runwrap{grid-template-columns:1fr}.tab{font-size:11.5px;padding:10px 8px}.tab span{display:none}}
 </style>
 </head>
 <body>
 
 <div class="topbar"><div class="wrap">
-  <b>SimThought</b>
+  <b>Simulating Society Requires Simulating Thought</b>
   <nav>
     <a href="https://arxiv.org/abs/2506.06958" target="_blank" rel="noopener">Paper</a>
     <a href="#bibtex">BibTeX</a>
@@ -239,7 +248,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <header class="hero wrap">
   <div class="kickerline">NeurIPS 2025 &middot; Position Paper Track</div>
-  <h1>Simulating Society <span class="h1a">Requires</span> Simulating Thought</h1>
+  <h1>Simulating Society Requires Simulating Thought</h1>
   <p class="heroauthors">
     Chance Jiajie Li<sup>1*</sup>, Jiayi Wu<sup>9*</sup>, Zhenze Mo<sup>8</sup>, Ao Qu<sup>4</sup>, Yuhan Tang<sup>5</sup>, Kaiya Ivy Zhao<sup>2,3</sup>, Yulu Gan<sup>2</sup>, Jie Fan<sup>2,7,&dagger;</sup>, Jiangbo Yu<sup>10</sup>, Jinhua Zhao<sup>4,5,6</sup>, Paul Pu Liang<sup>1,2</sup>, Luis Alonso<sup>1</sup>, Kent Larson<sup>1</sup>
   </p>
@@ -259,9 +268,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <div class="teaser">
   <a class="pipefig" style="display:block;margin:0;border:1px solid var(--line)" href="assets/teaser.jpg" target="_blank" rel="noopener"><img src="assets/teaser.jpg" alt="Iceberg: surface opinion from demographics above the waterline, reasoning from beliefs and experience below. Extrapolated to a population, the surface view yields flattened stereotypes; the grounded view yields heterogeneous, interpretable opinions."></a>
-  <div class="twocol">
-    <p class="figcap"><b style="color:var(--accent-ink)">Left, one person.</b> Above the waterline, an opinion predicted from age, gender, and income. Below it, the beliefs and experiences that actually produce the opinion, and that decide how it would change.</p>
-    <p class="figcap"><b style="color:var(--accent-ink)">Right, a population.</b> Extrapolate the surface and you get three stereotyped camps. Extrapolate the reasoning and you get a crowd that is heterogeneous, interpretable, and causally faithful. Click to enlarge.</p>
+  <div class="tcap">
+    <p class="scen"><b>The scenario.</b> A carbon tax is announced: a price on fuel and carbon-heavy goods, meant to cut emissions, paid by everyone at the pump and the checkout. It is the classic contested policy, a climate benefit set against a cost of living, which is why what a person <em>thinks</em> about it matters more than which box they tick.</p>
+    <div class="tgrid">
+      <div class="tcol">
+        <div class="th">Left &middot; one person</div>
+        <div class="trow light"><i class="sw"></i><b>Above the waterline: demographics.</b> 35, male, middle income. A model carrying population weights returns the modal answer for that label: support, &ldquo;we need to act on climate now.&rdquo; The label answered, not the person. This is a flattened identity.</div>
+        <div class="trow deep"><i class="sw"></i><b>Below: beliefs and experience.</b> Behind the same label sit specific experiences that pull in opposite directions. He volunteered for reforestation in college, so he cares about the climate and wants the policy. He now runs a logistics startup and is already struggling with delivery costs, so a fuel tax lands on his margins: &ldquo;this could hurt my small business.&rdquo; A real individual holds both. His stance is the resolution of that conflict, and it is exactly what an intervention (say, a small-business exemption) would move.</div>
+      </div>
+      <div class="tcol">
+        <div class="th">Right &middot; a population</div>
+        <div class="trow light"><i class="sw"></i><b>Extrapolate the surface</b> and you get three camps: yes, no, whatever. Stereotypes at scale: a society flattened into the categories the model started with.</div>
+        <div class="trow deep"><i class="sw"></i><b>Extrapolate the reasoning</b> and you get a crowd that is heterogeneous and complete: fair if transparent, who decides the rate, what is in it for me, better transit first, the rich will not care. Diverse, interpretable, and causally faithful, because every opinion still carries the beliefs that produced it. Click the figure to enlarge.</div>
+      </div>
+    </div>
   </div>
 </div>
 
