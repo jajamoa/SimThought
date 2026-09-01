@@ -724,10 +724,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           </div>
           <div class="fcol agent surface">
             <div class="fh"><span class="fn">&ne;</span> For comparison <small><i class="sw"></i>surface agent &middot; demographics in</small></div>
-            <div class="ain"><span class="chip">34, urban, renter</span><i class="ch">&rsaquo;</i><span class="chip">persona prompt</span><i class="ch">&rsaquo;</i><span class="chip">answer</span><br>No structure in between: the prompt has nowhere for the announcement to act, so the answer is the population prior for people like this, and it cannot update.</div>
-            <div class="ra small">I oppose it.</div>
+            <div class="ain"><span class="chip">34, urban, renter</span><i class="ch">&rsaquo;</i><span class="chip">persona prompt</span><i class="ch">&rsaquo;</i><span class="chip">answer</span><br>No structure in between. The model still reads the announcement, so the answer drifts a little with the wording, sometimes the wrong way, and it cannot say why.</div>
+            <div class="ra small" id="raS">I oppose it.</div>
             <div class="rbar2"><div class="rb2 l" id="sl"></div><div class="rb2 r" id="sr"></div><i class="mid"></i></div><div class="rbl"><span>oppose</span><span>support</span></div>
-            <div class="rnum">support <b>0.35</b>, whatever the announcement</div>
+            <div class="rnum">support <b id="rSs">0.35</b>, drifting without a reason</div>
           </div>
         </div>
         <p class="formula">The same person answers the same question under five different announcements. Weights are illustrative; the structure, sign, and strength of every edge come from the three answers in step 1. do() sets a node instead of observing it, so nothing flows back upstream.</p>
@@ -829,7 +829,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     var w={e1:[1.0,0.3,T],e2:[1.4,0.6,T],e3:[1.8,1,C],e4:[1.8,1,P],e5:[1.8,1,S]}; Object.keys(w).forEach(function(id){var e=document.getElementById(id); if(e)e.style.strokeWidth=(0.7*w[id][0]+2.6*w[id][1]*w[id][2]).toFixed(2);});
     var po=document.getElementById('pipeOut'); if(po)po.textContent='\u201c'+st[1]+'\u201d';
     var dev=(sup-0.5)*2; document.getElementById('gl').style.width=(dev<0?Math.round(-dev*50):0)+'%'; document.getElementById('gr').style.width=(dev>0?Math.round(dev*50):0)+'%';
-    var sl=document.getElementById('sl'), sr=document.getElementById('sr'); if(sl){sl.style.width='15%'; sr.style.width='0%';}
+    var sv=Math.max(0.05,Math.min(0.95,0.35+0.05*Math.sin(7.3*t)+0.04*Math.sin(2.1*t+1.3)));
+    var sdev=(sv-0.5)*2, sl=document.getElementById('sl'), sr=document.getElementById('sr');
+    if(sl){sl.style.width=(sdev<0?Math.round(-sdev*50):0)+'%'; sr.style.width=(sdev>0?Math.round(sdev*50):0)+'%';}
+    var ss=stances[0]; for(var j=0;j<stances.length;j++){if(sv<stances[j][0]){ss=stances[j];break;}}
+    var raS=document.getElementById('raS'); if(raS){raS.textContent=ss[1];}
+    var rSs=document.getElementById('rSs'); if(rSs)rSs.textContent=f(sv);
     document.getElementById('rS').textContent=f(sup); document.getElementById('rP').textContent=f(P); document.getElementById('rSf').textContent=f(S);
   }
   tr.addEventListener('input',run); run();
