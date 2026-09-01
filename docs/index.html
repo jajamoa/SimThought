@@ -564,6 +564,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .edge.neg{stroke:#8a8a86;stroke-dasharray:4 3}
 .glegend{font-size:12.5px;color:var(--mut);text-align:center;margin-top:4px}
 .formula{margin-top:12px;font-size:13px;color:var(--ink2);line-height:1.6}
+.mcard{border:1px solid var(--line);background:#fff;padding:10px 12px 0;margin-bottom:12px}
+.edge.m{marker-end:url(#ar2)}
+.evl{stroke:var(--accent);stroke-width:1.2;stroke-dasharray:3 3}
+.msvg{width:100%;max-width:560px;height:auto;display:block;margin:0 auto}
+.qa.ev{border:none;border-top:1.5px dotted var(--accent);background:var(--tint);margin:0 -12px;padding:10px 14px}
+.qa.ev strong{color:var(--accent-ink)}
+
 .ra{font-size:19px;font-weight:800;line-height:1.25;transition:color .35s}
 .ra.small{font-size:16px;color:#6f6f6b}
 .rbar{height:7px;background:#eee;border:1px solid var(--line);margin:8px 0 6px;position:relative}
@@ -653,24 +660,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="wrap">
     <div class="kicker">Try it</div>
     <h2>From two answers to a belief graph you can run</h2>
-    <p class="body">The paper&rsquo;s worked example, made live. Two interview answers become causal motifs, the motifs compose into one person&rsquo;s belief graph, and then you intervene on it and watch a policy announcement travel through it to a new answer. This is the whole position in one object.</p>
+    <p class="body">The paper&rsquo;s worked example, made live. Two interview answers become causal motifs, the motifs compose into one person&rsquo;s belief graph, and then you intervene on it and watch a policy announcement travel through it to a new answer. Start at step 3; steps 1 and 2 show where the graph came from.</p>
     <div class="lab">
       <div class="tabs">
-        <button class="tab on" data-p="0"><span>1</span>Ask</button>
+        <button class="tab" data-p="0"><span>1</span>Ask</button>
         <button class="tab" data-p="1"><span>2</span>Extract motifs</button>
-        <button class="tab" data-p="2"><span>3</span>Compose &amp; run</button>
+        <button class="tab on" data-p="2"><span>3</span>Compose &amp; run</button>
       </div>
-      <div class="pane on">
+      <div class="pane">
         <div class="qa"><b>Q: How do you think surveillance might affect public safety?</b>&ldquo;It can reduce crime by aiding investigations with more transparency, which increases public safety.&rdquo;</div>
         <div class="qa"><b>Q: Does transparency have an effect on support for surveillance?</b>&ldquo;People will have less privacy concern if they know how data is used&hellip;&rdquo;</div>
         <p class="note" style="margin-top:6px">Everyday language, elicited by a semi-structured interview. No survey scale yet, no persona label. Just how one person explains their own view.</p>
       </div>
       <div class="pane">
-        <div class="qa"><b>From answer 1</b>&ldquo;&hellip;reduce crime by aiding investigations with more transparency, which increases public safety.&rdquo;<div class="m"><i>motif</i>Transparency &rarr; Crime rate &rarr; Public safety</div></div>
-        <div class="qa"><b>From answer 2</b>&ldquo;&hellip;less privacy concern if they know how data is used.&rdquo;<div class="m"><i>motif</i>Transparency &rarr; Privacy concern &rarr; Opposition to surveillance</div></div>
-        <p class="note" style="margin-top:6px">A motif is the smallest causal unit in someone&rsquo;s reasoning: concept, arrow, concept. Motifs recur across people, which is what makes them shareable and comparable.</p>
+<div class="mcard"><svg viewBox="0 0 560 128" class="msvg" aria-label="motif"><defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f4e49"/></marker></defs><line x1="120" y1="38" x2="250" y2="38" class="edge m"/><text x="185" y="30" text-anchor="middle" class="el">&minus;</text><line x1="310" y1="38" x2="440" y2="38" class="edge m"/><text x="375" y="30" text-anchor="middle" class="el">&minus;</text><circle cx="90" cy="38" r="24" class="node"/><text x="90" y="84" text-anchor="middle" class="nl">Transparency</text><circle cx="280" cy="38" r="24" class="node"/><text x="280" y="84" text-anchor="middle" class="nl">Crime rate</text><circle cx="470" cy="38" r="24" class="node"/><text x="470" y="84" text-anchor="middle" class="nl">Public safety</text><line x1="280" y1="96" x2="280" y2="126" class="evl"/><text x="292" y="118" class="dol">evidence</text></svg><div class="qa ev"><b>Motif 1, from answer 1</b>&ldquo;It can reduce <strong>crime</strong> by aiding investigations with more <strong>transparency</strong>, which increases <strong>public safety</strong>.&rdquo;</div></div>
+<div class="mcard"><svg viewBox="0 0 560 128" class="msvg" aria-label="motif"><defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f4e49"/></marker></defs><line x1="120" y1="38" x2="250" y2="38" class="edge m"/><text x="185" y="30" text-anchor="middle" class="el">&minus;</text><line x1="310" y1="38" x2="440" y2="38" class="edge m"/><text x="375" y="30" text-anchor="middle" class="el">&minus;</text><circle cx="90" cy="38" r="24" class="node"/><text x="90" y="84" text-anchor="middle" class="nl">Transparency</text><circle cx="280" cy="38" r="24" class="node"/><text x="280" y="84" text-anchor="middle" class="nl">Privacy concern</text><circle cx="470" cy="38" r="24" class="node"/><text x="470" y="84" text-anchor="middle" class="nl">Support</text><line x1="280" y1="96" x2="280" y2="126" class="evl"/><text x="292" y="118" class="dol">evidence</text></svg><div class="qa ev"><b>Motif 2, from answer 2</b>&ldquo;People will have less <strong>privacy concern</strong> if they know how data is used&hellip;&rdquo;</div></div>
+        <p class="note" style="margin-top:10px">A motif is the smallest causal unit in someone&rsquo;s reasoning: concept, signed arrow, concept. Each one carries the sentence it came from, so every edge in the graph can be traced back to the person&rsquo;s own words. Motifs recur across people, which is what makes them comparable.</p>
       </div>
-      <div class="pane">
+      <div class="pane on">
         <div class="stage two">
           <div class="fcol">
             <div class="fh"><span class="fn">1</span> Stimulus <small>the survey question, the agent&rsquo;s input</small></div>
