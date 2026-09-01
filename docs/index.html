@@ -83,6 +83,7 @@ p.body strong{color:var(--ink)}
 .tw{display:grid;grid-template-columns:230px 1fr;gap:14px;font-size:13.5px;color:var(--ink2);padding:6px 0 8px;border-top:1px dashed var(--line)}
 .tw b{color:var(--ink)}
 .tw b small{display:block;font-weight:400;color:var(--mut);font-size:12px;margin-top:2px}
+.refs{display:block;font-size:12px;color:var(--mut);margin-top:4px;line-height:1.5}
 @media(max-width:760px){.tw{grid-template-columns:1fr}}
 /* stats strip */
 .stats{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);margin-top:8px}
@@ -765,8 +766,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
   <p class="body" style="margin-top:22px">Together these define what the paper calls <strong>reasoning fidelity</strong>: a trace of belief formation that is traceable, revisable, and built from reusable causal parts. Two alignments make it precise.</p>
   <div class="two"><div class="th2">Two alignments the paper asks for</div>
-    <div class="tw"><b>Agent behavior &harr; agent reasoning<small>decoding faithfulness</small></b><span>The trace an agent shows is the path it computed.</span></div>
-    <div class="tw"><b>Agent reasoning &harr; human reasoning<small>cognitive alignment</small></b><span>That path follows how the person forms beliefs.</span></div>
+    <div class="tw"><b>Agent behavior &harr; agent reasoning<small>decoding faithfulness</small></b><span>The trace an agent shows is the path it computed.<small class="refs">On unfaithful chains of thought: <a href="https://arxiv.org/abs/2301.13379" target="_blank" rel="noopener">Lyu et al. 2023</a>, <a href="https://arxiv.org/abs/2406.10625" target="_blank" rel="noopener">Tanneru et al. 2024</a>, <a href="https://arxiv.org/abs/2508.01191" target="_blank" rel="noopener">Zhao et al. 2025</a>. On human rationalization: <a href="https://doi.org/10.1017/S0140525X19001730" target="_blank" rel="noopener">Cushman 2020</a>.</small></span></div>
+    <div class="tw"><b>Agent reasoning &harr; human reasoning<small>cognitive alignment</small></b><span>That path follows how the person forms beliefs.<small class="refs"><a href="https://arxiv.org/abs/2302.08399" target="_blank" rel="noopener">Ullman 2023</a>, <a href="https://arxiv.org/abs/2406.12158" target="_blank" rel="noopener">Joshi et al. 2024</a>, <a href="https://arxiv.org/abs/2305.14250" target="_blank" rel="noopener">Kassner et al. 2023</a>.</small></span></div>
   </div>
   <p class="note" style="margin-top:18px">The next section makes this concrete.</p>
 </section>
