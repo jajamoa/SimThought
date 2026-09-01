@@ -553,7 +553,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .fh small .sw{display:inline-block;width:11px;height:11px;border-radius:2px;border:1px solid rgba(0,0,0,.2);vertical-align:-1px;margin-right:5px}
 .fn{display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;border:1px solid var(--accent);border-radius:50%;font-size:11px;margin-right:4px}
 .qbig{font-size:17px;font-weight:700;color:var(--ink);line-height:1.4;flex:1;display:flex;align-items:center}
-.stimlab{font-size:13.5px;color:var(--ink);font-weight:700;min-height:40px;line-height:1.45;margin-bottom:8px}
+.stimlab{font-size:13.5px;color:var(--ink2);font-weight:400;min-height:60px;line-height:1.5;margin-bottom:8px}
+.stimlab b{color:var(--ink);font-weight:700}
 .fcol input[type=range]{width:100%;accent-color:var(--accent)}
 .stimscale{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);margin-top:2px}
 .llm{margin:0;border:1px dashed var(--accent);background:var(--tint);padding:12px 16px;font-size:13px;color:var(--ink2);line-height:1.9}
@@ -844,7 +845,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   });});
   // stimulus -> structure -> response. Weights illustrative; baseline and "high" reproduce the paper's worked example.
   var tr=document.getElementById('tr');
-  var labels=[[-100,'Announcement: footage will be shared with third parties. No disclosure.'],[-50,'Announcement: retention extended indefinitely. No public access.'],[0,'No announcement. Status quo.'],[50,'Announcement: data use disclosed, retention limits set.'],[100,'Announcement: public audit log and independent oversight.']];
+  var labels=[[-100,'<b>City announces:</b> camera footage may be shared with private companies, with no public disclosure of how it is used.'],[-50,'<b>City announces:</b> camera footage will now be kept indefinitely, with no public access to the records.'],[0,'<b>No announcement.</b> The cameras run under today\u2019s rules.'],[50,'<b>City announces:</b> footage is deleted after 30 days, and a public report explains how it is used.'],[100,'<b>City announces:</b> a public audit log of every camera search, reviewed by an independent oversight board.']];
   var stances=[[0.15,'I strongly oppose it.','#8f1d16'],[0.27,'I oppose it.','#b3261e'],[0.45,'I lean against it.','#c4553f'],[0.6,'I am torn.','#6f6f6b'],[0.72,'I lean toward it.','#3f8f5a'],[0.85,'I support it.','#15803d'],[1.01,'I strongly support it.','#0a6a30']];
   function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
   function f(n){return n.toFixed(2)} function d(n){return n>=0.995?'1.0':f(n).slice(1)}
@@ -862,7 +863,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     Object.keys(base).forEach(function(k){var e=document.getElementById(k); e.classList.remove('up','dn'); if(cur[k]>base[k]+0.005)e.classList.add('up'); else if(cur[k]<base[k]-0.005)e.classList.add('dn');});
     document.getElementById('vC').textContent=d(C); document.getElementById('vS').textContent=d(S);
     document.getElementById('vP').textContent=d(P); document.getElementById('vO').textContent=d(sup);
-    document.getElementById('stimlab').textContent=nearest(tr.value);
+    document.getElementById('stimlab').innerHTML=nearest(tr.value);
     var st=stances[0]; for(var i=0;i<stances.length;i++){if(sup<stances[i][0]){st=stances[i];break;}}
     var ra=document.getElementById('ra'); ra.textContent=st[1]; ra.style.color=st[2];
     document.getElementById('rSv').textContent=f(sup); document.getElementById('rav').textContent='\u201c'+st[1]+'\u201d';
