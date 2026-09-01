@@ -182,6 +182,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .tlbar .now{background:var(--accent);font-weight:700}
 .msvg .node{fill:#e9e9e6;stroke:#8a8a86}
 .msvg .nv{fill:var(--ink)}
+/* easter egg: black box mode */
+body.bb .graph .gnode,body.bb .graph .edge,body.bb .graph .nl,body.bb .graph .el,body.bb .graph .dobox,body.bb .graph .dol{display:none}
+.bbox{display:none}body.bb .bbox{display:block}
+body.bb .row.below{color:transparent;background:#33506e}body.bb .row.below *{color:transparent}
+body.bb .ice.bot svg{display:none}
+body.bb .pcol.on,body.bb .pcol:last-child,body.bb .tlbar .s2,body.bb .tlbar .s3,body.bb .tlbar .now{opacity:.18}
+body.bb .agent.deep .ain,body.bb .agent.deep .rnum,body.bb .llm .ops,body.bb .msvg,body.bb .qa.ev{visibility:hidden}
+body.bb .glegend,body.bb .formula,body.bb .two,body.bb #why .cards{opacity:.15}
+.bbnote{display:none;position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:#111110;color:#fff;font-size:13px;padding:8px 16px;z-index:9;white-space:nowrap}
+body.bb .bbnote{display:block}
+.bbback{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:13px;padding:8px 16px;z-index:9;white-space:nowrap}
 </style>
 <style>
 /* page-specific */
@@ -619,7 +630,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
   <div class="btns">
     <a class="btn primary" href="https://arxiv.org/abs/2506.06958" target="_blank" rel="noopener">Paper</a>
-    <a class="btn" href="https://openreview.net/forum?id=EvXWexakZX" target="_blank" rel="noopener">OpenReview: discuss</a>
+    <a class="btn" href="https://openreview.net/forum?id=EvXWexakZX" target="_blank" rel="noopener">OpenReview</a>
     <a class="btn" href="#bibtex">BibTeX</a>
   </div>
 </header>
@@ -717,7 +728,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="fh"><span class="fn">2</span> Structure <small>the agent&rsquo;s belief graph, built from its own words; the do() sets one node, propagation does the rest</small></div>
             <div class="graph">
               <svg viewBox="0 0 520 300" aria-label="Belief graph">
-<defs><marker id="m_e1" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L10,5 L0,8.5 z" fill="#15803d"/></marker><marker id="m_e2" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L10,5 L0,8.5 z" fill="#b3261e"/></marker><marker id="m_e3" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L10,5 L0,8.5 z" fill="#15803d"/></marker><marker id="m_e4" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L10,5 L0,8.5 z" fill="#b3261e"/></marker><marker id="m_e5" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L10,5 L0,8.5 z" fill="#15803d"/></marker></defs>
+<defs><marker id="m_e1" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L10,5 L0,8.5 z" fill="#15803d"/></marker><marker id="m_e2" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L10,5 L0,8.5 z" fill="#b3261e"/></marker><marker id="m_e3" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L10,5 L0,8.5 z" fill="#15803d"/></marker><marker id="m_e4" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L10,5 L0,8.5 z" fill="#b3261e"/></marker><marker id="m_e5" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L10,5 L0,8.5 z" fill="#15803d"/></marker></defs><g class="bbox"><rect x="140" y="70" width="240" height="160" rx="4" fill="#4f4e49"/><text x="260" y="145" text-anchor="middle" font-family="inherit" font-size="18" font-weight="700" fill="#fff">black box</text><text x="260" y="170" text-anchor="middle" font-family="inherit" font-size="12" fill="#ddd">stimulus in, response out</text></g>
 <path id="e1" class="edge pos w1" marker-end="url(#m_e1)" d="M102 150 C160 80, 190 78, 227 76"/><text class="el pos" x="166" y="108" text-anchor="middle">+</text><path id="e2" class="edge neg w2" marker-end="url(#m_e2)" d="M102 150 C160 220, 190 222, 227 224"/><text class="el neg" x="166" y="200" text-anchor="middle">&minus;</text><path id="e3" class="edge pos w3" marker-end="url(#m_e3)" d="M281 76 C330 76, 350 76, 397 76"/><text class="el pos" x="338" y="66" text-anchor="middle">+</text><path id="e4" class="edge neg w3" marker-end="url(#m_e4)" d="M281 224 C330 224, 350 224, 397 224"/><text class="el neg" x="338" y="214" text-anchor="middle">&minus;</text><path id="e5" class="edge pos w3" marker-end="url(#m_e5)" d="M424 104 L424 197"/><text class="el pos" x="440" y="152" text-anchor="middle">+</text>
 <rect class="dobox" x="34" y="112" width="84" height="76" rx="3"/><g id="nT" class="gnode"><circle class="node" cx="76" cy="150" r="26"/><text class="nv" x="76" y="155" text-anchor="middle" id="vT">.00</text></g><text class="nl" x="76" y="204" text-anchor="middle">Transparency</text><text class="dol" x="76" y="104" text-anchor="middle">do()</text><g class="gnode"><circle class="node" cx="254" cy="76" r="26"/><text class="nv" x="254" y="81" text-anchor="middle" id="vC">.00</text></g><text class="nl" x="254" y="38" text-anchor="middle">Crime deterrence</text><g class="gnode"><circle class="node" cx="254" cy="224" r="26"/><text class="nv" x="254" y="229" text-anchor="middle" id="vP">.00</text></g><text class="nl" x="254" y="270" text-anchor="middle">Privacy concern</text><g class="gnode"><circle class="node" cx="424" cy="76" r="26"/><text class="nv" x="424" y="81" text-anchor="middle" id="vS">.00</text></g><text class="nl" x="424" y="38" text-anchor="middle">Public safety</text><rect class="dobox" x="382" y="186" width="84" height="76" rx="3"/><g id="nO" class="gnode"><circle class="node out" cx="424" cy="224" r="26" id="cO"/><text class="nv" x="424" y="229" text-anchor="middle" id="vO">.00</text></g><text class="nl" x="424" y="278" text-anchor="middle">Support for the law</text><text class="dol" x="472" y="228" text-anchor="start">query</text></svg>
             </div>
@@ -848,7 +859,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     document.getElementById('rS').textContent=f(sup); document.getElementById('rP').textContent=f(P); document.getElementById('rSf').textContent=f(S);
   }
   tr.addEventListener('input',run); run();
-  console.log('%cSimThought: to simulate society faithfully, we must simulate thought. arxiv.org/abs/2506.06958','color:#1d4fb0;font-family:monospace');
+})();
+</script>
+<div class="bbnote">black box mode: stimulus in, response out. type &ldquo;think&rdquo; to get the mind back.</div>
+<script>
+(function(){
+  var buf="", on=false, ra=document.getElementById('ra'), raS=document.getElementById('raS'), keep=null;
+  function goBB(){ if(on)return; on=true; document.body.classList.add('bb'); if(ra&&raS){keep=[ra.textContent,ra.style.color]; ra.textContent=raS.textContent; ra.style.color='#6f6f6b';} }
+  function goThink(){ if(!on)return; on=false; document.body.classList.remove('bb'); if(ra&&keep){ra.textContent=keep[0]; ra.style.color=keep[1];}
+    var n=document.createElement('div'); n.className='bbback'; n.textContent='Thought restored.'; document.body.appendChild(n); setTimeout(function(){n.remove();},2400); }
+  document.addEventListener('keydown',function(e){ if(e.key.length!==1)return; buf=(buf+e.key.toLowerCase()).slice(-12); if(buf.endsWith('behave'))goBB(); if(on&&buf.endsWith('think'))goThink(); });
+  console.log("%c\n        /\\\n       /  \\        SimThought\n  ~~~~/____\\~~~~  To simulate society faithfully,\n     /      \\     we must simulate thought.\n    /________\\\n","color:#1d4fb0;font-family:monospace;font-size:12px");
+  console.log("%cYou looked below the waterline. Say hello: jiajie@mit.edu \u00b7 arxiv.org/abs/2506.06958","color:#4f4e49;font-family:monospace");
 })();
 </script>
 </body>
