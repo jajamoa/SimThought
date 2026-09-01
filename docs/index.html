@@ -733,10 +733,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="rnum">support <b id="rSs">0.23</b>, whatever the announcement</div>
           </div>
         </div>
-        <p class="formula">The same person answers the same question under five announcements: the label never moves, and this person crosses over once the announcement meets their objection. Weights are illustrative; the structure, sign, and strength of every edge come from the answers in step 1.</p>
+        <p class="formula">Drag the slider and watch the graph, not the answer: support crosses the midline only after privacy concern falls below public safety. Every edge traces back to a sentence in step 1, so you can dispute one, change it, and rerun. A label cannot be argued with, only replaced.</p>
         <details class="calc">
           <summary>How the numbers are computed</summary>
           <div class="calcbody">
+            <div class="cr"><span>note</span><code>Weights are illustrative; structure, sign, and strength of each edge come from the answers in step 1. do() sets a node rather than observing it, so nothing flows upstream.</code></div>
             <div class="cr"><span>slider</span><code>t &isin; [&minus;1, 1], status quo at t = 0</code></div>
             <div class="cr"><span>do()</span><code>Transparency T = 0.5 + 0.5&thinsp;t</code></div>
             <div class="cr"><span>propagate</span><code>Privacy concern P = 0.7 &minus; 0.4&thinsp;t &nbsp;(t &ge; 0), &nbsp;0.7 &minus; 0.2&thinsp;t &nbsp;(t &lt; 0)</code></div>
