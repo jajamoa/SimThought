@@ -80,8 +80,9 @@ p.body strong{color:var(--ink)}
 .note{font-size:13.5px;color:var(--mut);margin-top:20px;max-width:760px}
 .two{margin-top:22px;border:1px solid var(--line);padding:14px 18px 6px}
 .th2{font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--accent-ink);margin-bottom:8px}
-.tw{display:grid;grid-template-columns:120px 1fr;gap:12px;font-size:13.5px;color:var(--ink2);padding:6px 0 8px;border-top:1px dashed var(--line)}
+.tw{display:grid;grid-template-columns:230px 1fr;gap:14px;font-size:13.5px;color:var(--ink2);padding:6px 0 8px;border-top:1px dashed var(--line)}
 .tw b{color:var(--ink)}
+.tw b small{display:block;font-weight:400;color:var(--mut);font-size:12px;margin-top:2px}
 @media(max-width:760px){.tw{grid-template-columns:1fr}}
 /* stats strip */
 .stats{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);margin-top:8px}
@@ -661,8 +662,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="card"><h3>3 &middot; Consistent under counterfactuals</h3><div class="csub">what would change their mind?</div><p>&ldquo;The capacity to revise beliefs predictably in response to interventions or changes in context.&rdquo; Most benchmarks test static inputs and never measure belief revision under a counterfactual: intervention blindness.</p></div>
   </div>
   <div class="two"><div class="th2">Two alignments the paper asks for</div>
-    <div class="tw"><b>Decoding faithfulness</b><span>the reasoning trace an agent shows must be the path it actually computed, not a rationalization assembled after the answer.</span></div>
-    <div class="tw"><b>Cognitive alignment</b><span>the agent&rsquo;s inference path must follow the way the person forms beliefs, and today that correspondence is asserted, never measured.</span></div>
+    <div class="tw"><b>Agent behavior &harr; agent reasoning<small>decoding faithfulness</small></b><span>the reasoning trace an agent shows must be the path it actually computed, not a rationalization assembled after the answer.</span></div>
+    <div class="tw"><b>Agent reasoning &harr; human reasoning<small>cognitive alignment</small></b><span>the agent&rsquo;s inference path must follow the way the person forms beliefs, and today that correspondence is asserted, never measured.</span></div>
   </div>
   <p class="body" style="margin-top:22px">Together these define what the paper calls <strong>reasoning fidelity</strong>: a trace of belief formation that is traceable, revisable, and built from reusable causal parts. DIBO has none of it. It is <strong>behaviorism rebuilt in software</strong>: whatever happens between input and output is not represented, so it <strong>cannot be inspected, tested, or falsified</strong>. We argue for the move psychology already made, <strong>from behaviorism to cognitivism</strong>, because only an agent with an inspectable internal structure is a <strong>scientific object</strong>, and only that makes a simulation <strong>scientifically credible</strong>. Plausible is a different thing.</p>
   <div class="para">
