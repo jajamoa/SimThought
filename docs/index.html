@@ -645,13 +645,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="kicker">What matters, and why</div>
   <h2>Three things a simulation must get right</h2>
   <div class="cards cards3">
-    <div class="card"><h3>1 &middot; Auditable causality</h3><div class="csub">why did the agent say that?</div><p>A stance should come with the chain of beliefs that produced it. Without a trace, a right answer and a wrong one look the same, and nobody can say which reason moved the outcome.</p></div>
-    <div class="card"><h3>2 &middot; Grounded in a real individual</h3><div class="csub">whose reasoning is this?</div><p>Beliefs come from experience. Two people with the same label routinely hold opposite views for good reasons. Simulate the label and you get a stereotype, then a stereotyped society.</p></div>
-    <div class="card"><h3>3 &middot; Consistent under counterfactuals</h3><div class="csub">what would change their mind?</div><p>Policy questions are what-if questions. An agent that cannot revise its beliefs predictably under an intervention cannot say what a policy would do, which is the only reason to run the simulation.</p></div>
+    <div class="card"><h3>1 &middot; Auditable causality</h3><div class="csub">why did the agent say that?</div><p>&ldquo;The ability to inspect how a belief or stance was formed through intermediate reasoning steps.&rdquo; Without it, an agent&rsquo;s reasoning trace is assembled after the fact from language patterns, with no belief model underneath.</p></div>
+    <div class="card"><h3>2 &middot; Grounded in a real individual</h3><div class="csub">whose reasoning is this?</div><p>&ldquo;Simulations should preserve individual-level heterogeneity, the positional and contextual diversity of human reasoning.&rdquo; Agents trained under shared priors collapse toward the mean of the pretraining distribution and erase it.</p></div>
+    <div class="card"><h3>3 &middot; Consistent under counterfactuals</h3><div class="csub">what would change their mind?</div><p>&ldquo;The capacity to revise beliefs predictably in response to interventions or changes in context.&rdquo; Most benchmarks test static inputs and never measure belief revision under a counterfactual: intervention blindness.</p></div>
   </div>
   <div class="two"><div class="th2">Two alignments the paper asks for</div>
-    <div class="tw"><b>Faithfulness</b><span>the answer follows from the agent&rsquo;s own trace: if the trace says privacy concern fell, the stance moves, and nothing else moves it.</span></div>
-    <div class="tw"><b>Fidelity</b><span>the agent&rsquo;s trace matches the person&rsquo;s: the beliefs, causes, and updates they actually reported.</span></div>
+    <div class="tw"><b>Decoding faithfulness</b><span>the reasoning trace an agent shows must be the path it actually computed, not a rationalization assembled after the answer.</span></div>
+    <div class="tw"><b>Cognitive alignment</b><span>the agent&rsquo;s inference path must follow the way the person forms beliefs, and today that correspondence is asserted, never measured.</span></div>
   </div>
   <p class="body" style="margin-top:22px">Together these define what the paper calls <strong>reasoning fidelity</strong>: a trace of belief formation that is traceable, revisable, and built from reusable causal parts. DIBO has none of it. It is <strong>behaviorism rebuilt in software</strong>: whatever happens between input and output is not represented, so it <strong>cannot be inspected, tested, or falsified</strong>. We argue for the move psychology already made, <strong>from behaviorism to cognitivism</strong>, because only an agent with an inspectable internal structure is a <strong>scientific object</strong>, and only that makes a simulation <strong>scientifically credible</strong>. Plausible is a different thing.</p>
   <div class="para">
@@ -764,25 +764,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
 </div>
 
-<section class="wrap" id="scaffolds">
-  <div class="kicker">Two scaffolds</div>
-  <h2>One for modeling, one for evaluating</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>GenMinds</h3><div class="csub">a modeling paradigm</div>
-      <p>Interview a person, parse the answers into causal motifs, compose the motifs into a belief network, and run interventions on it. Symbolic structure keeps it interpretable; a language model does the elicitation and assembly. Weakly supported nodes stay visible.</p>
-    </div>
-    <div class="card">
-      <h3>RECAP</h3><div class="csub">reconstructing causal paths</div>
-      <p>A benchmark schema that scores the reasoning trace. Principles: traceability, demographic sensitivity, intervention coherence. Metrics: motif alignment, belief coherence, counterfactual robustness. Every item comes from a real interview.</p>
-    </div>
-  </div>
-  <p class="note">Neither is a fixed system. They are the minimum structure a simulation needs before &ldquo;this agent reasons like that person&rdquo; becomes something you can check.</p>
-</section>
-
 <section class="wrap" id="call">
   <div class="kicker">The call</div>
-  <p class="body">The field is choosing, right now, between agents that sound human and agents that reason like humans: agents that hold beliefs, simulate causes, revise, and show their logic. We argue for the second. Causal structure is the tractable place to start. People also reason by association, analogy, and feeling.</p>
+  <p class="body">The field is choosing, right now, between agents that sound human and agents that reason like humans. We argue for the second, and that takes two moves at once. The modeling paradigm has to change: interview a person, parse the answers into causal motifs, compose them into a belief network, and run interventions on it (GenMinds). The evaluation paradigm has to change with it: score the reasoning trace for traceability, demographic sensitivity, and intervention coherence, on items drawn from real interviews (RECAP). Causal structure is the tractable place to start. People also reason by association, analogy, and feeling.</p>
   <div class="cta">To simulate society faithfully, we must simulate thought.</div>
 </section>
 
