@@ -723,10 +723,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           </div>
           <div class="fcol agent surface">
             <div class="fh"><span class="fn">&ne;</span> For comparison <small><i class="sw"></i>surface agent &middot; demographics in</small></div>
-            <div class="ain"><span class="chip">34, urban, renter</span><i class="ch">&rsaquo;</i><span class="chip">persona prompt</span><i class="ch">&rsaquo;</i><span class="chip">answer</span><br>No structure in between. The model still reads the announcement, so the answer drifts a little with the wording, sometimes the wrong way, and it cannot say why.</div>
+            <div class="ain"><span class="chip">34, urban, renter</span><i class="ch">&rsaquo;</i><span class="chip">persona prompt</span><i class="ch">&rsaquo;</i><span class="chip">answer</span><br>No structure in between. The model maps the wording to how an average respondent would react, so the answer moves a little, reproducibly, but it never reflects this person&rsquo;s reasons and stays about where the label put it.</div>
             <div class="ra small" id="raS">I oppose it.</div>
             <div class="rbar2"><div class="rb2 l" id="sl"></div><div class="rb2 r" id="sr"></div><i class="mid"></i></div><div class="rbl"><span>oppose</span><span>support</span></div>
-            <div class="rnum">support <b id="rSs">0.35</b>, drifting without a reason</div>
+            <div class="rnum">support <b id="rSs">0.35</b>, moving with the wording, not with this person</div>
           </div>
         </div>
         <p class="formula">The same person answers the same question under five different announcements. Weights are illustrative; the structure, sign, and strength of every edge come from the three answers in step 1. do() sets a node instead of observing it, so nothing flows back upstream.</p>
@@ -828,7 +828,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     var w={e1:[1.0,0.3,T],e2:[1.4,0.6,T],e3:[1.8,1,C],e4:[1.8,1,P],e5:[1.8,1,S]}; Object.keys(w).forEach(function(id){var e=document.getElementById(id); if(!e)return; var sw=0.7*w[id][0]+2.6*w[id][1]*w[id][2]; e.style.strokeWidth=sw.toFixed(2); var sz=sw<1.6?6:(sw<2.6?8:10); e.style.markerEnd='url(#'+(e.classList.contains('pos')?'arp':'arn')+sz+')';});
     var po=document.getElementById('pipeOut'); if(po)po.textContent='\u201c'+st[1]+'\u201d';
     var dev=(sup-0.5)*2; document.getElementById('gl').style.width=(dev<0?Math.round(-dev*50):0)+'%'; document.getElementById('gr').style.width=(dev>0?Math.round(dev*50):0)+'%';
-    var sv=Math.max(0.05,Math.min(0.95,0.35+0.05*Math.sin(7.3*t)+0.04*Math.sin(2.1*t+1.3)));
+    var sv=0.35+0.05*t;                     // surface agent: a fixed, mild mapping from wording to the average reaction (0.30 .. 0.40)
     var sdev=(sv-0.5)*2, sl=document.getElementById('sl'), sr=document.getElementById('sr');
     if(sl){sl.style.width=(sdev<0?Math.round(-sdev*50):0)+'%'; sr.style.width=(sdev>0?Math.round(sdev*50):0)+'%';}
     var ss=stances[0]; for(var j=0;j<stances.length;j++){if(sv<stances[j][0]){ss=stances[j];break;}}
