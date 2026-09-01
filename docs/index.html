@@ -803,7 +803,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   // stimulus -> structure -> response. Weights illustrative; baseline and "high" reproduce the paper's worked example.
   var tr=document.getElementById('tr');
   var labels=[[-100,'<b>City announces:</b> footage shared with private companies, no disclosure.'],[-50,'<b>City announces:</b> footage kept indefinitely, no public access.'],[0,'<b>No announcement.</b> Today\u2019s rules stay.'],[50,'<b>City announces:</b> footage deleted after 30 days, use reported publicly.'],[100,'<b>City announces:</b> public audit log, independent oversight board.']];
-  var stances=[[0.15,'I strongly oppose it.','#8f1d16'],[0.27,'I oppose it.','#b3261e'],[0.45,'I lean against it.','#c4553f'],[0.6,'I am torn.','#6f6f6b'],[0.72,'I lean toward it.','#3f8f5a'],[0.85,'I support it.','#15803d'],[1.01,'I strongly support it.','#0a6a30']];
+  var stances=[[0.15,'I strongly oppose it!','#8f1d16'],[0.27,'I oppose it.','#b3261e'],[0.45,'I lean against it.','#c4553f'],[0.6,'I am torn.','#6f6f6b'],[0.72,'I lean toward it.','#3f8f5a'],[0.85,'I support it.','#15803d'],[1.01,'I strongly support it!','#0a6a30']];
   function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
   function f(n){return n.toFixed(2)} function d(n){return n>=0.995?'1.0':f(n).slice(1)}
   function nearest(v){var best=labels[0];labels.forEach(function(l){if(Math.abs(l[0]-v)<Math.abs(best[0]-v))best=l});return best[1]}
