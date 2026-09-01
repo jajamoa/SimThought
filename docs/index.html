@@ -766,7 +766,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <section class="wrap" id="call">
   <div class="kicker">The call</div>
-  <p class="body">The field is choosing, right now, between agents that sound human and agents that reason like humans. We argue for the second, and that takes two moves at once. The modeling paradigm has to change: interview a person, parse the answers into causal motifs, compose them into a belief network, and run interventions on it (GenMinds). The evaluation paradigm has to change with it: score the reasoning trace for traceability, demographic sensitivity, and intervention coherence, on items drawn from real interviews (RECAP). Causal structure is the tractable place to start. People also reason by association, analogy, and feeling.</p>
+  <p class="body">The field is choosing, right now, between agents that sound human and agents that reason like humans. We argue for the second, and that takes two moves at once: the modeling paradigm and the evaluation paradigm both have to change. We propose one of each.</p>
+  <div class="cards">
+    <div class="card">
+      <h3>GenMinds</h3><div class="csub">a modeling paradigm</div>
+      <p>Interview a person, parse the answers into causal motifs, compose the motifs into a belief network, and run interventions on it. Symbolic structure keeps it interpretable; a language model does the elicitation and assembly. Weakly supported nodes stay visible.</p>
+    </div>
+    <div class="card">
+      <h3>RECAP</h3><div class="csub">reconstructing causal paths</div>
+      <p>A benchmark schema that scores the reasoning trace. Principles: traceability, demographic sensitivity, intervention coherence. Metrics: motif alignment, belief coherence, counterfactual robustness. Every item comes from a real interview.</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:18px">Causal structure is the tractable place to start. People also reason by association, analogy, and feeling.</p>
   <div class="cta">To simulate society faithfully, we must simulate thought.</div>
 </section>
 
