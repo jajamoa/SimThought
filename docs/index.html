@@ -353,6 +353,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .row{font-size:13px;color:var(--ink2);line-height:1.6;padding:8px 16px 12px 0}
 .row.r,.row.r+.ice+.row,.ig .row:nth-of-type(3n){padding-left:16px}
 .row.below,.ice.bot{background:#f3f6fa}
+.wline{grid-column:1/-1;height:3px;background:#6f8fc4}
 .wave{grid-column:1/-1;height:14px;position:relative}
 .wave .w{width:100%;height:100%;display:block}
 .wave .trunk{position:absolute;left:50%;top:0;width:46px;height:100%;margin-left:-23px}
@@ -515,9 +516,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .ice.top{padding-top:6px}
 .ice.bot{padding-bottom:6px}
 .trow{padding:8px 0 10px;font-size:13px;color:var(--ink2);line-height:1.6}
-.trow.deep,.ice.bot{border-top:1.5px solid #6f8fc4;background:#f3f6fa}
-.trow.deep{padding-left:8px;padding-right:8px}
-.ice.bot{padding-left:0}
+.trow.deep,.trow.deep{padding-left:8px;padding-right:8px}
 .trow b{color:var(--ink)}
 
 /* interactive */
@@ -536,19 +535,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .motifs{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .motif{border:1px solid var(--accent);color:var(--accent-ink);background:var(--tint);padding:6px 12px;font-size:13.5px;font-weight:700}
 .motif small{display:block;font-weight:400;color:var(--ink2);font-size:12px;margin-top:2px}
-.stage{display:grid;grid-template-columns:1fr;gap:14px;margin-top:10px}
+.stage{display:grid;grid-template-columns:1fr;gap:14px;margin-top:0}
+.pipe{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;margin:2px 0 12px;font-size:12.5px}
+.pchip{border:1px solid var(--line);background:#fff;padding:3px 9px;color:var(--ink2)}
+.pchip.say{color:var(--ink);font-weight:700;background:var(--tint);border-color:var(--accent)}
+.flowarrow{height:22px;display:flex;justify-content:center;margin:4px 0}
+.flowarrow svg{height:22px;width:20px}
+
 .stage.two{grid-template-columns:1fr 1fr}
 .fcol{border:1px solid var(--line);padding:12px 14px;background:#fff;display:flex;flex-direction:column}
 .fcol.wide{padding:12px 10px}
-.fh{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:10px}
-.fh small{display:block;text-transform:none;letter-spacing:0;font-weight:400;color:var(--mut);font-size:12px;margin-top:2px}
+.fh{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:14px}
+.fh small{display:block;text-transform:none;letter-spacing:0;font-weight:400;color:var(--mut);font-size:12px;margin-top:6px;line-height:1.5}
 .fh small .sw{display:inline-block;width:11px;height:11px;border-radius:2px;border:1px solid rgba(0,0,0,.2);vertical-align:-1px;margin-right:5px}
 .fn{display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;border:1px solid var(--accent);border-radius:50%;font-size:11px;margin-right:4px}
 .qbig{font-size:17px;font-weight:700;color:var(--ink);line-height:1.4;flex:1;display:flex;align-items:center}
 .stimlab{font-size:13.5px;color:var(--ink);font-weight:700;min-height:40px;line-height:1.45;margin-bottom:8px}
 .fcol input[type=range]{width:100%;accent-color:var(--accent)}
 .stimscale{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);margin-top:2px}
-.llm{margin:14px 0;border:1px dashed var(--accent);background:var(--tint);padding:12px 16px;font-size:13px;color:var(--ink2);line-height:1.9}
+.llm{margin:0;border:1px dashed var(--accent);background:var(--tint);padding:12px 16px;font-size:13px;color:var(--ink2);line-height:1.9}
 .ops{margin-top:6px}
 .op{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:3px 0}
 .opn{display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;border:1px solid var(--accent);border-radius:50%;font-size:11px;color:var(--accent-ink)}
@@ -562,13 +567,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .dotag{display:inline-block;border:1px solid var(--accent);color:var(--accent-ink);background:#fff;padding:1px 8px;font-size:12.5px;font-weight:700}
 .graph svg{width:100%;height:auto;display:block;max-width:700px;margin:0 auto}
 .node{fill:#fff;stroke:#4f4e49;stroke-width:1.4;transition:fill .35s,stroke .35s}
-.node.stim{stroke:var(--accent);stroke-width:2;stroke-dasharray:5 3}
+.node.stim{stroke:var(--ink2);stroke-width:1.8;stroke-dasharray:5 3}
 .graph svg{max-width:640px}
 .node.out{stroke-width:2}
 .nl{font-family:inherit;font-size:12.5px;fill:var(--ink)}
 .nv{font-family:inherit;font-size:14px;fill:var(--ink);font-weight:800}
 .el{font-family:inherit;font-size:11.5px;fill:var(--mut);font-weight:700}
-.dol{font-family:inherit;font-size:11px;fill:var(--accent-ink);font-weight:700;letter-spacing:.05em}
+.dol{font-family:inherit;font-size:11px;fill:var(--ink2);font-weight:700;letter-spacing:.05em}
 .edge{stroke:#4f4e49;stroke-width:1.5;fill:none;marker-end:url(#ar)}
 .node.mn{fill:var(--tint);stroke:var(--accent)}
 .edge.pos{stroke:#15803d;marker-end:url(#arp)}.edge.neg{stroke:#b3261e;marker-end:url(#arn)}
@@ -713,6 +718,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <p class="note" style="margin-top:10px">A motif is the smallest causal unit in someone&rsquo;s reasoning: concept, signed arrow, concept. Each one carries the sentence it came from, so every edge in the graph can be traced back to the person&rsquo;s own words. Motifs recur across people, which is what makes them comparable.</p>
       </div>
       <div class="pane on">
+        <div class="pipe"><span class="pchip say">&ldquo;Do you support the surveillance law?&rdquo;</span><i class="ch">&rsaquo;</i><span class="pchip">LLM parser</span><i class="ch">&rsaquo;</i><span class="pchip">belief graph</span><i class="ch">&rsaquo;</i><span class="pchip">LLM verbalizer</span><i class="ch">&rsaquo;</i><span class="pchip say" id="pipeOut">&ldquo;I lean against it.&rdquo;</span></div>
         <div class="stage two">
           <div class="fcol">
             <div class="fh"><span class="fn">1</span> Stimulus <small>the survey question, the agent&rsquo;s input</small></div>
@@ -725,26 +731,30 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="stimscale"><span>less transparent</span><span>more transparent</span></div>
           </div>
         </div>
+<div class="flowarrow"><svg viewBox="0 0 20 22"><line x1="10" y1="0" x2="10" y2="14" stroke="#8a8a86" stroke-width="1.4"/><path d="M4,12 L10,20 L16,12" fill="none" stroke="#8a8a86" stroke-width="1.4"/></svg></div>
         <div class="llm"><span class="llmtag">LLM as semantic parser</span> reads the two texts and writes two graph operations, applied in order:
           <div class="ops"><div class="op"><span class="opn">1</span><span class="opsrc">from the announcement</span><span class="dotag" id="dotag">do(Transparency = <span id="tv">0.50</span>)</span><span class="opex">set the node, propagate downstream</span></div>
           <div class="op"><span class="opn">2</span><span class="opsrc">from the question</span><span class="dotag">query(Support)</span><span class="opex">read the posterior of that node</span></div></div></div>
+<div class="flowarrow"><svg viewBox="0 0 20 22"><line x1="10" y1="0" x2="10" y2="14" stroke="#8a8a86" stroke-width="1.4"/><path d="M4,12 L10,20 L16,12" fill="none" stroke="#8a8a86" stroke-width="1.4"/></svg></div>
         <div class="stage">
           <div class="fcol wide">
             <div class="fh"><span class="fn">2</span> Structure <small>the agent&rsquo;s belief graph, built from its own words; the do() sets one node, propagation does the rest</small></div>
             <div class="graph">
               <svg viewBox="0 0 520 330" aria-label="Belief graph">
 <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L9,5 L0,8.5 z" fill="#4f4e49"/></marker><marker id="arp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L9,5 L0,8.5 z" fill="#15803d"/></marker><marker id="arn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,1.5 L9,5 L0,8.5 z" fill="#b3261e"/></marker></defs>
-<path id="e1" class="edge pos w1" d="M106 150 C160 80, 190 78, 222 76"/><text class="el pos" x="150" y="72" text-anchor="middle">+ weak</text><path id="e2" class="edge neg w2" d="M106 150 C160 220, 190 222, 222 224"/><text class="el neg" x="150" y="246" text-anchor="middle">- moderate</text><path id="e3" class="edge pos w3" d="M286 76 C330 76, 350 76, 392 76"/><text class="el pos" x="338" y="66" text-anchor="middle">+ strong</text><path id="e4" class="edge neg w3" d="M286 224 C330 224, 350 224, 392 224"/><text class="el neg" x="338" y="246" text-anchor="middle">- strong</text><path id="e5" class="edge pos w3" d="M440 104 C440 150, 440 160, 440 192"/><text class="el pos" x="478" y="152" text-anchor="middle">+ strong</text>
+<path id="e1" class="edge pos w1" d="M104.6 138.1 L225.4 87.9"/><text class="el pos" x="159.6" y="104.1" text-anchor="middle">+ weak</text><path id="e2" class="edge neg w2" d="M104.6 161.9 L225.4 212.1"/><text class="el neg" x="159.6" y="203.9" text-anchor="middle">- moderate</text><path id="e3" class="edge pos w3" d="M285.0 76.0 L393.0 76.0"/><text class="el pos" x="339.0" y="66.0" text-anchor="middle">+ strong</text><path id="e4" class="edge neg w3" d="M285.0 224.0 L393.0 224.0"/><text class="el neg" x="339.0" y="242.0" text-anchor="middle">- strong</text><path id="e5" class="edge pos w3" d="M424.0 107.0 L424.0 193.0"/><text class="el pos" x="438.0" y="154.0" text-anchor="middle">+ strong</text>
 <g id="nT" class="gnode"><circle class="node stim" cx="76" cy="150" r="30"/><text class="nv" x="76" y="155" text-anchor="middle" id="vT">.00</text></g><text class="nl" x="76" y="196" text-anchor="middle">Transparency</text><text class="dol" x="76" y="104" text-anchor="middle">do()</text><g class="gnode"><circle class="node" cx="254" cy="76" r="30"/><text class="nv" x="254" y="81" text-anchor="middle" id="vC">.00</text></g><text class="nl" x="254" y="122" text-anchor="middle">Crime deterrence</text><g class="gnode"><circle class="node" cx="254" cy="224" r="30"/><text class="nv" x="254" y="229" text-anchor="middle" id="vP">.00</text></g><text class="nl" x="254" y="270" text-anchor="middle">Privacy concern</text><g class="gnode"><circle class="node" cx="424" cy="76" r="30"/><text class="nv" x="424" y="81" text-anchor="middle" id="vS">.00</text></g><text class="nl" x="424" y="34" text-anchor="middle">Public safety</text><g id="nO" class="gnode"><circle class="node out" cx="424" cy="224" r="30" id="cO"/><text class="nv" x="424" y="229" text-anchor="middle" id="vO">.00</text></g><text class="nl" x="424" y="270" text-anchor="middle">Support</text><text class="dol" x="462" y="228" text-anchor="start">query</text></svg>
             </div>
-            <div class="glegend"><span style="color:#15803d">+ increases</span> &nbsp;&nbsp; <span style="color:#b3261e">&minus; decreases</span> &nbsp;&nbsp; thicker = stronger<br>numbers in nodes = P(node): <span style="color:#15803d">green</span> if up, <span style="color:#b3261e">red</span> if down, versus the status quo</div>
+            <div class="glegend"><span style="color:#15803d">+ increases</span> &nbsp;&nbsp; <span style="color:#b3261e">&minus; decreases</span> &nbsp;&nbsp; thicker = more influence right now (strength &times; parent value)<br>numbers in nodes = P(node): <span style="color:#15803d">green</span> if up, <span style="color:#b3261e">red</span> if down, versus the status quo</div>
           </div>
         </div>
+<div class="flowarrow"><svg viewBox="0 0 20 22"><line x1="10" y1="0" x2="10" y2="14" stroke="#8a8a86" stroke-width="1.4"/><path d="M4,12 L10,20 L16,12" fill="none" stroke="#8a8a86" stroke-width="1.4"/></svg></div>
         <div class="llm"><span class="llmtag">LLM as verbalizer</span> turns the queried posterior back into language:
           <div class="ops"><div class="op vb"><span class="opsrc">from the graph</span><span class="dotag">P(Support) = <span id="rSv">0.31</span></span><span class="opex">becomes</span><span class="dotag say" id="rav">&ldquo;I lean against it.&rdquo;</span></div></div></div>
+<div class="flowarrow"><svg viewBox="0 0 20 22"><line x1="10" y1="0" x2="10" y2="14" stroke="#8a8a86" stroke-width="1.4"/><path d="M4,12 L10,20 L16,12" fill="none" stroke="#8a8a86" stroke-width="1.4"/></svg></div>
         <div class="stage two">
           <div class="fcol agent deep">
-            <div class="fh"><span class="fn">3</span> Response <small><i class="sw"></i>grounded agent &middot; beliefs in</small></div>
+            <div class="fh"><span class="fn">3</span> Response <small><i class="sw"></i>grounded agent &middot; personal experience and beliefs in</small></div>
             <div class="ain"><span class="chip">own words</span><i class="ch">&rsaquo;</i><span class="chip">belief graph</span><i class="ch">&rsaquo;</i><span class="chip">answer</span><br>Transparency is a node in this person&rsquo;s graph, so the announcement changes the answer.</div>
             <div class="ra" id="ra">I lean against it.</div>
             <div class="rbar2"><div class="rb2 l" id="gl"></div><div class="rb2 r" id="gr"></div><i class="mid"></i></div><div class="rbl"><span>oppose</span><span>support</span></div>
@@ -752,7 +762,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           </div>
           <div class="fcol agent surface">
             <div class="fh"><span class="fn">&ne;</span> For comparison <small><i class="sw"></i>surface agent &middot; demographics in</small></div>
-            <div class="ain"><span class="chip">34, urban, renter</span><i class="ch">&rsaquo;</i><span class="chip">persona prompt</span><i class="ch">&rsaquo;</i><span class="chip">answer</span><br>No structure in between, so the announcement never reaches it.</div>
+            <div class="ain"><span class="chip">34, urban, renter</span><i class="ch">&rsaquo;</i><span class="chip">persona prompt</span><i class="ch">&rsaquo;</i><span class="chip">answer</span><br>No structure in between: the prompt has nowhere for the announcement to act, so the answer is the population prior for people like this, and it cannot update.</div>
             <div class="ra small">I oppose it.</div>
             <div class="rbar2"><div class="rb2 l" id="sl"></div><div class="rb2 r" id="sr"></div><i class="mid"></i></div><div class="rbl"><span>oppose</span><span>support</span></div>
             <div class="rnum">support <b>0.35</b>, whatever the announcement</div>
@@ -768,7 +778,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="cr"><span></span><code>Crime deterrence C = 0.2 + 0.6&thinsp;t &nbsp;(t &ge; 0), &nbsp;0.2 + 0.1&thinsp;t &nbsp;(t &lt; 0); &nbsp;Public safety S = C</code></div>
             <div class="cr"><span>combine</span><code>Opposition O = 1.1 &middot; P &middot; (1 &minus; 0.5&thinsp;S), clipped to [0.05, 0.95]; &nbsp;Support = 1 &minus; O</code></div>
             <div class="cr"><span>verbalize</span><code>&lt; 0.15 strongly oppose &middot; &lt; 0.27 oppose &middot; &lt; 0.45 lean against &middot; &lt; 0.60 torn &middot; &lt; 0.72 lean toward &middot; &lt; 0.85 support &middot; else strongly support</code></div>
-            <p class="calcref">Semantics: causal Bayesian network with the do-operator (Pearl, <i>Causality</i>, 2009); positive parents combine by noisy-OR, negative parents by noisy-AND-NOT (Cheng 1997; Griffiths &amp; Tenenbaum 2005). The page uses a linear simplification; the paper&rsquo;s worked example runs belief propagation on the same structure.</p>
+            <p class="calcref">Semantics: causal Bayesian network with the do-operator (<a href="https://bayes.cs.ucla.edu/BOOK-2K/" target="_blank" rel="noopener">Pearl, <i>Causality</i>, 2009</a>); positive parents combine by noisy-OR, negative parents by noisy-AND-NOT (<a href="https://doi.org/10.1037/0033-295X.104.2.367" target="_blank" rel="noopener">Cheng 1997</a>; <a href="https://doi.org/10.1016/j.cogpsych.2005.05.004" target="_blank" rel="noopener">Griffiths &amp; Tenenbaum 2005</a>). The page uses a linear simplification; the paper&rsquo;s worked example runs belief propagation on the same structure.</p>
           </div>
         </details>
       </div>
@@ -854,6 +864,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     var ra=document.getElementById('ra'); ra.textContent=st[1]; ra.style.color=st[2];
     document.getElementById('rSv').textContent=f(sup); document.getElementById('rav').textContent='\u201c'+st[1]+'\u201d';
     var cO=document.getElementById('cO'); cO.style.stroke=st[2]; cO.style.fill=st[2]+'22';
+    var w={e1:[0.3,T],e2:[0.6,T],e3:[1,C],e4:[1,P],e5:[1,S]}; Object.keys(w).forEach(function(id){var e=document.getElementById(id); if(e)e.style.strokeWidth=(0.8+3.4*w[id][0]*w[id][1]).toFixed(2);});
+    var po=document.getElementById('pipeOut'); if(po)po.textContent='\u201c'+st[1]+'\u201d';
     var dev=(sup-0.5)*2; document.getElementById('gl').style.width=(dev<0?Math.round(-dev*50):0)+'%'; document.getElementById('gr').style.width=(dev>0?Math.round(dev*50):0)+'%';
     var sl=document.getElementById('sl'), sr=document.getElementById('sr'); if(sl){sl.style.width='15%'; sr.style.width='0%';}
     document.getElementById('rS').textContent=f(sup); document.getElementById('rP').textContent=f(P); document.getElementById('rSf').textContent=f(S);
