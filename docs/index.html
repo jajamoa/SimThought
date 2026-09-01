@@ -548,7 +548,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .stimlab{font-size:13.5px;color:var(--ink);font-weight:700;min-height:40px;line-height:1.45;margin-bottom:8px}
 .fcol input[type=range]{width:100%;accent-color:var(--accent)}
 .stimscale{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);margin-top:2px}
-.llm{margin:10px 0 0;border:1px dashed var(--accent);background:var(--tint);padding:9px 14px;font-size:13px;color:var(--ink2);line-height:1.6}
+.llm{margin:14px 0;border:1px dashed var(--accent);background:var(--tint);padding:12px 16px;font-size:13px;color:var(--ink2);line-height:1.9}
+.ops{margin-top:6px}
+.op{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:3px 0}
+.opn{display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;border:1px solid var(--accent);border-radius:50%;font-size:11px;color:var(--accent-ink)}
+.opsrc{color:var(--mut);min-width:170px}
+.opex{color:var(--mut)}
 .llm b{color:var(--ink)}
 .llmtag{display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;margin-right:8px}
 .dotag{display:inline-block;border:1px solid var(--accent);color:var(--accent-ink);background:#fff;padding:1px 8px;font-size:12.5px;font-weight:700}
@@ -564,10 +569,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .dol{font-family:inherit;font-size:11px;fill:var(--accent-ink);font-weight:700;letter-spacing:.05em}
 .edge{stroke:#4f4e49;stroke-width:1.5;fill:none;marker-end:url(#ar)}
 .nin{font-family:inherit;font-size:12.5px;fill:var(--ink);font-weight:700}
-.edge.pos{stroke:#1d4fb0;marker-end:url(#arp)}.edge.neg{stroke:#b3261e;marker-end:url(#arn)}
+.edge.pos{stroke:#15803d;marker-end:url(#arp)}.edge.neg{stroke:#b3261e;marker-end:url(#arn)}
 .msvg .edge.pos{marker-end:url(#arp2)}.msvg .edge.neg{marker-end:url(#arn2)}
 .edge.w1{stroke-width:1.1;stroke-dasharray:0}.edge.w2{stroke-width:2}.edge.w3{stroke-width:3.2}
-.el.pos{fill:#1d4fb0}.el.neg{fill:#b3261e}
+.el.pos{fill:#15803d}.el.neg{fill:#b3261e}
+.nv.up{fill:#15803d}.nv.dn{fill:#b3261e}
+.edge{transition:stroke-width .25s}.edge.lit{stroke-width:5}
 
 .glegend{font-size:12.5px;color:var(--mut);text-align:center;margin-top:4px}
 .formula{margin-top:12px;font-size:13px;color:var(--ink2);line-height:1.6}
@@ -586,6 +593,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .ain{font-size:12px;color:var(--mut);margin-bottom:8px;line-height:1.9}
 .chip{display:inline-block;border:1px solid var(--line);background:#fff;padding:0 7px;line-height:1.6;color:var(--ink2);font-size:11.5px}
 .ch{font-style:normal;color:var(--mut);margin:0 5px;font-size:14px}
+.ain mark{background:transparent;color:var(--accent-ink);font-weight:700}
 .agent.surface .sw{background:#cfe0ea}.agent.deep .sw{background:#2b3f52}
 .agent.surface{border-left:3px solid #cfe0ea}.agent.deep{border-left:3px solid #2b3f52}
 @media(max-width:760px){.stage.two{grid-template-columns:1fr}}
@@ -681,8 +689,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <p class="note" style="margin-top:6px">Everyday language, elicited by a semi-structured interview. No survey scale yet, no persona label. Just how one person explains their own view.</p>
       </div>
       <div class="pane">
-<div class="mcard"><svg viewBox="0 0 580 110" class="msvg" aria-label="motif"><defs><marker id="arp2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d4fb0"/></marker><marker id="arn2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b3261e"/></marker></defs><path class="edge neg w1" d="M128 52 L252 52"/><text class="el neg" x="190" y="42" text-anchor="middle">- weak</text><path class="edge neg w3" d="M328 52 L452 52"/><text class="el neg" x="390" y="42" text-anchor="middle">- strong</text><g class="gnode"><circle class="node" cx="90" cy="52" r="36"/><text class="nin" x="90" y="49" text-anchor="middle">Transpa-</text><text class="nin" x="90" y="64" text-anchor="middle">rency</text></g><g class="gnode"><circle class="node" cx="290" cy="52" r="36"/><text class="nin" x="290" y="49" text-anchor="middle">Crime</text><text class="nin" x="290" y="64" text-anchor="middle">rate</text></g><g class="gnode"><circle class="node" cx="490" cy="52" r="36"/><text class="nin" x="490" y="49" text-anchor="middle">Public</text><text class="nin" x="490" y="64" text-anchor="middle">safety</text></g><line x1="290" y1="90" x2="290" y2="110" class="evl"/></svg><div class="qa ev"><b>Motif 1, from answer 1</b>&ldquo;It can reduce <strong>crime</strong> by aiding investigations with more <strong>transparency</strong>, which increases <strong>public safety</strong>.&rdquo;</div></div>
-<div class="mcard"><svg viewBox="0 0 580 110" class="msvg" aria-label="motif"><defs><marker id="arp2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d4fb0"/></marker><marker id="arn2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b3261e"/></marker></defs><path class="edge neg w2" d="M128 52 L252 52"/><text class="el neg" x="190" y="42" text-anchor="middle">- moderate</text><path class="edge neg w3" d="M328 52 L452 52"/><text class="el neg" x="390" y="42" text-anchor="middle">- strong</text><g class="gnode"><circle class="node" cx="90" cy="52" r="36"/><text class="nin" x="90" y="49" text-anchor="middle">Transpa-</text><text class="nin" x="90" y="64" text-anchor="middle">rency</text></g><g class="gnode"><circle class="node" cx="290" cy="52" r="36"/><text class="nin" x="290" y="49" text-anchor="middle">Privacy</text><text class="nin" x="290" y="64" text-anchor="middle">concern</text></g><g class="gnode"><circle class="node" cx="490" cy="52" r="36"/><text class="nin" x="490" y="57" text-anchor="middle">Support</text></g><line x1="290" y1="90" x2="290" y2="110" class="evl"/></svg><div class="qa ev"><b>Motif 2, from answer 2</b>&ldquo;People will have less <strong>privacy concern</strong> if they know how data is used&hellip;&rdquo;</div></div>
+<div class="mcard"><svg viewBox="0 0 580 110" class="msvg" aria-label="motif"><defs><marker id="arp2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="arn2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b3261e"/></marker></defs><path class="edge neg w1" d="M128 52 L252 52"/><text class="el neg" x="190" y="42" text-anchor="middle">- weak</text><path class="edge neg w3" d="M328 52 L452 52"/><text class="el neg" x="390" y="42" text-anchor="middle">- strong</text><g class="gnode"><circle class="node" cx="90" cy="52" r="36"/><text class="nin" x="90" y="49" text-anchor="middle">Transpa-</text><text class="nin" x="90" y="64" text-anchor="middle">rency</text></g><g class="gnode"><circle class="node" cx="290" cy="52" r="36"/><text class="nin" x="290" y="49" text-anchor="middle">Crime</text><text class="nin" x="290" y="64" text-anchor="middle">rate</text></g><g class="gnode"><circle class="node" cx="490" cy="52" r="36"/><text class="nin" x="490" y="49" text-anchor="middle">Public</text><text class="nin" x="490" y="64" text-anchor="middle">safety</text></g><line x1="290" y1="90" x2="290" y2="110" class="evl"/></svg><div class="qa ev"><b>Motif 1, from answer 1</b>&ldquo;It can reduce <strong>crime</strong> by aiding investigations with more <strong>transparency</strong>, which increases <strong>public safety</strong>.&rdquo;</div></div>
+<div class="mcard"><svg viewBox="0 0 580 110" class="msvg" aria-label="motif"><defs><marker id="arp2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="arn2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b3261e"/></marker></defs><path class="edge neg w2" d="M128 52 L252 52"/><text class="el neg" x="190" y="42" text-anchor="middle">- moderate</text><path class="edge neg w3" d="M328 52 L452 52"/><text class="el neg" x="390" y="42" text-anchor="middle">- strong</text><g class="gnode"><circle class="node" cx="90" cy="52" r="36"/><text class="nin" x="90" y="49" text-anchor="middle">Transpa-</text><text class="nin" x="90" y="64" text-anchor="middle">rency</text></g><g class="gnode"><circle class="node" cx="290" cy="52" r="36"/><text class="nin" x="290" y="49" text-anchor="middle">Privacy</text><text class="nin" x="290" y="64" text-anchor="middle">concern</text></g><g class="gnode"><circle class="node" cx="490" cy="52" r="36"/><text class="nin" x="490" y="57" text-anchor="middle">Support</text></g><line x1="290" y1="90" x2="290" y2="110" class="evl"/></svg><div class="qa ev"><b>Motif 2, from answer 2</b>&ldquo;People will have less <strong>privacy concern</strong> if they know how data is used&hellip;&rdquo;</div></div>
         <p class="note" style="margin-top:10px">A motif is the smallest causal unit in someone&rsquo;s reasoning: concept, signed arrow, concept. Each one carries the sentence it came from, so every edge in the graph can be traced back to the person&rsquo;s own words. Motifs recur across people, which is what makes them comparable.</p>
       </div>
       <div class="pane on">
@@ -698,23 +706,26 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="stimscale"><span>less transparent</span><span>more transparent</span></div>
           </div>
         </div>
-        <div class="llm"><span class="llmtag">LLM as semantic parser</span> reads both texts and writes two graph operations: <b>query</b> the node <i>Support</i>, and <b>intervene</b> with <span class="dotag" id="dotag">do(Transparency = <span id="tv">0.50</span>)</span></div>
+        <div class="llm"><span class="llmtag">LLM as semantic parser</span> reads the two texts and writes two graph operations, applied in order:
+          <div class="ops"><div class="op"><span class="opn">1</span><span class="opsrc">from the announcement</span><span class="dotag" id="dotag">do(Transparency = <span id="tv">0.50</span>)</span><span class="opex">set the node, propagate downstream</span></div>
+          <div class="op"><span class="opn">2</span><span class="opsrc">from the question</span><span class="dotag">query(Support)</span><span class="opex">read the posterior of that node</span></div></div></div>
         <div class="stage">
           <div class="fcol wide">
             <div class="fh"><span class="fn">2</span> Structure <small>the agent&rsquo;s belief graph, built from its own words; the do() sets one node, propagation does the rest</small></div>
             <div class="graph">
               <svg viewBox="0 0 520 320" aria-label="Belief graph">
-<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f4e49"/></marker><marker id="arp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d4fb0"/></marker><marker id="arn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b3261e"/></marker></defs>
-<path class="edge neg w1" d="M112 150 C160 80, 190 78, 216 76"/><text class="el neg" x="150" y="72" text-anchor="middle">- weak</text><path class="edge neg w2" d="M112 150 C160 220, 190 222, 216 224"/><text class="el neg" x="150" y="246" text-anchor="middle">- moderate</text><path class="edge neg w3" d="M292 76 C330 76, 350 76, 386 76"/><text class="el neg" x="338" y="66" text-anchor="middle">- strong</text><path class="edge neg w3" d="M292 224 C330 224, 350 224, 386 224"/><text class="el neg" x="338" y="246" text-anchor="middle">- strong</text><path class="edge pos w3" d="M446 106 C446 150, 446 160, 446 192"/><text class="el pos" x="484" y="152" text-anchor="middle">+ strong</text>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f4e49"/></marker><marker id="arp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="arn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b3261e"/></marker></defs>
+<path id="e1" class="edge neg w1" d="M112 150 C160 80, 190 78, 216 76"/><text class="el neg" x="150" y="72" text-anchor="middle">- weak</text><path id="e2" class="edge neg w2" d="M112 150 C160 220, 190 222, 216 224"/><text class="el neg" x="150" y="246" text-anchor="middle">- moderate</text><path id="e3" class="edge neg w3" d="M292 76 C330 76, 350 76, 386 76"/><text class="el neg" x="338" y="66" text-anchor="middle">- strong</text><path id="e4" class="edge neg w3" d="M292 224 C330 224, 350 224, 386 224"/><text class="el neg" x="338" y="246" text-anchor="middle">- strong</text><path id="e5" class="edge pos w3" d="M446 106 C446 150, 446 160, 446 192"/><text class="el pos" x="484" y="152" text-anchor="middle">+ strong</text>
 <g id="nT" class="gnode"><circle class="node stim" cx="76" cy="150" r="36"/><text class="nin" x="76" y="147" text-anchor="middle">Transpa-</text><text class="nin" x="76" y="162" text-anchor="middle">rency</text></g><text class="nv" x="76" y="204" text-anchor="middle" id="vT">.00</text><text class="dol" x="76" y="98" text-anchor="middle">do()</text><g class="gnode"><circle class="node" cx="254" cy="76" r="36"/><text class="nin" x="254" y="73" text-anchor="middle">Crime</text><text class="nin" x="254" y="88" text-anchor="middle">rate</text></g><text class="nv" x="254" y="130" text-anchor="middle" id="vC">.00</text><g class="gnode"><circle class="node" cx="254" cy="224" r="36"/><text class="nin" x="254" y="221" text-anchor="middle">Privacy</text><text class="nin" x="254" y="236" text-anchor="middle">concern</text></g><text class="nv" x="254" y="278" text-anchor="middle" id="vP">.00</text><g class="gnode"><circle class="node" cx="424" cy="76" r="36"/><text class="nin" x="424" y="73" text-anchor="middle">Public</text><text class="nin" x="424" y="88" text-anchor="middle">safety</text></g><text class="nv" x="424" y="130" text-anchor="middle" id="vS">.00</text><g id="nO" class="gnode"><circle class="node out" cx="424" cy="224" r="36" id="cO"/><text class="nin" x="424" y="229" text-anchor="middle">Support</text></g><text class="nv" x="424" y="278" text-anchor="middle" id="vO">.00</text><text class="dol" x="466" y="228" text-anchor="start">query</text></svg>
             </div>
-            <div class="glegend"><span style="color:#1d4fb0">+ increases</span> &nbsp; <span style="color:#b3261e">&minus; decreases</span> &nbsp; thicker = stronger &nbsp; numbers under nodes = P(node)</div>
+            <div class="glegend"><span style="color:#15803d">+ increases</span> &nbsp; <span style="color:#b3261e">&minus; decreases</span> &nbsp; thicker = stronger &nbsp; numbers under nodes = P(node), <span style="color:#15803d">green</span> if up and <span style="color:#b3261e">red</span> if down versus the status quo</div>
           </div>
         </div>
         <div class="llm"><span class="llmtag">LLM as verbalizer</span> turns the queried posterior back into language: P(support) = <b id="rSv">0.31</b> becomes <b id="rav">&ldquo;I lean against it.&rdquo;</b></div>
         <div class="stage two">
           <div class="fcol agent deep">
             <div class="fh"><span class="fn">3</span> Response <small><i class="sw"></i>grounded agent &middot; beliefs in</small></div>
+            <div class="ain"><span class="chip">own words</span><i class="ch">&rsaquo;</i><span class="chip">belief graph</span><i class="ch">&rsaquo;</i><span class="chip">answer</span><br>&ldquo;&hellip;more <mark>transparency</mark>, which increases <mark>public safety</mark>.&rdquo; &ldquo;&hellip;less <mark>privacy concern</mark> if they know how data is used.&rdquo;</div>
             <div class="ra" id="ra">I lean against it.</div>
             <div class="rbar"><i id="rfill"></i></div>
             <div class="rnum">support <b id="rS">0.31</b> &nbsp;&middot;&nbsp; privacy concern <b id="rP">0.70</b> &nbsp;&middot;&nbsp; safety <b id="rSf">0.20</b></div>
@@ -727,7 +738,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="rnum">support <b>0.35</b>, whatever the announcement</div>
           </div>
         </div>
-        <p class="formula">Same person, same question, five announcements. Slide right and the paper&rsquo;s worked numbers appear (privacy concern 0.7 &rarr; 0.3, support 0.3 &rarr; 0.8); slide left and the graph runs the other way. Weights are illustrative; the structure, the sign, and the strength of every edge come from the two answers in step 1 (hedged claims are weak edges, flat assertions are strong). do() sets the node instead of observing it, so nothing flows back upstream.</p>
+        <p class="formula">Same person, same question, five announcements. Slide right and the paper&rsquo;s worked numbers appear (privacy concern 0.7 &rarr; 0.3, support 0.3 &rarr; 0.8); slide left and the graph runs the other way. Weights are illustrative; the structure, the sign, and the strength of every edge come from the two answers in step 1 (hedged claims are weak edges, flat assertions are strong). do() sets the node instead of observing it, so nothing flows back upstream.<br><span style="color:var(--mut)">Semantics: a causal Bayesian network with Pearl&rsquo;s do-operator (Pearl, <i>Causality</i>, 2009); positive parents combine by noisy-OR and negative parents by noisy-AND-NOT (Cheng 1997; Griffiths &amp; Tenenbaum 2005). This page uses a simplified linear version of those rules; the paper&rsquo;s worked example uses belief propagation on the same structure.</span></p>
       </div>
       </div>
     </div>
@@ -802,6 +813,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     var O=clamp(1.1*P*(1-0.5*S),0.05,0.95);   // opposition: ~0.69 -> ~0.20
     var sup=1-O;
     document.getElementById('vT').textContent=d(T); document.getElementById('tv').textContent=f(T);
+    var base={vC:0.20,vS:0.20,vP:0.70,vO:0.31}, cur={vC:C,vS:S,vP:P,vO:sup};
+    Object.keys(base).forEach(function(k){var e=document.getElementById(k); e.classList.remove('up','dn'); if(cur[k]>base[k]+0.005)e.classList.add('up'); else if(cur[k]<base[k]-0.005)e.classList.add('dn');});
+    [['e1','e2'],['e3','e4'],['e5']].forEach(function(layer,i){setTimeout(function(){layer.forEach(function(id){var e=document.getElementById(id); if(!e)return; e.classList.add('lit'); setTimeout(function(){e.classList.remove('lit')},260)})},i*140)});
     document.getElementById('vC').textContent=d(C); document.getElementById('vS').textContent=d(S);
     document.getElementById('vP').textContent=d(P); document.getElementById('vO').textContent=d(sup);
     document.getElementById('stimlab').textContent=nearest(tr.value);
