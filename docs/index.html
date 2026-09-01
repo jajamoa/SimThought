@@ -203,6 +203,161 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .tcap{margin-top:12px}
 .scen{font-size:13.5px;color:var(--ink2);line-height:1.65;max-width:900px;margin:0 auto 14px;text-align:center}
 .scen b{color:var(--ink)}
+.ig{display:grid;grid-template-columns:1fr 46px 1fr;column-gap:0}
+.ig .th{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}
+.row{font-size:13px;color:var(--ink2);line-height:1.6;padding:8px 16px 12px 0}
+.row.r,.row.r+.ice+.row,.ig .row:nth-of-type(3n){padding-left:16px}
+.row.below,.ice.bot{border-top:1.5px solid #6f8fc4;background:#f3f6fa}
+.row.below{padding-left:8px;padding-right:12px}
+.row.below.r,.ig .row.below:last-child{padding-left:16px}
+.row.r{position:relative}
+.wl{position:absolute;right:6px;bottom:3px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#6f8fc4}
+.tag{font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:12px;margin-right:2px}
+.tag.ab{color:#7fa3bd}.tag.be{color:#2b3f52}
+.ice{align-self:stretch}
+.ice svg{width:100%;height:100%;display:block}
+.ice.top{padding-top:6px}
+.ice.bot{padding-bottom:6px}
+@media(max-width:760px){.ig{grid-template-columns:1fr}.ice,.ig .th:nth-child(2){display:none}.wl{display:none}}
+/* sections */
+section.wrap{margin-top:46px}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--accent-ink);text-transform:uppercase;margin-bottom:10px}
+h2{font-size:27px;font-weight:700;line-height:1.3;margin-bottom:14px;letter-spacing:-.01em}
+p.body{color:var(--ink2);max-width:700px;margin-bottom:14px}
+p.body strong{color:var(--ink)}
+/* cards */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.cards3{grid-template-columns:1fr 1fr 1fr}
+.card{border:1px solid var(--line);padding:20px 22px}
+.card h3{font-size:17.5px;font-weight:700;margin-bottom:2px}
+.card .csub{font-size:12.5px;color:var(--accent-ink);font-weight:600;letter-spacing:.06em;margin-bottom:10px}
+.card p{font-size:14.5px;color:var(--ink2)}
+.note{font-size:13.5px;color:var(--mut);margin-top:20px;max-width:760px}
+/* stats strip */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);margin-top:8px}
+.stat{padding:16px 14px;border-left:1px solid var(--line);font-size:13.5px;color:var(--ink2)}
+.stat:first-child{border-left:none}
+.stat b{display:block;font-size:21px;color:var(--ink);font-weight:800}
+/* table */
+.tablewrap{overflow-x:auto;margin-top:16px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{padding:9px 14px;text-align:right;border-top:1px solid var(--line);white-space:nowrap}
+th{font-size:12.5px;color:var(--mut);font-weight:600;border-top:none;letter-spacing:.03em}
+td:first-child,th:first-child{text-align:left}
+tr.human{background:var(--tint)}
+tr.human td{font-weight:700}
+td.best{color:var(--accent-ink);font-weight:800}
+tr.dim td{color:var(--mut)}
+.tnote{font-size:13px;color:var(--mut);margin-top:10px;max-width:700px}
+/* quiz */
+.quiz{background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0 42px;margin-top:46px}
+.qcard{background:#fff;border:1px solid var(--line);padding:22px 24px;margin-top:18px}
+.qhead{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mut);letter-spacing:.05em;margin-bottom:10px}
+.qsetup{font-size:14.5px;color:var(--ink2);margin-bottom:12px}
+.chips{display:grid;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);background:#fafaf8;padding:9px 12px;font-size:13px;color:var(--ink2)}
+.chip b{display:block;color:var(--mut);font-weight:600;font-size:12px;margin-bottom:2px}
+.qq{font-size:16px;font-weight:700;margin:14px 0 12px}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opt{border:1px solid var(--ink);background:#fff;padding:7px 14px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
+.opt:hover{background:var(--ink);color:#fff}
+.opt.scale{padding:7px 0;width:34px;text-align:center}
+.opt.picked-right{background:var(--accent);border-color:var(--accent);color:#fff}
+.opt.picked-wrong{background:#b3261e;border-color:#b3261e;color:#fff}
+.opt.gold{outline:2px solid var(--accent);outline-offset:1px}
+.opt:disabled{cursor:default;opacity:.85}
+.qreveal{display:none;margin-top:14px;border-left:3px solid var(--accent);padding:10px 14px;background:var(--tint2);font-size:14px;color:var(--ink2)}
+.qreveal b{color:var(--ink)}
+.verdict{font-weight:800;font-size:13px;letter-spacing:.05em;margin-bottom:4px}
+.verdict.ok{color:var(--accent-ink)} .verdict.no{color:#b3261e}
+.scoreline{margin-top:22px;font-size:15px;font-weight:700;display:none}
+.scoreline span{color:var(--accent-ink)}
+.outro{font-size:14.5px;color:var(--ink2);margin-top:12px;max-width:700px;display:none}
+/* pipeline + tyt */
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.step{border:1px solid var(--line);padding:14px 16px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sh{font-weight:700;color:var(--ink);font-size:13px;margin-bottom:5px;letter-spacing:.03em}
+.sh .pc{margin-right:6px}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.pipefig{margin-top:16px;border:1px solid var(--line)}
+.pipefig img{width:100%;display:block}
+.split{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center;margin-top:22px}
+.split img{width:100%;border:1px solid var(--line)}
+pre{background:#fafaf8;border:1px solid var(--line);padding:16px 18px;font-size:13.5px;overflow-x:auto;margin-top:16px;line-height:1.7}
+/* team */
+.authors{font-size:14.5px;line-height:1.75;max-width:760px}
+.authors sup{color:var(--accent-ink);font-size:11px}
+.affils{font-size:13.5px;color:var(--ink2);margin-top:18px;max-width:760px;display:flex;flex-wrap:wrap;gap:6px 26px}
+.affils span{white-space:nowrap}
+.affils sup{color:var(--accent-ink);font-size:11px;margin-right:3px}
+/* footer */
+/* easter egg: average mode */
+body.avg{--accent:#8a8a86;--accent-ink:#6f6f6b;--tint:#f2f2f0;--tint2:#ececea}
+body.avg img{filter:grayscale(1)}
+body.avg .pc,body.avg .lb,body.avg .kicker,body.avg .csub{filter:grayscale(1)}
+body.avg .tagline em{color:var(--ink2);border-bottom-color:#8a8a86}
+.avgnote{display:none;position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:#111110;color:#fff;font-size:13px;padding:8px 16px;z-index:9;white-space:nowrap}
+body.avg .avgnote{display:block}
+.backnote{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:13px;padding:8px 16px;z-index:9;white-space:nowrap}
+footer{border-top:1px solid var(--line);margin-top:46px;padding:36px 0 48px;font-size:13.5px;color:var(--mut)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){
+  h1{font-size:21px;padding:0 6px}.tagline{font-size:16.5px}
+  .deskbr{display:none}
+  .hero.wrap{padding:44px 18px 8px}
+  .kickerline{padding:0 12px}
+  .heroauthors{font-size:12.5px;line-height:1.7}
+  .heroaffils{font-size:11.5px}
+  .heronote{font-size:11px}
+  section.wrap{margin-top:39px}
+  .quiz{margin-top:84px;padding:56px 0 48px}
+  .qcard{padding:16px 14px}
+  .opt.scale{width:28px;font-size:13px}
+  .chips{gap:6px}
+  .chip{font-size:12.5px}
+  .panelcaps{gap:10px 14px}
+  .teaser{padding:0 16px}
+  .wrap{padding:0 18px}
+  .topbar nav{gap:12px;font-size:12.5px}
+  .mitmark{height:12px;margin-left:12px}
+  table{min-width:520px;font-size:12.5px}
+  th,td{padding:7px 8px}
+  .cards,.cards3{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr;border-right:none}
+  .stat{border-right:1px solid var(--line);border-top:1px solid var(--line)}
+  .stat:nth-child(-n+2){border-top:none}
+  .stat:last-child{grid-column:1/-1}
+  .split{grid-template-columns:1fr}
+  body{font-size:15.5px}
+}
+</style>
+<style>
+/* page-specific */
+.para{display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--line);margin-top:16px}
+.pcol{padding:16px 18px;border-left:1px solid var(--line);font-size:13.5px;color:var(--ink2);line-height:1.55}
+.pcol:first-child{border-left:none}
+.pcol i{display:block;font-style:normal;color:var(--mut);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.pcol b{display:block;font-size:15px;color:var(--ink);margin:8px 0 2px}
+.pcol.on b{color:var(--accent-ink)}
+.pcol .era{display:block;font-size:11.5px;color:var(--mut);margin-bottom:6px;line-height:1.45}
+.pd{width:100%;height:auto;display:block;max-width:260px}
+.pb{fill:#fff;stroke:#4f4e49;stroke-width:1.1}.pb.dark{fill:#4f4e49}.pb.tint{fill:var(--tint);stroke:var(--accent)}
+.pt{font-family:inherit;font-size:9.5px;fill:var(--ink)}.pt.light{fill:#fff}.pt.tiny{font-size:8px;fill:var(--mut)}
+.pa{stroke:#4f4e49;stroke-width:1.1;marker-end:url(#pa);fill:none}.pa.loop{stroke:var(--accent);stroke-dasharray:3 2}
+.pn{fill:var(--accent)}.pn.new{fill:#fff;stroke:var(--accent);stroke-width:1.2;stroke-dasharray:2 1}
+.pe{stroke:var(--accent-ink);stroke-width:1.1}.pe.new{stroke-dasharray:2 1}
+.tl{margin-top:14px;border:1px solid var(--line);padding:12px 16px}
+.tlrow{display:grid;grid-template-columns:190px 1fr;gap:12px;align-items:center;margin-bottom:8px}
+.tll{font-size:11.5px;color:var(--mut);letter-spacing:.04em;text-transform:uppercase}
+.tlbar{position:relative;height:22px;background:#f4f4f2;border:1px solid var(--line)}
+.tlbar i{position:absolute;top:0;bottom:0;font-style:normal;font-size:11px;line-height:20px;padding-left:8px;white-space:nowrap;overflow:hidden;color:#fff}
+.tlbar .s1{background:#8a8a86}.tlbar .s2{background:var(--accent)}.tlbar .s3{background:#6f8fc4}.tlbar .s0{background:repeating-linear-gradient(45deg,#f4f4f2,#f4f4f2 4px,#e6e6e3 4px,#e6e6e3 8px)}
+.tlbar .now{background:var(--accent-ink);font-weight:700}
+.tlnote{font-size:12px;color:var(--mut);margin-top:6px;line-height:1.5}
+@media(max-width:760px){.para{grid-template-columns:1fr}.pcol{border-left:none;border-top:1px solid var(--line)}.pcol:first-child{border-top:none}.tlrow{grid-template-columns:1fr}.tll{margin-bottom:2px}}
+.tcap{margin-top:12px}
+.scen{font-size:13.5px;color:var(--ink2);line-height:1.65;max-width:900px;margin:0 auto 14px;text-align:center}
+.scen b{color:var(--ink)}
 .tgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .th{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
 .tcol{display:grid;grid-template-columns:34px 1fr;grid-template-rows:auto auto auto;column-gap:12px}
@@ -309,17 +464,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <a class="pipefig" style="display:block;margin:0;border:1px solid var(--line)" href="assets/teaser.jpg" target="_blank" rel="noopener"><img src="assets/teaser.jpg" alt="Iceberg: surface opinion from demographics above the waterline, reasoning from beliefs and experience below. Extrapolated to a population, the surface view yields flattened stereotypes; the grounded view yields heterogeneous, interpretable opinions."></a>
   <div class="tcap">
     <p class="scen"><b>The scenario.</b> A carbon tax is announced: a price on fuel and carbon-heavy goods, meant to cut emissions, paid by everyone at the pump and the checkout. It is the classic contested policy, a climate benefit set against a cost of living, which is why what a person <em>thinks</em> about it matters more than which box they tick.</p>
-    <div class="tgrid">
-      <div class="tcol">
-        <div class="th">Left &middot; one person</div>
-        <div class="ice top"><svg viewBox="0 0 34 100" preserveAspectRatio="none"><polygon points="9,100 17,4 25,100" fill="#dbe8f0" stroke="#2b3f52" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg></div><div class="trow light"><b>Above the waterline: demographics.</b> 35, male, middle income. A model carrying population weights returns the modal answer for that label: support, &ldquo;we need to act on climate now.&rdquo; The label answered, not the person. This is a flattened identity.</div>
-        <div class="ice bot"><svg viewBox="0 0 34 100" preserveAspectRatio="none"><polygon points="9,0 25,0 32,55 23,100 11,100 2,55" fill="#2b3f52" stroke="#2b3f52" stroke-width="1" vector-effect="non-scaling-stroke"/></svg></div><div class="trow deep"><b>Below: beliefs and experience.</b> Behind the same label sit specific experiences that pull in opposite directions. He volunteered for reforestation in college, so he cares about the climate and wants the policy. He now runs a logistics startup and is already struggling with delivery costs, so a fuel tax lands on his margins: &ldquo;this could hurt my small business.&rdquo; A real individual holds both. His stance is the resolution of that conflict, and it is exactly what an intervention (say, a small-business exemption) would move.</div>
-      </div>
-      <div class="tcol">
-        <div class="th">Right &middot; a population</div>
-        <div class="ice top"><svg viewBox="0 0 34 100" preserveAspectRatio="none"><polygon points="9,100 17,4 25,100" fill="#dbe8f0" stroke="#2b3f52" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg></div><div class="trow light"><b>Extrapolate the surface</b> and you get three camps: yes, no, whatever. Stereotypes at scale: a society flattened into the categories the model started with.</div>
-        <div class="ice bot"><svg viewBox="0 0 34 100" preserveAspectRatio="none"><polygon points="9,0 25,0 32,55 23,100 11,100 2,55" fill="#2b3f52" stroke="#2b3f52" stroke-width="1" vector-effect="non-scaling-stroke"/></svg></div><div class="trow deep"><b>Extrapolate the reasoning</b> and you get a crowd that is heterogeneous and complete: fair if transparent, who decides the rate, what is in it for me, better transit first, the rich will not care. Diverse, interpretable, and causally faithful, because every opinion still carries the beliefs that produced it. Click the figure to enlarge.</div>
-      </div>
+    <div class="ig">
+      <div class="th">Left &middot; one person</div><div></div><div class="th">Right &middot; a population</div>
+      <div class="row above"><span class="tag ab">above:</span> demographics. 35, male, middle income. A model carrying population weights returns the modal answer for that label: support, &ldquo;we need to act on climate now.&rdquo; The label answered, not the person. This is a flattened identity.</div>
+      <div class="ice top"><svg viewBox="0 0 34 100" preserveAspectRatio="none"><polygon points="9,100 17,4 25,100" fill="#dbe8f0" stroke="#2b3f52" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg></div>
+      <div class="row above r"><span class="tag ab">above:</span> extrapolate the surface and you get three camps: yes, no, whatever. Stereotypes at scale, a society flattened into the categories the model started with.<span class="wl">waterline</span></div>
+      <div class="row below"><span class="tag be">below:</span> beliefs and experience. Behind the same label sit specific experiences that pull in opposite directions. He volunteered for reforestation in college, so he cares about the climate and wants the policy. He now runs a logistics startup and is already struggling with delivery costs, so a fuel tax lands on his margins: &ldquo;this could hurt my small business.&rdquo; A real individual holds both. His stance is the resolution of that conflict, and it is exactly what an intervention (say, a small-business exemption) would move.</div>
+      <div class="ice bot"><svg viewBox="0 0 34 100" preserveAspectRatio="none"><polygon points="9,0 25,0 32,55 23,100 11,100 2,55" fill="#2b3f52" stroke="#2b3f52" stroke-width="1" vector-effect="non-scaling-stroke"/></svg></div>
+      <div class="row below"><span class="tag be">below:</span> extrapolate the reasoning and you get a crowd that is heterogeneous and complete: fair if transparent, who decides the rate, what is in it for me, better transit first, the rich will not care. Diverse, interpretable, and causally faithful, because every opinion still carries the beliefs that produced it. Click the figure to enlarge.</div>
     </div>
   </div>
 </div>
